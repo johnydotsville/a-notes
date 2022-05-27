@@ -178,7 +178,7 @@ mvn exec:java -Dexec.mainClass="home.johny.App"
 | compile  | compile, test, runtime         | compile as compile, runtime > runtime, test > x, provided > x |
 | provided | compe, test                    | compile > provided, runtime > provided, test > x, provided > x |
 | runtime  | test, runtime                  | compile > runtime, runtime > runtime, test > x, provided > x |
-| test     | compile(???), test             | compile > test, runtime > test, test > x, provided > x       |
+| test     | test                           | compile > test, runtime > test, test > x, provided > x       |
 
 Третий столбец означает следующее: я пишу библиотеку, у меня есть зависимость Important, я даю ей скоп compile. Вася подключает мою библиотеку, дает ей скоп runtime и при этом для Васи моя зависимость Important получает скоп не compile, а runtime. Т.е. каждый скоп предполагает либо обрезку каких-то транзитивных зависимостей, либо их подтягивание с возможным изменением скопа. Как видно, все скопы предполагают игнорирование test- и provided- транзитивных зависимостей, а подтягивание только compile- и runtime-зависимостей. При этом compile тянет их без изменения, а provided, runtime и test превращают их в себя.
 
