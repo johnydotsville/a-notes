@@ -182,7 +182,7 @@ public class HomeKont {
 
 # Тако-тако, бурито-бурито
 
-## Домен
+## Доменные классы
 
 Доменные классы, ничего особенного, просто чтобы понимать о чем речь. Геттеры\сеттеры, toString, hashCode, equals генерирует библиотека lombok - @Data это его аннотация:
 
@@ -418,21 +418,137 @@ sauce=[Ingredient(id=SLSA, name=Salsa, type=SAUCE), Ingredient(id=SRCR, name=Sou
 </div>
 ```
 
+Полный html:
+
+```html
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Taco Cloud</title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+<h1>Welcome to Taco Cloud!</h1>
+<img src="/images/TacoCloud.png"/>
+
+<form method="POST">
+    <div class="grid">
+        <div class="ingredient-group" id="wraps">
+            <h3>Designate your wrap:</h3>
+            <div>
+                <input type="checkbox"
+                       value="FLTO" id="ingredients1" name="ingredients"/>
+                <input type="hidden" name="_ingredients" value="on"/>
+                <span>Flour Tortilla</span><br/>
+            </div>
+            <div>
+                <input type="checkbox"
+                       value="COTO" id="ingredients2" name="ingredients"/>
+                <input type="hidden" name="_ingredients" value="on"/>
+                <span>Corn Tortilla</span><br/>
+            </div>
+        </div>
+        <div class="ingredient-group" id="proteins">
+            <h3>Pick your protein:</h3>
+            <div>
+                <input type="checkbox"
+                       value="GRBF" id="ingredients3" name="ingredients"/>
+                <input type="hidden" name="_ingredients" value="on"/>
+                <span>Ground Beef</span><br/>
+            </div>
+            <div>
+                <input type="checkbox"
+                       value="CARN" id="ingredients4" name="ingredients"/>
+                <input type="hidden" name="_ingredients" value="on"/>
+                <span>Carnitas</span><br/>
+            </div>
+        </div>
+        <div class="ingredient-group" id="cheeses">
+            <h3>Choose your cheese:</h3>
+            <div>
+                <input type="checkbox"
+                       value="CHED" id="ingredients5" name="ingredients"/>
+                <input type="hidden" name="_ingredients" value="on"/>
+                <span>Cheddar</span><br/>
+            </div>
+            <div>
+                <input type="checkbox"
+                       value="JACK" id="ingredients6" name="ingredients"/>
+                <input type="hidden" name="_ingredients" value="on"/>
+                <span>Monterrey Jack</span><br/>
+            </div>
+        </div>
+        <div class="ingredient-group" id="veggies">
+            <h3>Determine your veggies:</h3>
+            <div>
+                <input type="checkbox"
+                       value="TMTO" id="ingredients7" name="ingredients"/>
+                <input type="hidden" name="_ingredients" value="on"/>
+                <span>Diced Tomatoes</span><br/>
+            </div>
+            <div>
+                <input type="checkbox"
+                       value="LETC" id="ingredients8" name="ingredients"/>
+                <input type="hidden" name="_ingredients" value="on"/>
+                <span>Lettuce</span><br/>
+            </div>
+        </div>
+        <div class="ingredient-group" id="sauces">
+            <h3>Select your sauce:</h3>
+            <div>
+                <input type="checkbox"
+                       value="SLSA" id="ingredients9" name="ingredients"/>
+                <input type="hidden" name="_ingredients" value="on"/>
+                <span>Salsa</span><br/>
+            </div>
+            <div>
+                <input type="checkbox"
+                       value="SRCR" id="ingredients10" name="ingredients"/>
+                <input type="hidden" name="_ingredients" value="on"/>
+                <span>Sour Cream</span><br/>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h3>Name your taco creation:</h3>
+        <input type="text" id="name" name="name" value="" />
+        <br/>
+        <button>Submit Your Taco</button>
+    </div>
+</form>
+</body>
+</html>
+```
+
 Про таймлиф придется отдельно почитать, но основа такая: 
 
 * Поскольку мы добавляли в модель объекты, то они доступны здесь по именам, под которыми мы их добавляли: ${wrap}, ${protein} и т.д. Каждый такой объект у нас - коллекция элементов, относящихся к виду ингредиента - соус, обертка и т.д.
+
 * Аналогично с `<form method="POST" th:object="${taco}">` - мы добавляли в модель новый пустой объект Taco под именем taco
+
 * `th:each="ingredient : ${wrap}` - это таймлифовский цикл. Поскольку wrap и остальное - коллекция, обходим ее и каждый элемент помещается в переменную с именем ingredient
+
+* `<form method="POST" th:object="${taco}">` - это вероятно значит, что при отправке все значения формы упакуются в объект с именем "taco"
+
+  UPD. Кажется нет?
+
 * Эту переменную `th:value="${ingredient.id}"`,  `th:text="${ingredient.name}"` мы используем для заполнения свойств. th:value превратится в свойство html value, а его значением будет значение ingredient.id
+
 * Вот эта канитель `th:field="*{ingredients}"` похоже что-то вроде спонсора автонумерации, судя по итоговому html. Надо читать, потому что field ведь такого свойства html вроде нет.
+
+  UPD. Скорее всего нет, скорее всего это значит, что этот элемент относится к полю ingredients объекта по имени taco, а звездочка - значит что этих элементов много, т.е. надо оформить их списком
+
+  UPD. Частично нет. Именно th:field означает привязку к объекту, указанному в th:object тега формы. А ingredients - да, это поле. Но звездочка не имеет отношения к тому, что ингредиенты - это список. Внизу у нас есть th:field="*{name}", а  это очевидно не список. Так что звездочка это просто такой синтаксис, маркирующий поле объекта.
 
 Не понятно, почему value становится FLTO и COTO (это id в типе Ingredient). Но это потом.
 
-## Отправка, Post, Converter
+## Отправка, Post
 
 Если для формы не задать атрибут action, то форма пошлется туда же, откуда пришла. А пришла она с design/tacos
 
 ??? Не понятно, зачем у формы мы пишем object = taco
+
+UPD. Вероятно затем, чтобы на сервер объект ушел под именем taco
 
 Вот эта хрень
 
@@ -441,7 +557,34 @@ sauce=[Ingredient(id=SLSA, name=Salsa, type=SAUCE), Ingredient(id=SRCR, name=Sou
                th:value="${ingredient.id}"/>
 ```
 
-Неспроста именно так написана наверное. indredients - такое же имя поля в объекте Taco. Это как-то связано?
+Неспроста именно так написана наверное. indredients - такое же имя поля в объекте Taco. Это как-то связано? Да, читай чуть выше.
+
+#### Очень важная вещь
+
+Про порядок отработки методов и что происходит с моделью
+
+* Методы, аннотированные @ModelAttribute, выполняются *каждый* раз *перед* вызовом методов обработки запроса. Это я знаю.
+
+* Модель каждый раз при этом изначально пустая, т.е. она заполняется каждый раз заново. Т.е. когда мы заходим на design/taco первый раз, через get, у нас вызывается метод заполнения ингредиентов. Модель на его старте пустая. Потом когда юзер сделал тако и отправил post, у нас снова вызывается метод заполнения ингредиентов и модель пустая. Но когда мы попадаем в метод, который этот post обрабатывает, processTaco, то у нас в модели кроме ингредиентов уже появляется объект taco.
+
+  Плюс к этому доказательство очистки модели: если в методе getmapping'а добавить условный объект stub, то потом при выполнении postmapping метода этого объекта stub там не будет.
+
+* POST и данные. Похоже, что данные сами по себе не выдергиваются из запроса в модель. Если написать метод обработки тако вот так: `public String processTaco(Model model) {` и  запросить model.getAttribute("taco"), то получим null, хотя на странице заполнения мы все заполнили и отправили, т.е. инфа-то есть. А вот если объявить вот так `public String processTaco(Taco taco, Model model) {` или более явно `public String processTaco(@ModelAttribute Taco taco, Model model) {` то наш объект тако и в модели появляется, и в переменной taco тоже.
+
+* Причем! Появляется он под именем типа. Т.е. если тип назывется Taco, то объект появится в модели под атрибутом taco - т.е. имя типа маленькими буквами. А если тип Tapok, значит под атрибутом tapok.
+
+* Короче говоря, если спринг видит в методе обработки запроса какой-то параметр, он создает пустой объект для этого параметра. А дальше походу если может его заполнить, например, из данных запроса, то заполняет. Если не может - объект остается пустой. И в конце все эти параметры добавляются в модель. Т.е. если метод будет ololo(Taco taco, Burito burito, Model model), то в итоге в модели окажутся объекты Taco и Burito под именами taco и burito соответственно.
+
+Остается не понятным как все же идет привязка того, что пришло в запросе к тому, что есть в параметрах метода?
+
+В общем, похуй. Это очень мутная тема, раскапывать которую - себе дороже. Monkey see, monkey do:
+
+* Перед возвратом страницы с формой, добавь в модель объект, который хочешь заполнить с помощью этой формы, под каким-нибудь именем
+* Объяви в thymelead-шаблоне формы объект через th:object и укажи имя из предыдущего пункта
+* Среди параметров метода, который обрабатывает запрос с пришедшими от формы данными, объяви параметр типа из пункта 1
+* Кайфуй от заполненного объекта
+
+## Converter
 
 Как бы то ни было, после сбора всех галочек, с фронта на бэк уходит набор строк OLOLO с кодом ингредиента. И по этим строкам нам надо создать объекты Ingredient. Это делается с помощью конвертеров:
 
@@ -491,3 +634,88 @@ public class IngredientByIdConverter implements Converter<String, Ingredient> {
 
 Ок, благодаря этому спринг сам его найдет. Но как его применить? Мне не нравится то, что оно все автоматически делает. Походу когда придет объект запроса, то данные из него спринг попытается приделать к объекту Taco. Вероятно по имени "ingredients" в объекте запроса он поймет, что прибивать надо к свойству ingredients объекта Taco. В запросе это строка, а в Taco это тип Ingredient. Возможно так он и найдет нужный конвертер.
 
+
+
+## Валидация
+
+Для валидации есть разные аннотации:
+
+```java
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+```
+
+Чтобы использовать, понадобится вот такая зависимость:
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-validation</artifactId>
+</dependency>
+```
+
+Примеры применения:
+
+```java
+@Data
+public class Taco {
+    // Почему тут нету поля id? В ингредиенте есть, а тут нету.
+    @NotNull
+    @Size(min = 5, message = "Name must be at least 5 characters long")
+    private String name;
+    @NotNull
+    @Size(min = 1, message = "You must chose at least 1 ingredient")
+    private List<Ingredient> ingredients;
+}
+
+@Data
+public class TacoOrder {
+    @NotBlank(message = "Delivery name is required")
+    private String deliveryName;
+    @NotBlank(message = "Delivery street is required")
+    private String deliveryStreet;
+    @NotBlank(message = "Delivery city is required")
+    private String deliveryCity;
+    @NotBlank(message = "Delivery state is required")
+    private String deliveryState;
+    @NotBlank(message = "Delivery zip is required")
+    private String deliveryZip;
+    @CreditCardNumber(message = "Not a valid credit card number")
+    private String ccNumber;
+    @Pattern(regexp="^(0[1-9]|1[0-2])([\\/])([1-9][0-9])$",
+            message="Must be formatted MM/YY")
+    private String ccExpiration;
+    @Digits(integer=3, fraction=0, message="Invalid CVV")
+    private String ccCVV;
+    private List<Taco> tacos = new ArrayList<>();
+
+    public void addTaco(Taco taco) {
+        this.tacos.add(taco);
+    }
+}
+```
+
+Пример проверки ошибок:
+
+```java
+@PostMapping
+public String processOrder(@Valid TacoOrder order, Errors errors) {
+    if (errors.hasErrors()) {
+        return "orderForm";
+    }
+```
+
+Применяем @Valid к параметру, которых хотим валидировать и среди параметров объявляем Error, чтобы спринг его заполнил.
+
+## Показ ошибок валидации
+
+```html
+<span class="validationError"
+        th:if="${#fields.hasErrors('ccNumber')}"
+        th:errors="*{ccNumber}">Credit card errors</span>
+```
+
+Интуитивно дб понятно. Только про fields загуглить надо отдельно.
