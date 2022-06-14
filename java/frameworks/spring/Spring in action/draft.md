@@ -180,6 +180,26 @@ public class HomeKont {
 
 Здесь есть картинка. Картинка относится к статическому контенту. Располагать его надо в папке resources/static. Путь в шаблоне рассчитывается именно он нее. Картинка лежит как видно в паке [resources/static]/images
 
+### Альтернативный способ
+
+Есть другой способ создать контроллер, если он просто отображает страницу:
+
+```java
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+public class WebConfig implements WebMvcConfigurer {
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/").setViewName("home");
+    }
+}
+```
+
+Любой класс может реализовать интерфейс WebMvcConfigurer, поэтому можно на свое усмотрение создавать такие классы-конфиги.
+
 # Тако-тако, бурито-бурито
 
 ## Доменные классы
@@ -541,6 +561,18 @@ sauce=[Ingredient(id=SLSA, name=Salsa, type=SAUCE), Ingredient(id=SRCR, name=Sou
   UPD. Частично нет. Именно th:field означает привязку к объекту, указанному в th:object тега формы. А ingredients - да, это поле. Но звездочка не имеет отношения к тому, что ингредиенты - это список. Внизу у нас есть th:field="*{name}", а  это очевидно не список. Так что звездочка это просто такой синтаксис, маркирующий поле объекта.
 
 Не понятно, почему value становится FLTO и COTO (это id в типе Ingredient). Но это потом.
+
+### Кэширование шаблона
+
+Шаблон парсится один раз, при первом обращении, а потом используется кешированная версия для улучшения производительности. Во время разработки можно добавить в файл *resources/application.properties* строку:
+
+```
+spring.thymeleaf.cache=false
+```
+
+которая отключит кэширование и тогда можно будет вносить изменения в шаблон и видеть их при обновлении страницы в браузере, без необходимости целиком перезапускать приложение.
+
+P.S. У меня не заработало)
 
 ## Отправка, Post
 
