@@ -36,7 +36,7 @@
 
 Потом предложит выбрать проект, к которому надо подсоединить архив и в итоге он появляется в разделе External Libraries.
 
-## Убрать замену на * в import
+## * в import отключить автозамену
 
 Когда мы импортируем несколько классов из одного и того же пакета, идея автоматически заменяет их на
 
@@ -45,6 +45,12 @@ import java.util.*;
 ```
 
 Чтобы это отключить, заходим в *File > Settings > раздел Editor > Code Style > Java > вкладка Imports* и меняем настройку *Class count to use import with \** например на 99
+
+## Размер шрифта
+
+Размер шрифта в редакторе кода: *File > Settings > Editor > Font*, параметр *Size* (мне подходит 14)
+
+Размер шрифта интерфейса: *File > Settings > Appearance & Behavior > Appearance*, пункт *Use custom font*
 
 # Идея, Maven, JDK, JAVA_HOME
 
