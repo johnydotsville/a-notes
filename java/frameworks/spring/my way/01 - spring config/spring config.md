@@ -156,3 +156,39 @@ public static void main( String[] args )
 В зависимости от того, какой способ конфигурирования мы выбрали (xml или классы), используем разные классы для создания контекста. А после создания работа с ним уже выглядит одинаково. По id'шнику запрашиваем бин, приводим его к нужному типу и работаем дальше в обычном режиме.
 
 Конечно в таком примере использование контекста не оправдано, зато наглядно видно как что работает. В реальных приложениях обычно мы просто конфигурируем бины, а контекст не создаем - его спринг создает сам, регистрирует бины, сам их создает, использует и т.д.
+
+# Объединение конфигов
+
+Можно использовать несколько классов-конфигураций для удобства, а потом объединить их в едином классе с помощью аннотации @Import. Сделаем все то же самое - CityService объявим явно, а MarriageService спринг будет искать сам, но каждую конфигурацию оформим в отдельном классе:
+
+```java
+@Configuration
+public class ServiceConfigPart1 {
+    @Bean
+    public CityService cityService(MarriageService marriageService) {
+        return new CityService(marriageService);
+    }
+}
+```
+
+```java
+@Configuration
+@ComponentScan(basePackages = { "johny.dotsville.service" })
+public class ServiceConfigPart2 {
+
+}
+```
+
+Теперь объединим их:
+
+```java
+@Configuration
+@Import({
+        ServiceConfigPart1.class,
+        ServiceConfigPart2.class })
+public class ServiceConfig {
+
+}
+```
+
+Можно было бы в ServiceConfig дописать и другие методы, будь у нас еще сервисы, но поскольку их у нас только два, используем этот класс исключительно для объединения.

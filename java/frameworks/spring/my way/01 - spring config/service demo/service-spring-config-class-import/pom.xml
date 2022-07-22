@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>johny.dotsville</groupId>
-  <artifactId>service-spring-config-class</artifactId>
+  <artifactId>service-spring-config-class-import</artifactId>
   <version>7.7.7</version>
 
-  <name>Service (spring config class)</name>
-  <description>Simple service demo with spring configured with class-style</description>
+  <name>Service (spring config class and import)</name>
+  <description>Simple service demo with spring configured with class-style and import</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
