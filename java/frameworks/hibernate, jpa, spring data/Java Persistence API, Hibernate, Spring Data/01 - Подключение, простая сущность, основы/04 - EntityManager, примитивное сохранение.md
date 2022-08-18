@@ -1,19 +1,20 @@
 # Примитивное сохранение
 
-Чел, никогда не забывай в куски вставлять импорты... Все эти классы могут быть в разных пакетах, хз поймешь, из какого.
-
-Сохранение, извлечение и т.д. - отдельная тема. Этот документ - временный.
+EntityManager, сохранение, извлечение и т.д. - отдельная тема. Этот документ - быстрогайд.
 
 Вот грязный пример сохранения актера в БД:
 
 ```java
+// Сперва формируем контекст по настройкам из указанного persistence-unit'а
 EntityManagerFactory factory = Persistence.createEntityManagerFactory("dvdrental-pu");
 EntityManager manager = factory.createEntityManager();
 
+// Создаем сущность
 Actor tom = new Actor();
 tom.setFirstName("Tom");
 tom.setLastName("Sawyer");
 
+// И через контекст управляем хранением сущности
 System.out.println("Пытаемся сохранить Тома");
 manager.getTransaction().begin();
 manager.persist(tom);
