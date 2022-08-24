@@ -1,6 +1,15 @@
-# Общее
+# Зависимость, адрес и порт приложения
 
-Запускается приложение по умолчанию на localhost:8080
+Запускается веб-приложение по умолчанию на localhost:8080
+
+Зависимость для работы с вебом:
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+```
 
 # Общий вид контроллера
 
@@ -104,6 +113,8 @@ public class CurrencyController {
   }
   ```
 
+  При этом десериализация в простых случаях происходит автоматически.
+
 * Если нужно извлечь параметр из заголовков, аннотация *@RequestHeader*:
 
   ```java
@@ -113,27 +124,10 @@ public class CurrencyController {
   }
   ```
 
-  
-
-## Если хочется вернуть просто 200, 500 и т.д.
-
-Используем класс *ResponseEntity*:
-
-```java
-@GetMapping("/generation/stop")
-public ResponseEntity stop() {
-    try {
-        service.stop();
-        return ResponseEntity.ok().build();
-    } catch (Exception ex) {
-        return ResponseEntity.internalServerError().build();
-    }
-}
-```
 
 ## Возврат\приём JSON
 
-Спринг использует *Jackson* для сериализации\десереализации. Он срабатывает автоматически. Так что если вернуть какой-нибудь объект, он автоматически сериализуется и возвращается в виде JSON:
+Спринг использует *Jackson* для сериализации\десереализации. Он срабатывает автоматически. Так что если вернуть какой-нибудь объект, он автоматически сериализуется и вернется в виде JSON:
 
 ```java
 @GetMapping("/just/test/autoserialization")
@@ -166,3 +160,19 @@ public String autoDeserializationDemo(@RequestBody SomeData someData) {
 ```
 
 Ну а если нужно написать правила для сериализации\десериализации, то это отдельная тема.
+
+## Если хочется вернуть просто 200, 500 и т.д.
+
+Используем класс *ResponseEntity*:
+
+```java
+@GetMapping("/generation/stop")
+public ResponseEntity stop() {
+    try {
+        service.stop();
+        return ResponseEntity.ok().build();
+    } catch (Exception ex) {
+        return ResponseEntity.internalServerError().build();
+    }
+}
+```
