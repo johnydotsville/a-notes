@@ -358,7 +358,11 @@ generator.writeObjectField("contacts", companyFullDto.getContacts());
 
 ```json
 {
-	"activityTypes": [ 400,	354, 768 ]
+	"activityTypes": [ 
+        400, 
+        354, 
+        768 
+    ]
 }
 ```
 
