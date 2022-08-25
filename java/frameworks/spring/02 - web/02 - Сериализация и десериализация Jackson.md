@@ -329,28 +329,28 @@ public class CompanyFullDtoSerializer extends JsonSerializer<CompanyFullDto> {
 }  // 2
 ```
 
-* Первый способ - сначала создать поле, потом записать значение:
+Первый способ - сначала создать поле, потом записать значение:
 
-  ```java
-  generator.writeStartObject();  // 1 просто для полноты картины, объяснения, если нужно, дальше
-  ...        
-  generator.writeFieldName("id");
-  generator.writeString(companyFullDto.getId());
-  ...
-  generator.writeEndObject();  // 2
-  ```
+```java
+generator.writeStartObject();  // 1 просто для полноты картины, объяснения, если нужно, дальше
+...        
+generator.writeFieldName("id");
+generator.writeString(companyFullDto.getId());
+...
+generator.writeEndObject();  // 2
+```
 
-* Второй - записать разом и название поля, и значение:
+Второй - записать разом и название поля, и значение:
 
-  ```java
-  generator.writeStringField("id", companyFullDto.getId());
-  ```
-  
-  Такие "комбинированные" методы хорошо подходят, когда поле и значение можно записать  одновременно. С их помощью можно записать не только простые поля, но и комплексный объект, например, разом все контакты:
-  
-  ```java
+```java
+generator.writeStringField("id", companyFullDto.getId());
+```
+
+Такие "комбинированные" методы хорошо подходят, когда поле и значение можно записать  одновременно. С их помощью можно записать не только простые поля, но и комплексный объект, например, разом все контакты:
+
+```java
 generator.writeObjectField("contacts", companyFullDto.getContacts());
-  ```
+```
 
 Т.о. методы writeStringField, writeObjectField читаются как "создать и записать поле с именем X, являющееся строкой" и "создать и записать поле с именем X, являющееся объектом".
 
