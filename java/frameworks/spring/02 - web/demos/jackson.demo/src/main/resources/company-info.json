@@ -1,0 +1,53 @@
+{
+  "data": {
+    "company": {
+      "id": "2ae1f337-0764-4dd1-a1a6-cba9f3a69de9",
+      "shortName": "ООО Золотое Кольцо",
+      "address": "г. Москва, ул. Кошкина, дом. 20",
+      "url": "golden-ring.ru",
+      "ogrn": 1172406846802,
+      "inn": 2448774304,
+      "kpp": 301244001,
+      "registerDate": "2005-07-12",
+      "contacts": {
+        "phones":
+        [
+          {
+            "value": "8(495)342-15-10",
+            "description": "Отдел продаж"
+          },
+          {
+            "value": "8(495)342-15-15",
+            "description": "Отдел закупок"
+          },
+          {
+            "value": "8(495)342-15-20",
+            "description": "Общий"
+          }
+        ],
+        "emails":
+        [
+          {
+            "value": "golden.ring@rings.ru",
+            "description": "Общий"
+          },
+          {
+            "value": "sales.golden.ring@rings.ru",
+            "description": "Отдел продаж"
+          },
+          {
+            "value": "comment.golden.ring@rings.ru",
+            "description": "Отзывы и предложения"
+          }
+        ]
+      },
+      "description": "Производитель ювелирных украшений со столетней историей",
+      "activityTypes": [ 400, 354, 768 ],
+      "isValidated": false,
+      "geo": {
+        "lat": 55.638561,
+        "long": 37.670021
+      }
+    }
+  }
+}
