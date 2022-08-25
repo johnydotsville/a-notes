@@ -348,17 +348,15 @@ public class CompanyFullDtoSerializer extends JsonSerializer<CompanyFullDto> {
   
   Такие "комбинированные" методы хорошо подходят, когда поле и значение можно записать  одновременно. С их помощью можно записать не только простые поля, но и комплексный объект, например, разом все контакты:
   
-  
-
   ```java
 generator.writeObjectField("contacts", companyFullDto.getContacts());
   ```
-  
-  
-  
+
   Т.о. методы writeStringField, writeObjectField читаются как "создать и записать поле с именем X, являющееся строкой" и "создать и записать поле с именем X, являющееся объектом".
 
 ## Запись массива
+
+Фрагмент json:
 
 ```json
 {
