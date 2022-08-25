@@ -346,13 +346,13 @@ public class CompanyFullDtoSerializer extends JsonSerializer<CompanyFullDto> {
   generator.writeStringField("id", companyFullDto.getId());
   ```
   
-  Такие "комбинированные" методы хорошо подходят, когда поле и значение можно записать  одновременно. С их помощью можно записать не только простые поля, но и комплексный объект, например, разом все контакты: `generator.writeObjectField("contacts", companyFullDto.getContacts());`
+  Такие "комбинированные" методы хорошо подходят, когда поле и значение можно записать  одновременно. С их помощью можно записать не только простые поля, но и комплексный объект, например, разом все контакты:
   
   ```java
-what the fuck is wrong with you?
+generator.writeObjectField("contacts", companyFullDto.getContacts());
   ```
 
-  Т.о. методы writeStringField, writeObjectField читаются как "создать и записать поле с именем X, являющееся строкой" и "создать и записать поле с именем X, являющееся объектом".
+Т.о. методы writeStringField, writeObjectField читаются как "создать и записать поле с именем X, являющееся строкой" и "создать и записать поле с именем X, являющееся объектом".
 
 ## Запись массива
 
