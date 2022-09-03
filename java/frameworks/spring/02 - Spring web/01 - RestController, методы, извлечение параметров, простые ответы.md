@@ -1,7 +1,5 @@
 # Зависимость, адрес и порт приложения
 
-Запускается веб-приложение по умолчанию на localhost:8080
-
 Зависимость для работы с вебом:
 
 ```xml
@@ -11,11 +9,21 @@
 </dependency>
 ```
 
+Запускается веб-приложение по умолчанию на localhost:8080, но можно изменить порт через application.yml или application.properties:
+
+```yaml
+# yaml
+server:
+  port: 49080
+# properties
+server.port=49080
+```
+
 # Общий вид контроллера
 
 ```java
 @RestController(value = "customControllerName")  // Имя опционально
-@RequestMapping(value = "/api/currency")  // Общий префикс для всех методов, если надо
+@RequestMapping(path = "/api/currency")  // Общий префикс для всех методов, если надо
 public class CurrencyController {
     private final CurrencyValuesGenerationService service;
     private final ApplicationProps props;
@@ -58,11 +66,13 @@ public class CurrencyController {
 * Использовать более общую аннотацию *@RequestMapping*:
 
   ```java
-  @RequestMapping(value = "/hello", method = GET)
+  @RequestMapping(path = "/hello", method = GET)
   public String hello() {
       return "Hello, get!"
   }
   ```
+
+У всех аннотаций обычно есть параметр value, который является алиасом для какого-либо типичного параметра. Например, для @XxxMapping это алиас для параметра path (они взаимозаменяемы), так что url можно указывать через любой из этих параметров. Или можно вообще не указывать, как в первом примере, если параметр всего один.
 
 ## Извлечение параметров
 

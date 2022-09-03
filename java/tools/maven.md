@@ -85,6 +85,41 @@ mvn package
 
 Пока не читал особо, что она значит. Вроде компиляция с упаковкой в .jar
 
+# Упаковка
+
+## Имя без версии
+
+Если мавен версии 3, можно явно указать конечное имя файла с помощью тега *finalName*:
+
+```xml
+<build>
+    <finalName>webclient-demo</finalName>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+...
+```
+
+Если версия мавена старая, то делается отдельным плагином:
+
+```xml
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>2.3.2</version>
+            <configuration>
+                <finalName>webclient-demo</finalName>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+...
+```
+
+
+
 # Запуск
 
 Команда запуска тоже запускается из корня проекта
