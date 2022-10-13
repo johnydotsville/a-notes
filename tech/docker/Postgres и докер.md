@@ -27,7 +27,9 @@
 
 * Все готово, сервер должен отобразиться в интерфейсе и там можно потыкать кнопки
 
-* В *File > Preferences > Paths > Binary Paths* выставляем в *PostgreSQL Binary Path > PostgreSQL 14* путь до bin (обычно C:\Program Files\PostgreSQL\14\bin), чтобы pgAdmin знал, где лежат утилиты, необходимые для его работы
+* В *File > Preferences > Paths > Binary Paths* выставляем в разделе *PostgreSQL Binary Path > PostgreSQL 14* путь до bin (обычно C:\Program Files\PostgreSQL\14\bin), чтобы pgAdmin знал, где лежат утилиты, необходимые для его работы
+
+  P.S. Сервер же в контейнере установлен, а pgAdmin локально, так что пункт не актуален для случая с докером.
 
 # Заполнение данными
 

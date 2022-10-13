@@ -21,6 +21,15 @@ set row_security = off;
 
 
 
+# Схема
+
+Схема это способ логически сгруппировать элементы (таблицы и прочее). Например, вспомогательные таблицы вроде авторизации - в одной схеме, а таблицы бизнес-логики - в другой схеме.
+
+```sql
+drop schema if exists bl cascade;
+create schema bl;
+```
+
 
 
 # Sequence
@@ -70,7 +79,7 @@ alter table only bl.goods_feature
     on delete restrict;
 ```
 
-
+FK сам по себе не применяет на поле not null, надо делать это самому
 
 # Trigger
 
@@ -78,7 +87,7 @@ alter table only bl.goods_feature
 drop trigger if exists last_updated on bl.feature cascade;
 
 create trigger last_updated
-    before update on bl.feature 
+    before update on bl.feature --Таблица, на которую вешаем триггер
 	for each row execute procedure bl.last_updated();
 ```
 
@@ -88,6 +97,7 @@ create trigger last_updated
 
 ```sql
 drop function if exists bl.last_updated cascade;
+
 create function bl.last_updated() returns trigger
     language plpgsql
     as $$
