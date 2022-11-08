@@ -1,0 +1,4 @@
+Список тем, которые пока не нашли свое место в конспектах:
+[ ] syncronized
+[ ] volatile
+[ ] thread.getName(), .currentThread()
