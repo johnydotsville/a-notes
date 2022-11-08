@@ -1,0 +1,1 @@
+Тут про тредпулы и execute service
