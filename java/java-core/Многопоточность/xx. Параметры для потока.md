@@ -1,16 +1,13 @@
 # Вопросы
 
 - [x] Как передать параметры в поток, используя конструктор класса и замыкания?
-- [ ] Можно ли вернуть из потока какой-то результат?
 
 # Параметры для потока
 
 Можно передать потоку параметры двумя способами:
 
-* Объявить их полями класса и передав через конструктор
+* Объявить их полями класса и передать через конструктор
 * Через замыкание
-
-Из потока можно вернуть результат, но это отдельная тема, связанная с Callable и Future. А используя Runnable и Thread вернуть результат нельзя, потому что .run() не имеет возвращаемого значения (void)
 
 ## Поля класса
 
@@ -21,19 +18,19 @@ public class FieldParamsDemo implements Runnable {
     private String message;  // <-- Обычные поля класса
     private int magicNumber;
 
-    public FieldParamsDemo(String message, int magicNumber) {  // <-- Заполняются через конструктор
-        this.message = message;
+    public FieldParamsDemo(String message, int magicNumber) {  // <-- Требуем их в конструкторе
+        this.message = message;                                // или задаем через сеттеры, по вкусу
         this.magicNumber = magicNumber;
     }
 
     @Override
     public void run() {
-        System.out.println("Message: " + message);  // <-- Используются в рассчетах
+        System.out.println("Message: " + message);  // <-- Используюем в рассчетах
         System.out.println("Magic number: " + magicNumber);
     }
 
     public static void main(String[] args) {
-        Runnable code = new FieldParamsDemo("Hello, params!", 777);  // <-- А задаются при создании объекта
+        Runnable code = new FieldParamsDemo("Hello, params!", 777);  // <-- Передаем значения до запуска
         new Thread(code).start();
     }
 }
@@ -61,6 +58,4 @@ public class ClosureParamsDemo {
 }
 ```
 
-# Возврат результата
-
-Тут про Callable и Future
+s
