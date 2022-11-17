@@ -2,3 +2,5 @@
 [ ] syncronized
 [ ] volatile
 [ ] thread.getName(), .currentThread()
+
+Thread.yield();
