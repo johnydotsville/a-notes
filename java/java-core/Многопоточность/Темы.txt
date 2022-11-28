@@ -1,6 +1,12 @@
 Список тем, которые пока не нашли свое место в конспектах:
-[ ] syncronized
-[ ] volatile
+[v] syncronized
+[v] volatile
 [ ] thread.getName(), .currentThread()
 
-Thread.yield();
+[v] Thread.yield();
+
+Семафоры, защелки и барьеры, Lock, ReentrantLock
+
+
+Разобрать на втором витке закрытие пула более детально
+it is good practice to add a shutdown hook to your application that calls threadPool.shutdown() to allow for a graceful completion of all running threads, and waits for threadPool.isTerminated() to become true, or waits for threadPool.awaitTermination(max time before force shutdown) to return.
