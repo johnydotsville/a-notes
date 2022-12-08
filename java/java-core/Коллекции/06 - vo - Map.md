@@ -1,3 +1,24 @@
+# Вопросы
+
+- [ ] Зачем нужен интерфейс Entry, определенный внутри интерфейса Map?
+  - [ ] Этот интерфейс содержит методы .getKey, .getValue, .setValue, а где находятся реализации этих методов? Как это связано с конкретными реализациями самого интерфейса Map?
+- [ ] Расскажите про реализацию HashMap:
+  - [ ] Какая структура данных лежит в ее основе?
+  - [ ] От чего вычисляется хэш-код - от ключа или от значения?
+  - [ ] Почему можно хранить null в качестве значения?
+  - [ ] Почему можно хранить null в качестве ключа? Как считается хэш-функция от null в этой реализации и что будет, если добавить несколько элементов к ключом null?
+  - [ ] Какой способ разрешения коллизий используется в этой реализации?
+  - [ ] Почему операции добавления и удаления выполняются за константное время?
+  - [ ] Почему не гарантируется сохранение порядка элементов в этой реализации?
+  - [ ] Какую роль выполняют методы .equals и .hashCode при добавлении\удалении\поиске элемента?
+- [ ] Какие отношения между классом LinkedHashMap и HashMap?
+  - [ ] За счет чего LinkedHashMap позволяет сохранить порядок добавления элементов?
+- [ ] Расскажите про реализацию TreeMap:
+  - [ ] Что означает использование красно-черного дерева в TreeMap?
+  - [ ] За какое время выполняются операции добавления и удаления? Почему?
+  - [ ] Почему необходимо передать этой реализации при создании компаратор или чтобы хранимые элементы реализовывали интерфейс Comparable?
+    - [ ] Как это связано с null в качестве ключа?
+
 # Map
 
 Map - это структура, хранящая пары "ключ - значение". Одному ключу может соответствовать строго одно значение.
@@ -60,6 +81,42 @@ interface Entry<K, V> {
 }
 ```
 
+Реализации этого интерфейса находятся внутри каждой реализаций Map'а. Например, внутри класса HashMap есть вот такой класс:
+
+```java
+static class Node<K,V> implements Map.Entry<K,V> {
+    final int hash;
+    final K key;
+    V value;
+    Node<K,V> next;
+    ...
+}
+```
+
+Внутри класса LinkedHashMap - вот такой:
+
+```java
+static class Entry<K,V> extends HashMap.Node<K,V> {
+    Entry<K,V> before, after;
+    ...
+}
+```
+
+А внутри класса TreeMap - вот такой:
+
+```java
+static final class Entry<K,V> implements Map.Entry<K,V> {
+    K key;
+    V value;
+    Entry<K,V> left;
+    Entry<K,V> right;
+    Entry<K,V> parent;
+    ...
+}
+```
+
+
+
 ## Интерфейс SortedMap
 
 Полное описание [тут](https://docs.oracle.com/javase/8/docs/api/java/util/SortedMap.html):
@@ -83,7 +140,7 @@ public interface SortedMap<K,V>
 
 ## Интерфейс NavigableMap
 
-Полное описание [тут](https://docs.oracle.com/javase/8/docs/api/java/util/SortedMap.html):
+Полное описание [тут](https://docs.oracle.com/javase/8/docs/api/java/util/NavigableMap.html):
 
 ```java
 public interface NavigableMap<K,V> 
@@ -99,7 +156,7 @@ public interface NavigableMap<K,V>
 
 ## Hashtable
 
-asdf
+TODO: это легаси, поэтому разбирается в последнюю очередь
 
 ## HashMap
 
@@ -119,7 +176,7 @@ asdf
   transient Node<K,V>[] table;
   ```
   
-* Для разрешения коллизий используется связный список. Каждый хранимый элемент в HashMap представлен вот таким классом:
+* Для разрешения коллизий используется связный список. Каждый хранимый элемент в HashMap представлен вот таким классом (этот класс объявлен внутри класса HashMap):
 
   ```java
   static class Node<K,V> implements Map.Entry<K,V> {
@@ -130,8 +187,10 @@ asdf
       ...
   }
   ```
+  
+  TODO: Как-нибудь при случае разобраться, почему порядок элементов не гарантируется, если тут есть ссылка на следующий элемент?
 
-### Добавление элемента и насчет null в ключе
+### Добавление элемента и про null в ключе
 
 Вот код добавления элемента:
 
@@ -192,6 +251,45 @@ transient LinkedHashMap.Entry<K,V> tail;
 * null не допускается в качестве ключа. Но когда-то давно, до 7 джавы, допускалось добавлять null первым элементом, после чего уже ничего нельзя было добавить и ничего не работало, но теперь null запрещен
 
 * Не синхронизирован
+
+### null в ключе
+
+TODO: На самом деле, можно добавить null в ключе. Детально сейчас нет времени разбираться, есть вещи поважнее, но я оставлю тут зацепку на будущее. Поведение получается странное, но ошибки нет, можно потом получше поэкспериментировать:
+
+```java
+private static void nullAsKeyInTreeMap() {
+    Comparator<Integer> personComparator = (Integer i1, Integer i2) -> {
+        if (i1 == null || i2 == null) {
+            return 0;
+        }
+        return i1.compareTo(i2);
+    };
+
+    Map<Integer, Person> map = new TreeMap<Integer, Person>(personComparator);
+
+    Person tom = new Person("Tom Sawyer", 14);
+    Person huck = new Person("Huck Finn", 14);
+    Person mary = new Person("Mary Sawyer", 17);
+
+    map.put(5, tom);
+    map.put(12, huck);
+    map.put(null, mary);
+
+    printMap(map);
+}
+// Вывод (Том пропал)
+// Mary Sawyer 17
+// Huck Finn 14
+
+private static void printMap(Map<Integer, Person> map) {
+    Set<Map.Entry<Integer, Person>> entries = map.entrySet();
+    for (Map.Entry<Integer, Person> entry : entries) {
+        System.out.println(entry.getValue());
+    }
+}
+```
+
+
 
 # Представители специфичные
 
