@@ -66,7 +66,7 @@ public interface Deque<E>
 
 * `ArrayDeque` эффективнее, чем `LinkedList` при добавлении и удалении элементов в начале и в конце
 * `LinkedList` хорош для удаления текущего элемента при итерации, но не очень хорош для самой итерации
-* `LinkedList` больше памяти, чем `ArrayDeque`
+* `LinkedList` потребляет больше памяти, чем `ArrayDeque`
 
 ## PriorityQueue
 
