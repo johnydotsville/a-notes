@@ -1,20 +1,21 @@
 # Вопросы
 
-- [x] Что появилось раньше - Hibernate или JPA? В каких годах вышло одно и другое?
-- [x] Как расшифровывается аббревиатура JPA?
-- [x] JPA является спецификацией, а не конкретной реализацией. Значит ли это, что в ней одни только интерфейсы, и нет никаких классов? Если классы есть, то какую роль они в основном выполняют и как это связано с конкретными реализациями спецификации?
-- [x] Является ли Hibernate *полностью* JPA-совместимой технологией? Т.е. реализует ли он *все* возможности, определенные в JPA? А в обратную сторону? Т.е. есть ли в JPA все, что есть в Hibernate?
-- [x] Какая связь между зависимостями javax.persistence-api и hibernate-core? Если подключить одну из них, подтянется ли другая автоматически?
-- [x] Какие взаимоотношения между классом Persistence и интерфейсами EntityManagerFactory и EntityManager?
-  - [x] Класс Persistence относится к JPA или Hibernate?
-  - [x] Зачем нужна технология SPI (Service Provider Interface)? Например, в архиве с реализацией хибера есть директория *META-INF/services*, а в ней файл с названием *jakarta.persistence.spi.PersistenceProvider*, а внутри - строчка с именем класса *org.hibernate.jpa.HibernatePersistenceProvider*. Что это значит?
-  - [x] В чем отличие файлов hibernate.cfg.xml и persistence.xml, располагающихся в директории resources/META-INF? К какой технологии относится каждый из них?
-    - [x] Что такое единица хранения (persistence-unit) в persistence.xml? Какие параметры она содержит? Может ли быть в этом файле несколько pu?
-    - [x] За что отвечает настройка provider в persistence.xml? Пример ее значения *"org.hibernate.jpa.HibernatePersistenceProvider"*. Есть ли такая настройка в hibernate.cfg.xml?
-    - [x] Когда мы вызываем метод Persistence.createEntityManagerFactory, что мы передаем ему в качестве параметра? Как в этом методе происходит создание конкретной реализации интерфейса EntityManagerFactory и как это связано с интерфейсом PersistenceProvider?
-  - [x] Что такое EntityManager по своей сути? Какую роль он выполняет для объектов данных БД, транзакций?
-    - [x] Какие отношения между объектами EntityManager и Session? Что из них относится к JPA, а что к Hibernate?
-    - [x] Что делает код entityManager.unwrap(Session.class) и зачем такое может понадобиться?
+- [ ] Что появилось раньше - Hibernate или JPA? В каких годах вышло одно и другое (2006, 2001)?
+- [ ] Как расшифровывается аббревиатура JPA?
+- [ ] JPA является спецификацией, а не конкретной реализацией. Значит ли это, что в ней одни только интерфейсы, и нет никаких классов? Если классы есть, то какую роль они в основном выполняют и как это связано с конкретными реализациями спецификации?
+- [ ] Является ли Hibernate *полностью* JPA-совместимой технологией? Т.е. реализует ли он *все* возможности, определенные в JPA? А в обратную сторону? Т.е. есть ли в JPA все, что есть в Hibernate?
+- [ ] Какая связь между зависимостями javax.persistence-api и hibernate-core? Если подключить одну из них, подтянется ли другая автоматически?
+- [ ] Какие отношения между классом Persistence и интерфейсами PersistenceProvider, EntityManagerFactory и EntityManager? Какое у них назначение?
+  - [ ] Класс Persistence относится к JPA или Hibernate?
+  - [ ] Зачем нужна технология SPI (Service Provider Interface)? Например, в архиве с реализацией хибера есть директория *META-INF/services*, а в ней файл с названием *jakarta.persistence.spi.PersistenceProvider*, а внутри - строчка с именем класса *org.hibernate.jpa.HibernatePersistenceProvider*. Что это значит?
+  - [ ] В чем отличие файлов hibernate.cfg.xml и persistence.xml, располагающихся в директории resources/META-INF? К какой технологии относится каждый из них?
+    - [ ] Что такое единица хранения (persistence-unit) в persistence.xml? Какие параметры она содержит? Может ли быть в этом файле несколько pu?
+    - [ ] За что отвечает настройка provider в persistence.xml? Пример ее значения *"org.hibernate.jpa.HibernatePersistenceProvider"*. Есть ли такая настройка в hibernate.cfg.xml?
+  - [ ] Когда мы вызываем *метод* Persistence.createEntityManagerFactory, что мы передаем ему в качестве параметра?
+    - [ ] Опишите процесс создания в этом методе конкретной реализации интерфейса EntityManagerFactory. Как это связано с интерфейсом PersistenceProvider?
+  - [ ] Что такое EntityManager по своей сути? Какую роль он выполняет для объектов данных БД, транзакций?
+    - [ ] Какие отношения между объектами EntityManager и Session? Что из них относится к JPA, а что к Hibernate?
+    - [ ] Что делает код entityManager.unwrap(Session.class) и зачем такое может понадобиться?
 
 
 

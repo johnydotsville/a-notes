@@ -45,6 +45,10 @@ archetype:generate
 mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-simple -DarchetypeVersion=1.4 -DgroupId=com.samplegroup -DartifactId=some-demo -Dversion=7.7.7
 ```
 
+## Настройка в Idea
+
+Если вдруг открытый в Idea maven-проект не распознается именно как maven-проект (нет панели maven справа), нужно щелкнуть ПКМ по pom.xml в дереве проекта и выбрать пункт *Add as Maven project*.
+
 # Структура проекта
 
 Каждый архетип формирует свою структуру каталогов. Для сравнения можно посмотреть структуру [archetype-simple](https://maven.apache.org/archetypes/maven-archetype-simple/), [archetype-quickstart](https://maven.apache.org/archetypes/maven-archetype-quickstart/) и [archetype-j2eesimple](https://maven.apache.org/archetypes/maven-archetype-j2ee-simple/)

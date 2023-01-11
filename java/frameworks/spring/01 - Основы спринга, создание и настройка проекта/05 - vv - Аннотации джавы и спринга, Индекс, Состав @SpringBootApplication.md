@@ -46,70 +46,80 @@ public @interface X
 @Native
 ```
 
-* `@Target` - определяет, к какому элементу можно применить аннотацию @X
+## @Target
 
-  Например, `@Target(value={METHOD, ANNOTATION_TYPE})` значит, что аннотацию @X можно применить к методу и к аннотациям
+Определяет, к какому элементу можно применить аннотацию @X
 
-  [Полный список возможных целей с описаниями](https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/ElementType.html). Из наиболее интересных: TYPE (к классу, но и не только), CONSTRUCTOR, FIELD, METHOD
+Например, `@Target(value={METHOD, ANNOTATION_TYPE})` значит, что аннотацию @X можно применить к методу и к аннотациям
 
-  ```java
-  @Documented
-  @Retention(RetentionPolicy.RUNTIME)
-  @Target(ElementType.ANNOTATION_TYPE)
-  public @interface Target
-  ```
+[Полный список возможных целей с описаниями](https://docs.oracle.com/javase/8/docs/api/java/lang/annotation/ElementType.html). Из наиболее интересных: TYPE (к классу, но и не только), CONSTRUCTOR, FIELD, METHOD
 
-  P.S. Интересно, как аннотация применяется к самой себе...
+```java
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.ANNOTATION_TYPE)
+public @interface Target
+```
 
-* `@Retention` (пер., "удержание", "сохранение") - определяет "как долго аннотация @X будет прилеплена к элементу", например: 
+P.S. Интересно, как аннотация применяется к самой себе...
 
-  * `@Retention(value = RetentionPolicy.RUNTIME)` - аннотация будет доступна во время выполнения. Тогда, например, с помощью рефлексии мы сможем узнать, что у класса есть аннотация @X
-  * `@Retention(value = RetentionPolicy.SOURCE)` - аннотация доступна только во время компиляции. Во время выполнения у класса уже не будет @X
+## @Retention
 
-  ```java
-  @Documented
-  @Retention(RetentionPolicy.RUNTIME)
-  @Target(ElementType.ANNOTATION_TYPE)
-  public @interface Retention
-  ```
+Переводится как "удержание", "сохранение". Определяет "как долго аннотация @X будет прилеплена к элементу", например: 
 
-* `@Documented` - что-то связанное с автогенерацией документации
+* `@Retention(value = RetentionPolicy.RUNTIME)` - аннотация будет доступна во время выполнения. Тогда, например, с помощью рефлексии мы сможем узнать, что у класса есть аннотация @X
+* `@Retention(value = RetentionPolicy.SOURCE)` - аннотация доступна только во время компиляции. Во время выполнения у класса уже не будет @X
 
-  ```java
-  @Documented
-  @Retention(RetentionPolicy.RUNTIME)
-  @Target(ElementType.ANNOTATION_TYPE)
-  public @interface Documented
-  ```
+```java
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.ANNOTATION_TYPE)
+public @interface Retention
+```
 
-* `@Inherited` - если аннотация @X отмечена как @Inherited, то применение @X к классу приводит к тому, что и у его потомков автоматически будет @X
+## @Documented
 
-  ```java
-  @Documented
-  @Retention(RetentionPolicy.RUNTIME)
-  @Target(ElementType.ANNOTATION_TYPE)
-  public @interface Inherited
-  ```
+Что-то связанное с автогенерацией документации
 
-* @Repeatable - аннотацию можно применять к элементу несколько раз, с разными значениями
+```java
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.ANNOTATION_TYPE)
+public @interface Documented
+```
 
-  ```java
-  @Documented
-  @Retention(RetentionPolicy.RUNTIME)
-  @Target(ElementType.ANNOTATION_TYPE)
-  public @interface Repeatable
-  ```
+## @Inherited
 
-* @Native - такой аннотацией отмечают поля-константы, на которые можно ссылаться из нативного кода
+Если аннотация @X отмечена как @Inherited, то применение @X к классу приводит к тому, что и у его потомков автоматически будет @X
 
-  ```java
-  @Documented
-  @Target(ElementType.FIELD)
-  @Retention(RetentionPolicy.SOURCE)
-  public @interface Native
-  ```
+```java
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.ANNOTATION_TYPE)
+public @interface Inherited
+```
+
+## @Native
+
+Такой аннотацией отмечают поля-константы, на которые можно ссылаться из нативного кода
+
+```java
+@Documented
+@Target(ElementType.FIELD)
+@Retention(RetentionPolicy.SOURCE)
+public @interface Native
+```
 
 ## @Repeatable
+
+Аннотацию можно применять к элементу несколько раз, с разными значениями
+
+```java
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.ANNOTATION_TYPE)
+public @interface Repeatable
+```
 
 Чтобы пользоваться этой аннотацией, нужно подготовить ей техническую основу:
 
@@ -245,7 +255,7 @@ spring.index.ignore=true
 
 Эта настройка помещается в файл */src/main/resources/spring.properties*
 
-## @Component
+## @Component и @Service
 
 ```java
 @Target(value=TYPE)
