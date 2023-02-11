@@ -210,8 +210,9 @@ public class ShutdownDemo implements Runnable {
                         new ShutdownDemo("Task 3"))
         );
 
-        ExecutorService exec = Executors.newFixedThreadPool(1);  // <-- За счет "single"-пула у нас
-                                                                 // гарантированно будет очередь
+        // <-- За счет "single"-пула у нас гарантированно будет очередь
+        ExecutorService exec = Executors.newFixedThreadPool(1);
+
         for (int i = 0; i < 4; i++) {
             ShutdownDemo task = (ShutdownDemo) tasks.get(i);
             try {

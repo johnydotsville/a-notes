@@ -254,7 +254,7 @@ thrOut.start();
 System.out.println(thrOut.isDaemon());
 
 try {
-    thr1.join();
+    thrOut.join();
 } catch (Exception ex) {
 
 }
