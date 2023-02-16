@@ -31,6 +31,95 @@ docker build -t currency-generator .
 
 Здесь через -t задается человекочитаемое имя образа, а `.` - это директория с файлом Dockerfile (в данном случае текущая). После этого в docker desktop появляется этот образ и его можно запустить как обычно.
 
+# Запуск через docker-compose
+
+Конфигурацию описываем в файле *docker-compose.yml*. Положить его можно куда угодно:
+
+```yaml
+version: "3.9"
+
+services:
+  
+  service-a:
+    image: service-a-img
+    container_name: service-a-cont
+    ports:
+      - "49080:49080"
+    networks:
+      servicesubnet:
+        ipv4_address: "172.16.238.10"
+
+  service-b:
+    image: service-b-img
+    container_name: service-b-cont
+    ports:
+      - "49081:49081"
+    depends_on:
+      - db
+      - service-a
+    networks:
+      servicesubnet:
+        ipv4_address: "172.16.238.11"
+        
+  service-c:
+    image: service-c-img
+    container_name: service-c-cont
+    ports:
+      - "49082:49082"
+    depends_on:
+      - db
+      - service-a
+      - service-b
+    networks:
+      servicesubnet:
+        ipv4_address: "172.16.238.12"
+
+  db:
+    image: postgres
+    container_name: postgres-cont
+    environment:
+      TZ: "Europe/Moscow"
+      PGTZ: "Europe/Moscow"
+      POSTGRES_DB: "postgres"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "0451"
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgs_data:/var/lib/postgresql/data
+    networks:
+      servicesubnet:
+        ipv4_address: "172.16.238.13"
+
+volumes:
+  pgs_data:
+
+networks:
+  servicesubnet:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.16.238.0/24"
+```
+
+Критично важно соблюдать отступы. Если например перед именем какого-нибудь сервиса не подставить два пробела, тогда он выпадет из секции сервисов и будет ошибка при запуске композа. Что здесь написано:
+
+* Секция services описывает сервисы, которые мы хотим запустить вместе
+
+* Чтобы они видели друг друга, нужно запустить их в одной виртуальной сети. Ее мы описываем в секции networks и указываем явно каждому сервису IP-адрес в этой сети.
+
+  Если сеть явно не писать и не объявлять, то docker-compose сам создаст сеть и разместит в ней все сервисы.
+
+  Общее правило такое: если связь сервисов целиком осуществляется здесь же в yml-файле, то если одному сервису требуется ip другого, можно просто указать имя сервиса вместо ip и докер сам разберется. Но если (как в примере выше) мы запускаем три самописных сервиса, которые в своем коде общаются друг с другом, то для них имена "service-a-b-c" ничего не значат. И в этом случае как раз потребуется явно указать ip.
+
+* Каждый сервис описываем отдельно:
+
+  * Указываем образ, из которого будет развернут контейнер и имя будущего контейнера
+  * Переменные окружения, порты
+  * Порядок запуска сервисов через раздел depends_on
+  * Тома через volumes (подробнее - в мануале про тома)
+
 # Остальные возможности Dockerfile
 
 ```java
