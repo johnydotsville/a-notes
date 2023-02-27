@@ -52,6 +52,12 @@ import java.util.*;
 
 Размер шрифта интерфейса: *File > Settings > Appearance & Behavior > Appearance*, пункт *Use custom font*
 
+## Отключить хинты типов переменных
+
+*File > Settings > Editot > Inlay Hints > Types*
+
+В зависимости от версии идеи, может находиться в другом месте.
+
 # Идея, Maven, JDK, JAVA_HOME
 
 Почти каждая строчка этого раздела является критичной. Важно прочитать от А до Я и тогда вопросов не останется.

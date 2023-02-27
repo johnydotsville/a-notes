@@ -20,6 +20,12 @@ server:
 server.port=49080
 ```
 
+Пример простого запроса:
+
+```
+http://localhost:8080/api/hello/user/JohNy
+```
+
 # Общий вид контроллера
 
 ```java

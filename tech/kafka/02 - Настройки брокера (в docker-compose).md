@@ -2,8 +2,6 @@
 
 Здесь в итоге размещу готовый рабочий конфиг, а внизу пойдет объяснение, что к чему:
 
-TODO: Сделать нескольких зукиперов
-
 ```yaml
 version: '2'
 
@@ -11,11 +9,13 @@ services:
 
 # ========================= ZooKeeper section ========================= #
 
-  zookeeper:
+  # ========== Zookeper A ========== #
+
+  zookeeper-1:
   
     image: confluentinc/cp-zookeeper:latest
     
-    container_name: my-zookeeper
+    container_name: my-zookeeper-1
     
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
@@ -24,35 +24,49 @@ services:
     ports:
       - 22181:2181
 
+  # ========== Zookeper B ========== #      
+      
+  zookeeper-2:
+  
+    image: confluentinc/cp-zookeeper:latest
+    
+    container_name: my-zookeeper-2
+    
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+      
+    ports:
+      - 22182:2181
+
 # ========================= Kafka section ========================= #
 
-# ========== Broker A ========== #
+  # ========== Broker A ========== #
 
   broker-1:
   
     image: confluentinc/cp-kafka:latest
     
-    container_name: my-kafka-1
+    container_name: my-broker-1
     
     depends_on:
-      - zookeeper
+      - zookeeper-1
+      - zookeeper-2
       
     ports:
       - 49092:49092
-    
-    # ========== Broker settings ========== #
     
     environment:
     
 #      KAFKA_BROKER_ID: 1  # Не обязательно, если не задан, то автогенерация
       
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper-1:2181,zookeeper-2:2181
       
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT, OUTSIDE:PLAINTEXT
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
       
-      KAFKA_LISTENERS: INSIDE://broker-1:9092, OUTSIDE://broker-1:49092
+      KAFKA_LISTENERS: INSIDE://broker-1:9092,OUTSIDE://broker-1:49092
       
-      KAFKA_ADVERTISED_LISTENERS: INSIDE://broker-1:9092, OUTSIDE://localhost:49092
+      KAFKA_ADVERTISED_LISTENERS: INSIDE://broker-1:9092,OUTSIDE://localhost:49092
       
       KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
       
@@ -61,33 +75,32 @@ services:
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
 
 
-# ========== Broker B ========== #
+  # ========== Broker B ========== #
 
   broker-2:
   
     image: confluentinc/cp-kafka:latest
     
-    container_name: my-kafka-2
+    container_name: my-broker-2
     
     depends_on:
-      - zookeeper
+      - zookeeper-1
+      - zookeeper-2
       
     ports:
       - 49093:49092
-    
-    # ========== Broker settings ========== #
     
     environment:
     
 #      KAFKA_BROKER_ID: 2  # Не обязательно, если не задан, то автогенерация
       
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper-1:2181,zookeeper-2:2181
       
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT, OUTSIDE:PLAINTEXT
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
       
-      KAFKA_LISTENERS: INSIDE://broker-2:9092, OUTSIDE://broker-2:49092
+      KAFKA_LISTENERS: INSIDE://broker-2:9092,OUTSIDE://broker-2:49092
       
-      KAFKA_ADVERTISED_LISTENERS: INSIDE://broker-2:9092, OUTSIDE://localhost:49093
+      KAFKA_ADVERTISED_LISTENERS: INSIDE://broker-2:9092,OUTSIDE://localhost:49093
       
       KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
       
@@ -95,6 +108,8 @@ services:
       
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
 ```
+
+В настройках вроде KAFKA_ZOOKEEPER_CONNECT, KAFKA_LISTENERS и прочих, поддерживающих несколько значений, лучше не использовать пробел после запятой. Для KAFKA_LISTENERS например пробелы не вызывают проблем, а вот из-за пробела в KAFKA_ZOOKEEPER_CONNECT была ошибка.
 
 # Listeners, "слухачи"
 
@@ -219,7 +234,7 @@ services:
   br.2) KAFKA_ADVERTISED_LISTENERS: INSIDE://broker-2:9092, OUTSIDE://localhost:49093
   ```
 
-  У OTSIDE почему-то указан какой-то localhost (хотя в докере нет понятия localhost), а во втором слухаче второго брокера к тому же и порт не такой какой был у него же в параметре listeners. В чем дело?
+  У OUTSIDE почему-то указан какой-то localhost (хотя в докере нет понятия localhost), а во втором слухаче второго брокера к тому же и порт не такой какой был у него же в параметре listeners. В чем дело?
 
   А дело как раз в том, что к брокерам могут стучаться из разных мест. В данном случае предполагается, что из двух: из самой сети докера (т.к. брокеры общаются друг с другом тоже), и с хоста, где работает докер. В более сложных случаях дополнительно могут стучаться еще и из других сетей и т.д. И параметр advertised.listeners нужен как раз для того, чтобы каждый заинтересованный получил именно того слухача, который для него предназначается.
 
@@ -230,9 +245,10 @@ services:
   3. Но подключение "к брокеру" фактически означает подключение к одному из слухачей этого брокера.
   4. У второго брокера есть два слухача, один работает на на порту 9092, а второй - на порту 49092 (KAFKA_LISTENERS: INSIDE://broker-2:9092, OUTSIDE://broker-2:49092)
   5. Судя по именам, мы решили, что слухач-9092 будет предназначаться для работы внутри самого докера, а слухач-49092 - для "внешних" клиентов.
-  6. Поэтому мы сделали проброс именно до порта 49092 - `49093:49092`. Теперь порт 49093 *хоста* (машины, где работает докер) связан с портом 49092 внутри докера, причем конкретно с портом сервиса broker-2. Хоть у сервиса broker-1 тоже есть порт 49092, но он тут не при чем - он связан с хостовым портом 49092, т.к. у него проброс выполнен вот так - `49092:49092`.
-  7. Соответственно, когда клиент на хосте обращается на localhost:49093 он попадает на слухача `OUTSIDE://broker-2:49092`
-  8. Аналогичным образом попасть на `INSIDE://broker-2:9092` клиент с хоста не сможет, потому что "broker-2" для него ничего не значит, т.к. это внутренний идентификатор сервиса в докере и только для докера он имеет смысл.
+  6. Поэтому мы сделали проброс именно до порта 49092, а не до 9092 - `49093:49092`. Теперь порт 49093 *хоста* (машины, где работает докер) связан с портом 49092 внутри докера, причем конкретно с портом сервиса broker-2. Хоть у сервиса broker-1 тоже есть порт 49092, но он тут не при чем - он связан с хостовым портом 49092, т.к. у него проброс выполнен вот так - `49092:49092`.
+  7. Соответственно, когда клиент на хосте обращается на localhost:49093 он, за счет проброса портов, попадает на слухача `OUTSIDE://broker-2:49092`
+  8. Клиент, успешно достучавшись до одного слухача, получает информацию обо всем кластере, т.е. автоматом узнает и о broker-1.
+  9. Аналогичным образом попасть на `INSIDE://broker-2:9092` клиент с хоста не сможет, потому что "broker-2" для него ничего не значит, т.к. это внутренний идентификатор сервиса в докере и только для докера он имеет смысл.
 
   В более сложных сценариях все возможно будет хитрее, но суть сводится к одному: listeners - это сами слухачи, а advertised.listeners - это способы достучаться до них. Поэтому в a.l порты могут повторяться, т.к. здесь уже идет фактически не объявление слухачей, а просто наборы uri для клиентов из разных мест.
 
@@ -267,7 +283,7 @@ KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
 
 Поскольку в докере можно самому объявить сеть и настроить ip для каждого сервиса вручную, я проверил, как реагирует брокер это:
 
-```json
+```yaml
 networks:
   servicesubnet:
     driver: bridge
