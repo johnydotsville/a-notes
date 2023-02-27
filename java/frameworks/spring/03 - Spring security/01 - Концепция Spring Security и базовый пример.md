@@ -6,6 +6,12 @@ Spring Security технически представляет собой как 
 
 ![spring-security-idea.drawio](img/spring-security-idea.drawio.svg)
 
+Пример дефолтной цепочки фильтров в Spring Security, через которые проходит запрос:
+
+```
+Запрос -> SecurityContextPersistenceFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, UsernamePasswordAuthenticationFilter, DefaultLoginPageGeneratingFilter, DefaultLogoutPageGeneratingFilter, BasicAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, FilterSecurityInterceptor -> Запрос наконец-то попадает в контроллер
+```
+
 # Аутентификация и авторизация, http-коды
 
 Эти понятия означают следующее:
