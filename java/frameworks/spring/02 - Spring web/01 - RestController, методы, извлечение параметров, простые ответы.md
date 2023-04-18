@@ -112,7 +112,8 @@ public class CurrencyController {
 
   ```java
   @GetMapping("/just/test")
-  public String requestParamDemo(@RequestParam String title, @RequestParam int rating) {
+  public String requestParamDemo(@RequestParam String title,
+                                 @RequestParam(required = false) Integer rating) {
       return title + " " + rating;
   }
   ```
@@ -120,6 +121,8 @@ public class CurrencyController {
   ```
   localhost:8080/api/currency/just/test?title=Resident%20evil&rating=8
   ```
+
+  Параметр rating можно не передавать, т.к. он помечен как необязательный. При этом его нужно объявлять типом-оберткой, т.к. в него попадет null. Либо можно можно написать `@RequestParam Optional<Integer> rating` вместо указания required.
 
 * Если объект передается в теле запроса, тогда используем аннотация *@RequestBody*:
 

@@ -200,7 +200,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/user/**").hasAnyRole("admin", "user")
                 .anyRequest().permitAll()
                 .and()
-            .httpBasic();  // <-- 5.3
+            .httpBasic();  // <-- 6
     }
 }
 ```

@@ -125,6 +125,8 @@ ExecutorService executor = Executors.newCachedThreadPool();
 void execute(Runnable command)
 ```
 
+При этом у нас нет никаких средств для управления запущенной задачей. Мы не можем ее отменить или проверить, выполнилась она или нет.
+
 ```java
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
@@ -155,6 +157,75 @@ public class SimpleTaskDemo implements Runnable {
 * Закрывать пул потоков
 
 TODO: примеры! хотя бы на submit. Плюс разобраться и написать во что превращается Runnable. Он вроде в Callable<Void> трансформируется (но это не точно)
+
+TODO: Вписать про возможные исключения, которые вообще существуют в многопоточном мире
+
+### Отправка методом submit
+
+Существует три сигнатуры, одна для отправки Callable и две для отправки Runnable:
+
+```java
+<T> Future<T> submit(Callable<T> task)
+Future<?>     submit(Runnable task)
+<T> Future<T> submit(Runnable task, T result)
+```
+
+* Callable - это обычно задачи, возвращающие результат (хотя если хочется использовать Callable для задач без результата, можно типизировать `Callable<Void>`). Тип этого результата заранее известен, ну а его значение возвращается нам по окончанию выполнения задачи:
+
+  ```java
+  ExecutorService exec = Executors.newSingleThreadExecutor();
+  Future<String> task = exec.submit(someCallable);
+  try {
+      String result = task.get();
+      System.out.println("Результат выполнения Callable: " + result);
+  } catch (InterruptedException iex) {
+      ...
+  } catch (ExecutionException eex) {
+      ...
+  }
+  ```
+
+* Runnable по своей концепции результат не возвращает, однако метод submit подразумевает возврат Future, который является дженериком. Поэтому возможно два варианта:
+
+  1. В случае сигнатуры `Future<?> submit(Runnable task)` признаком успешного выполнения задачи является null в качестве результата:
+
+     ```java
+     ExecutorService exec = Executors.newSingleThreadExecutor();
+     Future task = exec.submit(someRunnable);  // <-- Future никак не типизируем
+     try {
+         if (task.get() == null) {
+             System.out.println("Задача выполнилась успешно");
+         }
+     } catch (InterruptedException iex) {
+         ...
+     } catch (ExecutionException eex) {
+         ...
+     }
+   ```
+  
+2. В случае сигнатуры `<T> Future<T> submit(Runnable task, T result)` мы заранее объявляем некоторый "результат" и передаем его в метод submit. Если задача выполнилась успешно, то он нам просто возвращает этот результат, который в данном случае не результат работы задачи, а по сути просто флажок, например:
+  
+     ```java
+     ExecutorService exec = Executors.newSingleThreadExecutor();
+     Boolean result = true;
+     Future<Boolean> task = exec.submit(simpleRunnable, result);
+     try {
+         if (task.get() == true) {
+             System.out.println("Задача выполнилась успешно");
+         }
+     } catch (InterruptedException iex) {
+     
+     } catch (ExecutionException eex) {
+     
+   }
+  ```
+
+  
+
+  
+
+
+TODO: Разобраться и вписать в нужное место как обрабатывать InterruptedException и ExecutionException
 
 ## ScheduledExecutorService
 

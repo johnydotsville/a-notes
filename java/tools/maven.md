@@ -22,6 +22,10 @@ mvn dependency:tree    https://www.tutorialworks.com/maven-find-transitive-depen
 
   Если используем идею, а не отдельные JDK, то заходим в идее в *File > Project Structure > Platform Settings | SDKs*, смотрим там путь в поле JDK home path (например *C:\Users\JohNy\.jdks\corretto-11.0.16.1*) и берем его для JAVA_HOME
 
+# Локальный репозиторий
+
+Находится в `C:\Users\JohNy\.m2` Сюда скачиваются все библиотеки. В случае каких-то проблем можно удалить все, чтобы мавен перезакачал.
+
 # Создание проекта
 
 Создать папку с проектом можно по шаблонам (архетипам), которые предоставляет мэвин. Список мэвин-архетипов можно посмотреть тут https://maven.apache.org/archetypes/index.html

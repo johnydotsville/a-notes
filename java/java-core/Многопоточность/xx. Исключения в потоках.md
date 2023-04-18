@@ -210,3 +210,6 @@ class SimpleTasks {
 
 # Обработка в пуле
 
+https://stackoverflow.com/questions/2248131/handling-exceptions-from-java-executorservice-tasks
+
+Лучше использовать Callable.

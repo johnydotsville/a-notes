@@ -26,6 +26,32 @@
 </dependency>
 ```
 
+Также полезными окажутся lombok и dev tools:
+
+```xml
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.26</version>
+</dependency>
+```
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-devtools</artifactId>
+    <scope>runtime</scope>
+    <optional>true</optional>
+</dependency>
+```
+
+Включить горячий перезапуск в настройках идеи:
+
+```
+File > Settings > Build, Execution, Deployment > Compiler, установить галочку Build Project Automatically
+File > Settings > Advanced Settings, установить галочку Allow automake to start if developped application is currently running
+```
+
 # Два стиля конфигурирования
 
 Хибер можно использовать как самостоятельную технологию, а можно как реализацию JPA. При этом как минимум отличается способ конфигурирования.
@@ -63,6 +89,8 @@
 ```
 
 Собственно все понятно и так, это минимальная конфигурация.
+
+В строчке `jdbc:postgresql://localhost:5432/dvdrental` *dvdrental* - это имя базы данных, а не сервера, контейнера или чего-то еще.
 
 Здесь явно написаны данные для подключения к БД, но еще их можно вынести в какой-то отдельный то ли файл, то ли что, я не знаю, при этом задействуется JNDI, а я совсем не понял, что это такое.
 
