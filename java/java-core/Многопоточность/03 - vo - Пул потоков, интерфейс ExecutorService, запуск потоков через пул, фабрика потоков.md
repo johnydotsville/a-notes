@@ -33,19 +33,55 @@
 
 ![executor-framework.drawio](img/executor-framework.drawio.svg)
 
-# Виды пулов
+В двух словах о каждом:
 
-В основе пулов лежит класс `ThreadPoolExecutor`:
+* Executor
+
+  Все, что умеет - запускать Runnable через свой единственный метод *execute*. Смысла использовать этот интерфейс как будто бы и нет.
+
+* ExecutorService
+
+  * Умеет выполнять не только Runnable, но и Callable (задачи, возвращающие результат)
+  * Запускать пачку задач, переданную в виде коллекции
+  * Закрывать пул потоков
+
+* ScheduledExecutorService
+
+  * Работать с Runnable и Callable
+  * Запускать задачу после указанного ожидания
+  * Запускать задачу после указанного ожидания и выполнять ее раз за разом через указанный интервал времени
+
+Для каждого интерфейса есть несколько конкретных реализаций пулов.
+
+# Конкретные виды пулов
+
+Сначала будет про конкретные пулы и как их создать, а потом уже про интерфейсы. Т.е. сначала смотрим как создать пул, а потом уже - что с его помощью можно сделать. Поскольку из пулов возвращается Future-объект, который имеет несколько разновидностей, то о получении результатов из него будет в отдельном конспекте. В этом же - только как создать пул и отправить в него задачу.
+
+Все пулы можно создать с помощью соответствующих статических методов класса `Executors`
+
+## Класс ThreadPoolExecutor
+
+Лежит в основе *всех* конкретных пулов, реализующих как интерфейс *ExecutorService*, так и интерфейс *ScheduledExecutorService*:
 
 ```java
-public ThreadPoolExecutor(int corePoolSize,
-                          int maximumPoolSize,
-                          long keepAliveTime,
-                          TimeUnit unit,
-                          BlockingQueue<Runnable> workQueue) {
-    this(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue,
-         Executors.defaultThreadFactory(), defaultHandler);
+public class ThreadPoolExecutor extends AbstractExecutorService {
+    ...
+    public ThreadPoolExecutor(
+        int corePoolSize,
+        int maximumPoolSize,
+        long keepAliveTime,
+        TimeUnit unit,
+        BlockingQueue<Runnable> workQueue
+        // ThreadFactory threadFactory, есть несколько конструкторов, один вот с фабрикой
+        // RejectedExecutionHandler handler, разные комбинации этих параметров )
+    {
+        this(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue,
+             Executors.defaultThreadFactory(), defaultHandler);
+    }
+...
 }
+...
+public abstract class AbstractExecutorService implements ExecutorService {
 ```
 
 Конфигурируется разными параметрами, среди которых:
@@ -55,19 +91,19 @@ public ThreadPoolExecutor(int corePoolSize,
 * keepAliveTime - время, по истечению которого простаивающий поток будет уничтожен
 * unit - размерность времени для предыдущего параметра (например, миллисекунды)
 * workQueue - конкретная реализация очереди, которая будет использоваться в пуле
+* threadFactory - необязательно, но можно передать свою реализацию фабрики создания потоков. Соответственно, для любой реализации тоже можно передать фабрику через конструктор.
+* RejectedExecutionHandler - пока не знаю зачем нужно, просто включил до кучи
 
-Все пулы можно создать с помощью соответствующих статических методов класса `Executors`
-
-## Fixed thread pool
+### Fixed thread pool
 
 ```java
+ExecutorService executor = Executors.newFixedThreadPool(7, // ThreadFactory);
+...
 public static ExecutorService newFixedThreadPool(int nThreads) {
     return new ThreadPoolExecutor(nThreads, nThreads,
                                   0L, TimeUnit.MILLISECONDS,
                                   new LinkedBlockingQueue<Runnable>());
 }
-...
-ExecutorService executor = Executors.newFixedThreadPool(7);
 ```
 
 Пул с фиксированным количеством потоков:
@@ -76,17 +112,17 @@ ExecutorService executor = Executors.newFixedThreadPool(7);
 * Если все треды работают, новой задаче придется подождать.
 * Если задач мало и часть тредов простаивает, то они не удаляются (третий параметр = 0)
 
-## Single thread pool
+### Single thread pool
 
 ```java
+ExecutorService executor = Executors.newSingleThreadExecutor(// ThreadFactory);
+...
 public static ExecutorService newSingleThreadExecutor() {
     return new FinalizableDelegatedExecutorService
         (new ThreadPoolExecutor(1, 1,
                                 0L, TimeUnit.MILLISECONDS,
                                 new LinkedBlockingQueue<Runnable>()));
 }
-...
-ExecutorService executor = Executors.newSingleThreadExecutor();
 ```
 
 Пул размером в один поток:
@@ -94,16 +130,16 @@ ExecutorService executor = Executors.newSingleThreadExecutor();
 * В основе своей использует Fixed thread pool, так что все остальные характеристики аналогичные
 * Хорошая альтернатива ручному созданию и запуску треда: вместо `new Thread(...).start()` используем сингл-пул
 
-## Cached thread pool
+### Cached thread pool
 
 ```java
+ExecutorService executor = Executors.newCachedThreadPool(// ThreadFactory);
+...
 public static ExecutorService newCachedThreadPool() {
     return new ThreadPoolExecutor(0, Integer.MAX_VALUE,
                                   60L, TimeUnit.SECONDS,
                                   new SynchronousQueue<Runnable>());
 }
-...
-ExecutorService executor = Executors.newCachedThreadPool();
 ```
 
 Пул с динамическим размером:
@@ -113,7 +149,73 @@ ExecutorService executor = Executors.newCachedThreadPool();
 * Если поступает задача, а свободных потоков нет, то создается новый поток и добавляется в пул
 * Если поток простаивает 60 секунд, то он уничтожается (третий параметр 60)
 
-# Интерфейсы
+## Класс ScheduledThreadPoolExecutor
+
+Лежит в основе всех конкретных пулов, реализующих интерфейс *ScheduledExecutorService*:
+
+```java
+public class ScheduledThreadPoolExecutor
+        extends ThreadPoolExecutor
+        implements ScheduledExecutorService {
+    
+    public ScheduledThreadPoolExecutor(
+        int corePoolSize
+        // ThreadFactory threadFactory
+        // RejectedExecutionHandler handler) 
+    {
+        super(corePoolSize, Integer.MAX_VALUE,  // Вызов конструктора ThreadPoolExecutor
+              DEFAULT_KEEPALIVE_MILLIS, MILLISECONDS,   // <-- DEFAULT_KEEPALIVE_MILLIS = 10L
+              new DelayedWorkQueue()
+              // threadFactory
+              // handler
+             );
+    }
+...
+}
+// Напоминание конструктора ThreadPoolExecutor, чтобы не листать туда-сюда
+public ThreadPoolExecutor(
+    int corePoolSize,
+    int maximumPoolSize,
+    long keepAliveTime,
+    TimeUnit unit,
+    BlockingQueue<Runnable> workQueue
+    // ThreadFactory threadFactory, есть несколько конструкторов, один вот с фабрикой
+    // RejectedExecutionHandler handler, разные комбинации этих параметров
+)
+```
+
+Несмотря на то, что здесь указано время DEFAULT_KEEPALIVE_MILLIS, судя по описанию класса, потоки держатся в пуле, даже если простаивают. Рекомендуется устанавливать corePoolSize > 0, и тогда все будет в порядке.
+
+> The default keep-alive time for pool threads. Normally, this value is unused because all pool threads will be core threads, but if a user creates a pool with a corePoolSize of zero (against our advice), we keep a thread alive as long as there are queued tasks.
+
+### Scheduled thread pool
+
+Пул с указанным количеством потоков.
+
+```java
+ScheduledExecutorService exec = Executors.newScheduledThreadPool(5);
+...
+public static ScheduledExecutorService newScheduledThreadPool(int corePoolSize, // ThreadFactory) {
+    return new ScheduledThreadPoolExecutor(corePoolSize);
+}
+```
+
+Scheduled-пул использует только фиксированное количество потоков. Cached-версии не имеет. Точный ответ "почему" - дать сложно. По своей природе scheduled-пул предназначен в основном для выполнения задач "по расписанию". Выполнили задачу, подождали некоторое время, выполнили повторно и т.д. Стало быть количество этих задач заранее известно, а значит нет смысла делать версию такого пула с динамическим размером.
+
+### Single sheduled thread pool
+
+Пул с единственным потоком. С виду будто бы используется в основном именно он, а не версия с возможностью указать количество потоков.
+
+```java
+ScheduledExecutorService exec = Executors.newSingleThreadScheduledExecutor();
+...
+public static ScheduledExecutorService newSingleThreadScheduledExecutor(// ThreadFactory) {
+    return new DelegatedScheduledExecutorService
+        (new ScheduledThreadPoolExecutor(1));
+}
+```
+
+# Интерфейсы пулов
 
 ## Executor
 
@@ -136,14 +238,11 @@ public class SimpleTaskDemo implements Runnable {
     public void run() {
         System.out.println("Это самая простая задача");
     }
-
-    public static void main(String[] args) {
-        Runnable task = new SimpleTaskDemo();
-
-        Executor executor = Executors.newSingleThreadExecutor();  // <-- Реализация пула по вкусу
-        executor.execute(task);  // <-- Просто и бесхитростно
-    }
 }
+...
+Runnable task = new SimpleTaskDemo();
+Executor executor = Executors.newSingleThreadExecutor();  // <-- Реализация пула по вкусу
+executor.execute(task);  // <-- Просто и бесхитростно
 ```
 
 ## ExecutorService
@@ -156,11 +255,9 @@ public class SimpleTaskDemo implements Runnable {
 * Запускать пачку задач, переданную в виде коллекции
 * Закрывать пул потоков
 
-TODO: примеры! хотя бы на submit. Плюс разобраться и написать во что превращается Runnable. Он вроде в Callable<Void> трансформируется (но это не точно)
-
-TODO: Вписать про возможные исключения, которые вообще существуют в многопоточном мире
-
 ### Отправка методом submit
+
+Предназначен для отправки *одной* задачи на выполнение *без ожидания* результата. Просто отправляет ее выполняться и идет дальше. Метод возвращает Future, с помощью которого мы можем узнавать статус задачи, получать результат или появившееся исключение. О получении результатов - в отдельном конспекте.
 
 Существует три сигнатуры, одна для отправки Callable и две для отправки Runnable:
 
@@ -201,10 +298,10 @@ Future<?>     submit(Runnable task)
      } catch (ExecutionException eex) {
          ...
      }
-   ```
-  
-2. В случае сигнатуры `<T> Future<T> submit(Runnable task, T result)` мы заранее объявляем некоторый "результат" и передаем его в метод submit. Если задача выполнилась успешно, то он нам просто возвращает этот результат, который в данном случае не результат работы задачи, а по сути просто флажок, например:
-  
+     ```
+
+  2. В случае сигнатуры `<T> Future<T> submit(Runnable task, T result)` мы заранее объявляем некоторый "результат" и передаем его в метод submit. Если задача выполнилась успешно, то он нам просто возвращает этот результат, который в данном случае не результат работы задачи, а по сути просто флажок, например:
+
      ```java
      ExecutorService exec = Executors.newSingleThreadExecutor();
      Boolean result = true;
@@ -214,22 +311,126 @@ Future<?>     submit(Runnable task)
              System.out.println("Задача выполнилась успешно");
          }
      } catch (InterruptedException iex) {
-     
+         ...
      } catch (ExecutionException eex) {
-     
-   }
+         ...
+     }
+     ```
+
+TODO: Разобраться и вписать в нужное место как обрабатывать InterruptedException и ExecutionException. Вероятно это тема для конспекта по получению результата.
+
+### Отправка методом invoke...
+
+Предназначен для отправки *нескольких* задач на выполнение, *с ожиданием* результата. Т.е. пока результат не появится, поток дальше не идет.
+
+```java
+<T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks)
+<T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks, long timeout, TimeUnit unit)
+<T> T invokeAny(Collection<? extends Callable<T>> tasks)
+<T> T invokeAny(Collection<? extends Callable<T>> tasks, long timeout, TimeUnit unit)
+```
+
+* invokeAny возвращает результат выполнения *одной* из переданных задач. Это та задача, которая успела выполниться быстрее других. Остальные отменяются. Если в задаче возникает исключение, остальные тоже отменяются и результата, по сути, не будет.
+
+  ```java
+  ExecutorService execFixed = Executors.newFixedThreadPool(5);
+  try {
+      String result = execFixed.invokeAny(Set.of(callable1, callable2, callable3), 1, TimeUnit.NANOSECONDS);
+      System.out.println(result);
+  } catch (InterruptedException iex) {
+      ...
+  } catch (ExecutionException eex) {
+      System.out.println(eex.getCause().getMessage());
+  }
+  catch (TimeoutException tex) {
+      System.out.println("Ни одна задача не успела выполниться");
+  }
   ```
 
-  
+* invokeAll возвращает Future'ы для всех задач. Через их обход мы можем получить результат, либо узнать, что в какой-то задаче произошло исключение.
 
-  
-
-
-TODO: Разобраться и вписать в нужное место как обрабатывать InterruptedException и ExecutionException
+  ```java
+  ExecutorService execFixed = Executors.newFixedThreadPool(5);
+  try {
+      List<Future<String>> result = execFixed.invokeAll(Set.of(callable1, callable2, callable3));
+      for (Future<String> future : result) {
+          try {
+              System.out.println(future.get());
+          } catch (InterruptedException iex) {
+              ...  // Сюда, вероятно ???, мы не попадем, по причине, указанной в каменте ниже
+          } catch (ExecutionException eex) {
+              System.out.println(eex.getCause().getMessage());
+          }
+      }
+  } catch (InterruptedException iex) {
+      System.out.println("Выпало InterruptedException");
+      // Этот InterruptedException связан именно с invokeAll. Сюда мы попадаем, если хотя бы одна задача
+      // из списка была отменена. Это может произойти, например, при закрытии пула или еще как-то, не
+      // важно. Поскольку invokeAll концептуально дожидается выполнения всех задач, то стало быть при
+      // отмене хотя бы одной мы не получаем ничего и попадаем сюда.
+  }
+  ```
 
 ## ScheduledExecutorService
 
-:warning: TODO
+[Документация](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ScheduledExecutorService.html)
+
+Наследник интерфейса ExecutorService, умеет:
+
+* Работать с Runnable и Callable
+* Запускать задачу после указанного ожидания
+* Запускать задачу после указанного ожидания и выполнять ее раз за разом через указанный интервал времени
+
+```java
+Все методы от ExecutorService +
+<V> ScheduledFuture<V> schedule(Callable<V> callable, long delay, TimeUnit unit)
+ScheduledFuture<?> schedule(Runnable command, long delay, TimeUnit unit)
+ScheduledFuture<?> scheduleAtFixedRate(Runnable command, long initialDelay, long period, TimeUnit unit)
+ScheduledFuture<?> scheduleWithFixedDelay(Runnable command, long initialDelay, long delay, TimeUnit unit)
+```
+
+На примере единственной задачи:
+
+* schedule - "подожди 5 секунд и запусти один раз"
+
+  Запускает переданную задачу после указанной задержки
+
+* scheduleAtFixedRate - "запускай каждые 5 секунд или, если не получается, то сразу как только сможешь"
+
+  Выполняет задачу повторно раз за разом через *period* интервал. *initialDelay* это задержка перед первым выполнением. Например в этом случае мы сначала подождем 1 сек, а потом каждые три секунды будем запускать задачу, показывающую сообщение:
+
+  ```java
+  int interval = 3000;
+  Runnable task = () -> System.out.println(String.format("Эта задача выполняется каждые %d мс", interval));
+  ScheduledExecutorService exec = Executors.newSingleThreadScheduledExecutor();
+  
+  exec.scheduleAtFixedRate(task, 1000, interval, TimeUnit.MILLISECONDS);
+  ```
+
+  Эта задача выполняется моментально. Но если вдруг выполнение задачи заняло больше, чем интервал запусков, то новый запуск будет только после завершения предыдущей работы. При этом не важно, сколько потоков в пуле, один или несколько, задача все равно будет запускаться в единственном экземпляре:
+
+  ```java
+  int interval = 3000;
+  Runnable task = () -> {
+      System.out.println(String.format("Эта задача выполняется каждые %d мс", interval));
+      try { Thread.sleep(10_000); } catch (InterruptedException iex) { }  // Долгая задача
+  };
+  ScheduledExecutorService exec = Executors.newScheduledThreadPool(5);
+  
+  exec.scheduleAtFixedRate(task, 1000, interval, TimeUnit.MILLISECONDS);
+  ```
+
+  Хотя здесь у нас 5 потоков, все равно задача будет запускаться примерно каждые 10 секунд, потому что интервал запуска 3, но сама задача занимает 10. Через 3 секунды положен новый запуск, но задача еще "работает" (спит в данном случае) 7 секунд. А после этого *сразу* новый запуск.
+
+* scheduleWithFixedDelay - "запускай, а когда выполнится, жди 5 секунд и запускай снова"
+
+  Выполняет задачу раз за разом, соблюдая указанный интервал между повторными запусками. Т.е. если взять предыдущий пример и заменить метод, то мы получим выполнение задачи каждые 13 секунд, потому что 10 секунд занимает сама задача и еще 3 секунды на ожидание перед новым запуском:
+
+  ```java
+  exec.scheduleWithFixedDelay(task, 1000, interval, TimeUnit.MILLISECONDS);
+  ```
+
+Когда задач несколько, тогда количество потоков имеет значение. Если поток один, а задач две, они будут работать последовательно. Если же потоков столько же, сколько задач, тогда они смогут работать параллельно.
 
 # Закрытие пула
 
@@ -238,17 +439,15 @@ TODO: Разобраться и вписать в нужное место как
 Закрыть пул можно двумя методами:
 
 ```java
-void shutdown()
-    * Выполняющиеся задачи будут выполнены
-    * Поставленные в очередь будут выполнены
-    * Новые приниматься не будут
-List<Runnable> shutdownNow()
-    * Выполняющиеся задачи будут прерваны и возвращены в виде списка
-    * Поставленные в очередь даже не будут запущены
-    * Новые приниматься не будут
+void shutdown();
+List<Runnable> shutdownNow();
 ```
 
-Демо обычного shutdown'а:
+## .shutdown()
+
+* Выполняющиеся задачи будут выполнены
+* Поставленные в очередь будут выполнены
+* Новые приниматься не будут
 
 ```java
 public class ShutdownDemo implements Runnable {
@@ -271,36 +470,38 @@ public class ShutdownDemo implements Runnable {
         }
         System.out.println(name + " выполнена " + LocalDateTime.now());
     }
+}
+```
 
-    public static void main(String[] args) {
-        ArrayList<Runnable> tasks = new ArrayList<>(
-                Arrays.asList(
-                        new ShutdownDemo("Task 0"),
-                        new ShutdownDemo("Task 1"),
-                        new ShutdownDemo("Task 2"),
-                        new ShutdownDemo("Task 3"))
-        );
+Проверяем:
 
-        // <-- За счет "single"-пула у нас гарантированно будет очередь
-        ExecutorService exec = Executors.newFixedThreadPool(1);
+```java
+ArrayList<Runnable> tasks = new ArrayList<>(
+    Arrays.asList(
+        new ShutdownDemo("Task 0"),
+        new ShutdownDemo("Task 1"),
+        new ShutdownDemo("Task 2"),
+        new ShutdownDemo("Task 3"))
+);
 
-        for (int i = 0; i < 4; i++) {
-            ShutdownDemo task = (ShutdownDemo) tasks.get(i);
-            try {
-                exec.submit(task);
-                System.out.println("main: Задача " + task.name + " отправлена на выполнение " + LocalDateTime.now());
-            } catch (Exception ex) {
-                System.out.println("main: Не удалось отправить задачу " + task.name + " на выполнение: " + ex.getMessage());
-            }
-            if (i == 2) {  // <-- Имитируем ситуацию, когда последняя задача
-                exec.shutdown();  // не успела попасть в очередь до закрытия пула
-                System.out.println("main: Пул теперь закрыт");
-            }
-        }
+// <-- За счет "single"-пула у нас гарантированно будет очередь
+ExecutorService exec = Executors.newFixedThreadPool(1);
 
-        System.out.println("main() выполнилась");
+for (int i = 0; i < 4; i++) {
+    ShutdownDemo task = (ShutdownDemo) tasks.get(i);
+    try {
+        exec.submit(task);
+        System.out.println("main: Задача " + task.name + " отправлена на выполнение " + LocalDateTime.now());
+    } catch (Exception ex) {
+        System.out.println("main: Не удалось отправить задачу " + task.name + " на выполнение: " + ex.getMessage());
+    }
+    if (i == 2) {  // <-- Имитируем ситуацию, когда последняя задача (третья в данном случае)
+        exec.shutdown();  // не успеет попасть в очередь до закрытия пула
+        System.out.println("main: Пул теперь закрыт");
     }
 }
+
+System.out.println("main() выполнилась");
 ```
 
 Результат:
@@ -324,6 +525,12 @@ Task 1 выполнена 2022-11-14T11:35:25.279088100
 Task 2 выполнена 2022-11-14T11:35:27.887182600
 ```
 
+## .shutdownNow()
+
+* Выполняющиеся задачи будут прерваны и возвращены в виде списка
+* Поставленные в очередь даже не будут запущены
+* Новые приниматься не будут
+
 Демку для shutdownNow() целиком вставлять не буду, отличие в паре мест:
 
 ```java
@@ -333,7 +540,9 @@ List<Runnable> cancelledTasks = new ArrayList<Runnable>();
 ...
 if (i == 2) {
     System.out.println("main: поспим 2 сек перед закрытием пула");
-    try { Thread.sleep(2_000); } catch (Exception ex) { }
+    try { 
+        Thread.sleep(2_000); 
+    } catch (Exception ex) { }
     cancelledTasks = exec.shutdownNow();
     System.out.println("main: Пул теперь закрыт");
 }
@@ -384,4 +593,3 @@ ExecutorService exec = Executors.newFixedThreadPool(4,
 
 exec.execute(YourTaskNowWillBeDaemon);
 ```
-
