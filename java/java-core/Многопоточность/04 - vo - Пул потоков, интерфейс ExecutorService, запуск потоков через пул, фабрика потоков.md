@@ -381,6 +381,8 @@ TODO: Разобраться и вписать в нужное место как
 * Запускать задачу после указанного ожидания
 * Запускать задачу после указанного ожидания и выполнять ее раз за разом через указанный интервал времени
 
+Его методы возвращает интерфейс *ScheduledFuture*, а не просто Future:
+
 ```java
 Все методы от ExecutorService +
 <V> ScheduledFuture<V> schedule(Callable<V> callable, long delay, TimeUnit unit)
