@@ -35,7 +35,7 @@
 
 В качестве данных можно найти базу dvdrental, а еще у postgrespro есть демо-база с полетами самолетов. И там, и там предоставляется sql с созданием схемы БД и заполнением ее данными.
 
-Для работы понадобится утилита `psql`. Она ставится вместе с postgres и находится в *C:\Program Files\PostgreSQL\14\bin*
+Для работы понадобится утилита `psql`. Она ставится вместе с postgres и находится в *C:\Program Files\PostgreSQL\14\bin*. В 7 версии pgadmin директория изменилась на `C:\Users\JohNy\AppData\Local\Programs\pgAdmin 4\v7\runtime`
 
 ## Полеты
 
@@ -52,6 +52,6 @@
 Эту БД удалось восстановить только через pgAdmin:
 
 * Создаем через pgAdmin БД dvdrental
-* ПКМ на ней, *Restore*. Если не работает, значит не указали путь до bin в *File > Preferences > Paths > Binary Paths*
-* Указываем архивный файл *.tar*
+* ПКМ на ней, *Restore*. Если не работает, значит не указали путь до bin в *File > Preferences > Paths > Binary Paths*. В 7 версии pgadmin это будет путь до runtime: `C:\Users\JohNy\AppData\Local\Programs\pgAdmin 4\v7\runtime`
+* Указываем архивный файл *.tar* Не директорию, не файл restore, а именно целый архив .tar
 * БД разворачивается, появляются таблицы с данными

@@ -54,7 +54,7 @@ import java.util.*;
 
 ## Отключить хинты типов переменных
 
-*File > Settings > Editot > Inlay Hints > Types*
+*File > Settings > Editor > Inlay Hints > Types*
 
 В зависимости от версии идеи, может находиться в другом месте.
 
