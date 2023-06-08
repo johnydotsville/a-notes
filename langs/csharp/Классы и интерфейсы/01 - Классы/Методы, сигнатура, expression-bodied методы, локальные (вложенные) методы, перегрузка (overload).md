@@ -2,14 +2,16 @@
 
 ## Доступные модификаторы
 
-TODO
+| Категория модификатора           | Ключевые слова                       |
+| -------------------------------- | ------------------------------------ |
+| Статичный метод                  | static                               |
+| Модификаторы доступа             | public internal private protected    |
+| Модификаторы наследования        | new virtual abstract override sealed |
+| Частичный метод                  | partial                              |
+| Модификаторы неуправляемого кода | unsafe extern                        |
+| Модификатор асинхронного кода    | async                                |
 
-Static modifier static
-Access modifiers public internal private protected
-Inheritance modifiers new virtual abstract override sealed
-Partial method modifier partial
-Unmanaged code modifiers unsafe extern
-Asynchronous code modifier async
+Про модификаторы - соответствующих конспектах, тут только сводка.
 
 ## Сигнатура метода
 
@@ -46,7 +48,7 @@ internal class MethodDemo
 
 Используется, если тело метода можно уместить в одно выражение. `=>` заменяет скобки и return.
 
-## Перегрузка
+## Перегрузка (overload)
 
 Перегрузка - *overload*, когда в классе есть несколько методов с одинаковым именем, но разным набором параметров. Порядок параметров имеет значение, поэтому (int, string) и (string, int) считается разным набором параметров.
 

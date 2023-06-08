@@ -1,0 +1,9 @@
+out, ref, var
+
+binary compatibility
+
+Indices и Range, стр 56
+
+
+From C# 9, you can also define module initializers - стр 111 Албахари
+
