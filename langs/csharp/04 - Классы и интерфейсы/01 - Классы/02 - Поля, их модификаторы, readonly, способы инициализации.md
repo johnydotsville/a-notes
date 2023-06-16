@@ -1,19 +1,35 @@
 # Поля
 
-Поля - это переменные, принадлежащие классу.
+Поля - это переменные, принадлежащие классу или экземпляру класса (в зависимости от типа поля).
+
+## Обычные поля
+
+Обычные поля - это переменные, принадлежащие экземпляру класса.
+
+```c#
+internal class Player
+{
+    public string nickname;  // Поле
+    public string race;  // Поле
+}
+```
+
+Характеристики обычных полей:
+
+* Получают значение по умолчанию при создании экземпляра класса.
 
 ## Модификаторы полей
 
 TODO: описание сделать получше, когда вспомню про new и 
 
-| Ключевое слово                    | Назначение                      |
-| --------------------------------- | ------------------------------- |
-| static                            | Указывает, что поле статическое |
-| public internal private protected | Модификатор доступа             |
-| new                               | TODO                            |
-| unsafe                            | Неуправляемый код TODO          |
-| readonly                          | Поле только для чтения          |
-| volatile                          | TODO Многопоточность            |
+| Ключевое слово                    | Назначение                                        |
+| --------------------------------- | ------------------------------------------------- |
+| static                            | Поле статическое                                  |
+| public internal private protected | Модификатор доступа                               |
+| new                               | Поле перекрывает (hide) аналогичное поле родителя |
+| unsafe                            | Неуправляемый код TODO                            |
+| readonly                          | Поле только для чтения                            |
+| volatile                          | TODO Многопоточность                              |
 
 ## readonly-поля
 
@@ -41,20 +57,26 @@ internal class Player
 
 В качестве инициализатора может быть:
 
-* Литерал
-* Выражение
-* Статический метод:
+* Литерал.
+* Выражение.
+* Статический метод (но не обычный. А в Java обычный метод может использоваться для инициализации поля).
 
 ```c#
 internal class Player
 {
-    public readonly string nickname = "JohNy";  // Литерал
-    public readonly int level = new Random().Next(1, 100);  // Выражение
-    public readonly string race = chooseRace();  // Статический метод
+    public string nickname = "JohNy";  // Литерал
+    public int level = new Random().Next(1, 100);  // Выражение
+    public string race = chooseRace();  // Статический метод
+    public int defaultExp = getDefaultExp();  // Ошибка! Обычный метод нельзя использовать для инициализации поля
 
-	private static string chooseRace()
+    private static string chooseRace()
     {
         return "human";
+    }
+    
+    private int getDefaultExp()
+    {
+        return 100;
     }
 }
 ```
