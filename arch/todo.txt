@@ -1,0 +1,13 @@
+unit of work
+active record
+dao и repository
+cqrs
+
+onion, hexagonal, tier 3 архитектуры
+
+
+Основная ценность - в комментариях, а не в статье
+https://habr.com/ru/articles/267125/
+
+Приложение с демонстрацией этих идей
+https://github.com/norberttech/mydrinks
