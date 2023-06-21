@@ -1,10 +1,10 @@
-# Принцип единственной ответственности
+# Формулировка принципа
 
-SRP заключается в том, что *код должен иметь только одну причину для изменения*. Именно так, только одну причину для изменения, а не "выполнять только одну функцию", потому что это не одно и то же. Код может выполнять несколько функций и при этом не нарушать SRP.
+SRP, или "Принцип единственной ответственности", заключается в том, что *код должен иметь только одну причину для изменения*. Именно так, только одну причину для изменения, а не "выполнять только одну функцию", потому что это не одно и то же. Код может выполнять несколько функций и при этом не нарушать SRP.
 
 Это возможно в том случае, если класс *делегирует* часть обязанностей другим классам. Тогда при изменении требований правки касаются только того класса, который *непосредственно* решает поставленную задачу, а более высокоуровневый класс остается без изменений.
 
-## Исходный пример
+# Пример 1
 
 Рассмотрим на примере класса, обрабатывающего акции. Он выполняет разом три функции - читает данные из файла, форматирует их и вставляет в базу данных. Этот класс нарушает SRP не потому, что выполняет сразу три функции, а потому что *содержит реализацию всех трех функций* разом. То есть при изменении деталей любой из функций потребуется править код этого класса:
 
@@ -45,13 +45,13 @@ public class TradeProcessor
             }
 
             int tradeAmount;
-            if(!int.TryParse(fields[1], out tradeAmount))
+            if (!int.TryParse(fields[1], out tradeAmount))
             {
                 Console.WriteLine("WARN: Trade amount on line {0} not a valid integer: '{1}'", lineCount, fields[1]);
             }
 
             decimal tradePrice;
-            if(!decimal.TryParse(fields[2], out tradePrice))
+            if (!decimal.TryParse(fields[2], out tradePrice))
             {
                 Console.WriteLine("WARN: Trade price on line {0} not a valid decimal: '{1}'", lineCount, fields[2]);
             }
@@ -113,7 +113,7 @@ public class TradeProcessor
 
 ## Подготовка к рефакторингу
 
-Начать можно с разделения этого монолитного метода на несколько специализированных, оставив все для начала в исходном классе:
+Начать можно с разделения этого монолитного метода на несколько специализированных, оставив для начала все получившиеся методы в исходном классе:
 
 ```c#
 public class TradeProcessor
@@ -312,8 +312,6 @@ public class StreamTradeDataProvider : ITradeDataProvider
 }
 ```
 
-
-
 ### ITradeParser
 
 ```c#
@@ -359,8 +357,6 @@ public class SimpleTradeParser : ITradeParser
     }
 }
 ```
-
-
 
 ### ITradeValidator
 
@@ -414,8 +410,6 @@ public class SimpleTradeValidator : ITradeValidator
 }
 ```
 
-
-
 ### ITradeMapper
 
 ```c#
@@ -450,8 +444,6 @@ public class SimpleTradeMapper : ITradeMapper
 }
 ```
 
-
-
 ### ILogger
 
 ```c#
@@ -477,8 +469,6 @@ public class ConsoleLogger : ILogger
     }
 }
 ```
-
-
 
 ### ITradeStorage
 
@@ -531,8 +521,6 @@ public class AdoNetTradeStorage : ITradeStorage
 }
 ```
 
-
-
 ## Собираем их всех вместе
 
 Вот таким компактным становится класс TradeProcessor после делегирования обязанностей специализированным классам:
@@ -569,7 +557,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        var tradeStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("SingleResponsibilityPrinciple.trades.txt");
+        var tradeStream = Assembly.GetExecutingAssembly().
+            GetManifestResourceStream("SingleResponsibilityPrinciple.trades.txt");
 
         var logger = new ConsoleLogger();
         var tradeValidator = new SimpleTradeValidator(logger);
@@ -586,8 +575,147 @@ class Program
 }
 ```
 
-
-
 ## Вывод
 
 В итоге класс TradeProcessor все еще занимается тремя вещами - получает данные из источника, форматирует их и записывает в хранилище. Но теперь реализация этих вещей скрыта за абстракциями и в случае изменений требований к любому компоненту правки затронут только этот компонент, но не TradeProcessor, в отличие от исходного примера. Поэтому TradeProcessor теперь соответствует SRP в полной мере.
+
+# Пример 2
+
+Валидация продукта. Пусть у нас есть простой класс продукта и какое-нибудь начальное требование к его валидности. Например, чтобы цена была больше нуля:
+
+```java
+@Getter @Setter
+public class Product {
+    private String name;
+    private int price;
+
+    public Product(String name, int price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    public boolean isValid() {
+        return price > 0;
+    }
+}
+```
+
+```java
+var product = new Product("Cake", 350);
+boolean valid = product.isValid();
+System.out.println(valid);
+```
+
+Размещая код валидации в самом классе продукта, мы нарушаем SRP, потому что у нас появляется две причины для изменения класса:
+
+1. Изменение структуры продукта - добавление или изменение полей.
+2. Изменение условий валидации. Например, "подарочный" продукт должен иметь цену 0. Или наоборот цена не должна быть меньше какого-то значения. К тому же, если валидация станет сложнее, например, добавятся разные требования к проверке названия, то метод может стать к тому же и очень сложным.
+
+В итоге получается, что выгоднее отделить валидацию от продукта.
+
+```java
+@Getter @Setter
+public class Product {
+    private String name;
+    private int price;
+
+    public Product(String name, int price) {
+        this.name = name;
+        this.price = price;
+    }
+    
+    // Убрали метод валидации
+}
+```
+
+Определяем интерфейс для валидаторов и пишем несколько реализаций:
+
+```java
+public interface ProductValidator {
+    boolean isValid(Product product);
+}
+```
+
+```java
+public class DefaultProductValidator implements ProductValidator {
+    @Override
+    public boolean isValid(Product product) {
+        return product.getPrice() > 0;
+    }
+}
+```
+
+```java
+public class GiftProductValidator implements ProductValidator {
+    @Override
+    public boolean isValid(Product product) {
+        return product.getPrice() == 0;
+    }
+}
+```
+
+```java
+public class TitleProductValidator implements ProductValidator {
+    @Override
+    public boolean isValid(Product product) {
+        return Character.isUpperCase(product.getName().charAt(0));
+    }
+}
+```
+
+Для удобного комбинирования валидаторов воспользуемся шаблоном Composite и создадим валидатор, образующий цепочку из нескольких валидаторов.
+
+```java
+public interface ProductValidationChain {
+    boolean isValid(Product product);
+    void addValidator(ProductValidator validator);
+    void removeValidator(ProductValidator validator);
+}
+```
+
+```java
+public class SimpleProductValidationChain implements ProductValidationChain {
+    private final Set<ProductValidator> chain;
+
+    public SimpleProductValidationChain() {
+        chain = new LinkedHashSet<>();
+    }
+
+    public SimpleProductValidationChain(Collection<ProductValidator> validators) {
+        chain = new LinkedHashSet<>(validators.size());
+        chain.addAll(validators);
+    }
+
+    public void addValidator(ProductValidator validator) {
+        chain.add(validator);
+    }
+
+    public void removeValidator(ProductValidator validator) {
+        chain.remove(validator);
+    }
+
+    @Override
+    public boolean isValid(Product product) {
+        System.out.println(chain.size());
+        return chain.stream().allMatch(v -> v.isValid(product));
+    }
+}
+```
+
+Проведем валидацию продукта новым способом:
+
+```java
+var product = new Product("Cake", 350);
+
+var giftValidator = new GiftProductValidator();
+var titleValidator = new TitleProductValidator();
+// ProductValidator validationChain = new SimpleProductValidationChain(
+//     List.of(giftValidator, titleValidator));
+ProductValidationChain chain = new SimpleProductValidationChain();
+chain.addValidator(giftValidator);
+chain.addValidator(titleValidator);
+chain.removeValidator(giftValidator);
+boolean valid = chain.isValid(product);
+```
+
+Можно было бы улучшить, чтобы возвращался список проблем, но это уже другая история. Важно то, что теперь функциональность разнесена и изменение условий валидации не затрагивают класс Product.
