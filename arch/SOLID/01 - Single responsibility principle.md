@@ -1,10 +1,207 @@
 # Формулировка принципа
 
-SRP, или "Принцип единственной ответственности", заключается в том, что *код должен иметь только одну причину для изменения*. Именно так, только одну причину для изменения, а не "выполнять только одну функцию", потому что это не одно и то же. Код может выполнять несколько функций и при этом не нарушать SRP.
+SRP, или "Принцип единственной ответственности", имеет две формулировки, обе от Роберта Мартина. Обе в целом об одном и том же, но немного разными словами и, по личным ощущениям, первая имеет более технический характер и хорошо подходит для классов, формирующих утилиты, а вторая - для классов, формирующих приложения, автоматизирующие какой-то бизнес.
 
-Это возможно в том случае, если класс *делегирует* часть обязанностей другим классам. Тогда при изменении требований правки касаются только того класса, который *непосредственно* решает поставленную задачу, а более высокоуровневый класс остается без изменений.
+## Формулировка 1
 
-# Пример 1
+> Код должен иметь одну и только одну причину для изменения (ориг. "A module should have one, and only one, reason to change")
+
+Именно так, только одну причину для изменения, а не "выполнять только одну функцию", потому что это не одно и то же. Выполнение "только одной функции" больше относится к принципам clean code и означает обычно, что если метод очень большой, то его вероятно можно разделить на несколько методов поменьше. 
+
+Но даже если все методы максимально маленькие и каждый делает только одну вещь, класс в целом может на основе этих методов выполнять несколько бизнес-задач, относящихся к разным "акторам". И вот тут вступает в дело вторая формулировка.
+
+## Формулировка 2
+
+> Код должен работать на одного и только одного актора (ориг. "A module should be responsible to one, and only one, actor").
+
+Под актором, насколько я понял, имеются ввиду бизнес-группы пользователей ("бухгалтерия", "отдел менеджмента" и т.д.). В книге "Чистая архитектура" есть пример:
+
+```java
+class Employee {
+    calculatePay();  // Зависит от желаний бухгалтерии
+    reportHours();  // Зависит от желаний менеджеров
+    save();  // Зависит от желаний администратора БД
+}
+```
+
+Этот класс связал трех акторов друг с другом. Если бухгалтерия решила по-другому считать оплату, надо менять класс. Если менеджеры решили по-другому учитывать рабочие часы, надо менять класс. Если администратор БД решил поменять СУБД, надо менять класс. То есть появляется ТРИ причины для изменения класса, хотя согласно принципу должна быть только одна.
+
+Кроме того, совмещение кода, относящегося к разным областям бизнеса чревато появлением случайных зависимостей:
+
+```java
+class Employee {
+    private calculateHoursWorked() { ... }  // Общий алгоритм вычисления отработанных часов
+    
+    public int calculatePay() {  // область бухгалтерии
+        int hWorked = calculateHoursWorked();
+        int payForHour = 10;
+        return hWorked * payForHour;
+    }
+    
+    public int reportHours() {  // область менеджмента
+        return calculateHoursWorked();
+    }
+}
+```
+
+Видно, что обе области полагаются на общий метод расчета отработанных часов. В какой-то момент, менеджеры могут захотеть учитывать часы по-другому, например, брать только отработанные в офисе, а не из дома, или исключать время, проведенное на больничном, и т.д. При программировании этих изменений, если программист не заметит, что метод calculateHoursWorked используется также и в области бухгалтерии и перепишет его под требования менеджеров, у бухгалтеров будет косяк в расчетах.
+
+# Как приблизиться к SRP?
+
+В общем случае проблема классов-"мастеров на все руки" обычно решается так:
+
+* Делегирование части обязанностей другим классам.
+
+  Вводим интерфейс и пусть делегирующий класс им пользуется. В случае изменения требований к реализации, класс-пользователь трогать не придется, изменению подлежит только класс-исполнитель.
+
+* Полный вынос обязанности в другой класс и соединения с исходным классом каким-либо иным образом.
+
+Т.е. все сводится к обдуманному перемещению функций в разные классы. Обдуманность заключается не только в чисто техническом разделении функционала, но и в логическом, "бизнесовом" его разделении.
+
+## Пример полного выноса обязанности
+
+Валидация продукта. Пусть у нас есть простой класс продукта и какое-нибудь начальное требование к его валидности. Например, чтобы цена была больше нуля:
+
+```java
+@Getter @Setter
+public class Product {
+    private String name;
+    private int price;
+
+    public Product(String name, int price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    public boolean isValid() {
+        return price > 0;
+    }
+}
+```
+
+```java
+var product = new Product("Cake", 350);
+boolean valid = product.isValid();
+System.out.println(valid);
+```
+
+Размещая код валидации в самом классе продукта, мы нарушаем SRP, потому что у нас появляется две причины для изменения класса:
+
+1. Изменение структуры продукта - добавление или изменение полей.
+2. Изменение условий валидации. Например, "подарочный" продукт должен иметь цену 0. Или наоборот цена не должна быть меньше какого-то значения. К тому же, если валидация станет сложнее, например, добавятся разные требования к проверке названия, то метод может стать к тому же и очень сложным.
+
+В итоге получается, что выгоднее отделить валидацию от продукта.
+
+```java
+@Getter @Setter
+public class Product {
+    private String name;
+    private int price;
+
+    public Product(String name, int price) {
+        this.name = name;
+        this.price = price;
+    }
+    
+    // Убрали метод валидации
+}
+```
+
+Определяем интерфейс для валидаторов и пишем несколько реализаций:
+
+```java
+public interface ProductValidator {
+    boolean isValid(Product product);
+}
+```
+
+```java
+public class DefaultProductValidator implements ProductValidator {
+    @Override
+    public boolean isValid(Product product) {
+        return product.getPrice() > 0;
+    }
+}
+```
+
+```java
+public class GiftProductValidator implements ProductValidator {
+    @Override
+    public boolean isValid(Product product) {
+        return product.getPrice() == 0;
+    }
+}
+```
+
+```java
+public class TitleProductValidator implements ProductValidator {
+    @Override
+    public boolean isValid(Product product) {
+        return Character.isUpperCase(product.getName().charAt(0));
+    }
+}
+```
+
+Для удобного комбинирования валидаторов воспользуемся шаблоном Composite и создадим валидатор, образующий цепочку из нескольких валидаторов.
+
+```java
+public interface ProductValidationChain {
+    boolean isValid(Product product);
+    void addValidator(ProductValidator validator);
+    void removeValidator(ProductValidator validator);
+}
+```
+
+```java
+public class SimpleProductValidationChain implements ProductValidationChain {
+    private final Set<ProductValidator> chain;
+
+    public SimpleProductValidationChain() {
+        chain = new LinkedHashSet<>();
+    }
+
+    public SimpleProductValidationChain(Collection<ProductValidator> validators) {
+        chain = new LinkedHashSet<>(validators.size());
+        chain.addAll(validators);
+    }
+
+    public void addValidator(ProductValidator validator) {
+        chain.add(validator);
+    }
+
+    public void removeValidator(ProductValidator validator) {
+        chain.remove(validator);
+    }
+
+    @Override
+    public boolean isValid(Product product) {
+        System.out.println(chain.size());
+        return chain.stream().allMatch(v -> v.isValid(product));
+    }
+}
+```
+
+Проведем валидацию продукта новым способом:
+
+```java
+var product = new Product("Cake", 350);
+
+var giftValidator = new GiftProductValidator();
+var titleValidator = new TitleProductValidator();
+// ProductValidator validationChain = new SimpleProductValidationChain(
+//     List.of(giftValidator, titleValidator));
+ProductValidationChain chain = new SimpleProductValidationChain();
+chain.addValidator(giftValidator);
+chain.addValidator(titleValidator);
+chain.removeValidator(giftValidator);
+boolean valid = chain.isValid(product);
+```
+
+Можно было бы улучшить, чтобы возвращался список проблем, но это уже другая история. Важно то, что теперь функциональность разнесена и изменение условий валидации не затрагивают класс Product.
+
+## Пример делегирования обязанностей
+
+Из книги "Adaptive Code via C#" (2017, 2-е изд), автор Gary McLean Hall. Утилита "Обработчик акций".
 
 Рассмотрим на примере класса, обрабатывающего акции. Он выполняет разом три функции - читает данные из файла, форматирует их и вставляет в базу данных. Этот класс нарушает SRP не потому, что выполняет сразу три функции, а потому что *содержит реализацию всех трех функций* разом. То есть при изменении деталей любой из функций потребуется править код этого класса:
 
@@ -108,8 +305,6 @@ public class TradeProcessor
 Исправить ситуацию можно, если вынести код этих трех функций в отдельные классы, а в исходном классе, `TradeProcessor`, оставить только интерфейсы и запросить реализацию извне. В этом случае, если например понадобится считывать данные из другого источника - не из файла, а из БД - то TradeProcessor править не придется, потому что он не будет ответственен за реализацию этого функционала. Общая схема работы "считать-отформатировать-записать" останется неизменной. 
 
 Таким образом, можно сказать, что TradeProcessor ответственен не за "чтение", "форматирование", "запись", а за *организацию этих трех функций в единый рабочий процесс*. И вот эта организация и становится его единственной ответственностью. Единственной причиной изменения TradeProcessor будет изменение в этом процессе, если к примеру после форматирования нужно будет произвести еще какие-нибудь вычисления.
-
-
 
 ## Подготовка к рефакторингу
 
@@ -578,144 +773,3 @@ class Program
 ## Вывод
 
 В итоге класс TradeProcessor все еще занимается тремя вещами - получает данные из источника, форматирует их и записывает в хранилище. Но теперь реализация этих вещей скрыта за абстракциями и в случае изменений требований к любому компоненту правки затронут только этот компонент, но не TradeProcessor, в отличие от исходного примера. Поэтому TradeProcessor теперь соответствует SRP в полной мере.
-
-# Пример 2
-
-Валидация продукта. Пусть у нас есть простой класс продукта и какое-нибудь начальное требование к его валидности. Например, чтобы цена была больше нуля:
-
-```java
-@Getter @Setter
-public class Product {
-    private String name;
-    private int price;
-
-    public Product(String name, int price) {
-        this.name = name;
-        this.price = price;
-    }
-
-    public boolean isValid() {
-        return price > 0;
-    }
-}
-```
-
-```java
-var product = new Product("Cake", 350);
-boolean valid = product.isValid();
-System.out.println(valid);
-```
-
-Размещая код валидации в самом классе продукта, мы нарушаем SRP, потому что у нас появляется две причины для изменения класса:
-
-1. Изменение структуры продукта - добавление или изменение полей.
-2. Изменение условий валидации. Например, "подарочный" продукт должен иметь цену 0. Или наоборот цена не должна быть меньше какого-то значения. К тому же, если валидация станет сложнее, например, добавятся разные требования к проверке названия, то метод может стать к тому же и очень сложным.
-
-В итоге получается, что выгоднее отделить валидацию от продукта.
-
-```java
-@Getter @Setter
-public class Product {
-    private String name;
-    private int price;
-
-    public Product(String name, int price) {
-        this.name = name;
-        this.price = price;
-    }
-    
-    // Убрали метод валидации
-}
-```
-
-Определяем интерфейс для валидаторов и пишем несколько реализаций:
-
-```java
-public interface ProductValidator {
-    boolean isValid(Product product);
-}
-```
-
-```java
-public class DefaultProductValidator implements ProductValidator {
-    @Override
-    public boolean isValid(Product product) {
-        return product.getPrice() > 0;
-    }
-}
-```
-
-```java
-public class GiftProductValidator implements ProductValidator {
-    @Override
-    public boolean isValid(Product product) {
-        return product.getPrice() == 0;
-    }
-}
-```
-
-```java
-public class TitleProductValidator implements ProductValidator {
-    @Override
-    public boolean isValid(Product product) {
-        return Character.isUpperCase(product.getName().charAt(0));
-    }
-}
-```
-
-Для удобного комбинирования валидаторов воспользуемся шаблоном Composite и создадим валидатор, образующий цепочку из нескольких валидаторов.
-
-```java
-public interface ProductValidationChain {
-    boolean isValid(Product product);
-    void addValidator(ProductValidator validator);
-    void removeValidator(ProductValidator validator);
-}
-```
-
-```java
-public class SimpleProductValidationChain implements ProductValidationChain {
-    private final Set<ProductValidator> chain;
-
-    public SimpleProductValidationChain() {
-        chain = new LinkedHashSet<>();
-    }
-
-    public SimpleProductValidationChain(Collection<ProductValidator> validators) {
-        chain = new LinkedHashSet<>(validators.size());
-        chain.addAll(validators);
-    }
-
-    public void addValidator(ProductValidator validator) {
-        chain.add(validator);
-    }
-
-    public void removeValidator(ProductValidator validator) {
-        chain.remove(validator);
-    }
-
-    @Override
-    public boolean isValid(Product product) {
-        System.out.println(chain.size());
-        return chain.stream().allMatch(v -> v.isValid(product));
-    }
-}
-```
-
-Проведем валидацию продукта новым способом:
-
-```java
-var product = new Product("Cake", 350);
-
-var giftValidator = new GiftProductValidator();
-var titleValidator = new TitleProductValidator();
-// ProductValidator validationChain = new SimpleProductValidationChain(
-//     List.of(giftValidator, titleValidator));
-ProductValidationChain chain = new SimpleProductValidationChain();
-chain.addValidator(giftValidator);
-chain.addValidator(titleValidator);
-chain.removeValidator(giftValidator);
-boolean valid = chain.isValid(product);
-```
-
-Можно было бы улучшить, чтобы возвращался список проблем, но это уже другая история. Важно то, что теперь функциональность разнесена и изменение условий валидации не затрагивают класс Product.

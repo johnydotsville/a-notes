@@ -1,0 +1,5 @@
+Локальные классы
+https://docs.oracle.com/javase/tutorial/java/javaOO/localclasses.html
+
+Анонимные классы
+https://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html
