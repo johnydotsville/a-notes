@@ -1,3 +1,9 @@
+Все фичи по версиям в виде таблицы:
+
+https://docs.oracle.com/en/java/javase/20/language/java-language-changes.html#GUID-8FD2B5E3-46C7-4C6C-8E8A-64AB49ABF855
+
+
+
 # JDK 10
 
 * Ключевое слово var

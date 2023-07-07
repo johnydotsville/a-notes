@@ -306,7 +306,7 @@ public class TradeProcessor
 
 Таким образом, можно сказать, что TradeProcessor ответственен не за "чтение", "форматирование", "запись", а за *организацию этих трех функций в единый рабочий процесс*. И вот эта организация и становится его единственной ответственностью. Единственной причиной изменения TradeProcessor будет изменение в этом процессе, если к примеру после форматирования нужно будет произвести еще какие-нибудь вычисления.
 
-## Подготовка к рефакторингу
+### Подготовка к рефакторингу
 
 Начать можно с разделения этого монолитного метода на несколько специализированных, оставив для начала все получившиеся методы в исходном классе:
 
@@ -466,13 +466,11 @@ public class TradeRecord
 }
 ```
 
-
-
-## Рефакторинг к абстракциям
+### Рефакторинг к абстракциям
 
 Обозначим абстракции с помощью интерфейсов и напишем их реализации
 
-### ITradeDataProvider
+#### ITradeDataProvider
 
 ```c#
 public interface ITradeDataProvider
@@ -507,7 +505,7 @@ public class StreamTradeDataProvider : ITradeDataProvider
 }
 ```
 
-### ITradeParser
+#### ITradeParser
 
 ```c#
 public interface ITradeParser
@@ -553,7 +551,7 @@ public class SimpleTradeParser : ITradeParser
 }
 ```
 
-### ITradeValidator
+#### ITradeValidator
 
 ```c#
 public interface ITradeValidator
@@ -605,7 +603,7 @@ public class SimpleTradeValidator : ITradeValidator
 }
 ```
 
-### ITradeMapper
+#### ITradeMapper
 
 ```c#
 public interface ITradeMapper
@@ -639,7 +637,7 @@ public class SimpleTradeMapper : ITradeMapper
 }
 ```
 
-### ILogger
+#### ILogger
 
 ```c#
 public interface ILogger
@@ -665,7 +663,7 @@ public class ConsoleLogger : ILogger
 }
 ```
 
-### ITradeStorage
+#### ITradeStorage
 
 ```c#
 public interface ITradeStorage
@@ -716,7 +714,7 @@ public class AdoNetTradeStorage : ITradeStorage
 }
 ```
 
-## Собираем их всех вместе
+### Собираем их всех вместе
 
 Вот таким компактным становится класс TradeProcessor после делегирования обязанностей специализированным классам:
 
@@ -770,6 +768,6 @@ class Program
 }
 ```
 
-## Вывод
+### Вывод
 
 В итоге класс TradeProcessor все еще занимается тремя вещами - получает данные из источника, форматирует их и записывает в хранилище. Но теперь реализация этих вещей скрыта за абстракциями и в случае изменений требований к любому компоненту правки затронут только этот компонент, но не TradeProcessor, в отличие от исходного примера. Поэтому TradeProcessor теперь соответствует SRP в полной мере.
