@@ -9,7 +9,22 @@ Spring Security технически представляет собой как 
 Пример дефолтной цепочки фильтров в Spring Security, через которые проходит запрос:
 
 ```
-Запрос -> SecurityContextPersistenceFilter, HeaderWriterFilter, CsrfFilter, LogoutFilter, UsernamePasswordAuthenticationFilter, DefaultLoginPageGeneratingFilter, DefaultLogoutPageGeneratingFilter, BasicAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, FilterSecurityInterceptor -> Запрос наконец-то попадает в контроллер
+Запрос -> 
+    -> SecurityContextPersistenceFilter
+    -> HeaderWriterFilter
+    -> CsrfFilter
+    -> LogoutFilter
+    -> UsernamePasswordAuthenticationFilter
+    -> DefaultLoginPageGeneratingFilter
+    -> DefaultLogoutPageGeneratingFilter
+    -> BasicAuthenticationFilter
+    -> RequestCacheAwareFilter
+    -> SecurityContextHolderAwareRequestFilter
+    -> AnonymousAuthenticationFilter
+    -> SessionManagementFilter
+    -> ExceptionTranslationFilter
+    -> FilterSecurityInterceptor 
+-> Запрос наконец-то попадает в контроллер
 ```
 
 Актуальную цепочку можно посмотреть в документации к нужной версии спринга. Например, [тут для 5.3.9](https://docs.spring.io/spring-security/site/docs/5.3.9.RELEASE/reference/html5/)
@@ -147,9 +162,9 @@ public class HelloController {
 
 Логически можно выделить три сценария работы spring security:
 
-1. Наше приложение самостоятельно проводит аутентификацию (авто-"спринговая" аутентификация)
-2. Наше приложение поручает аутентификацию другому приложению
-3. Наше приложение использует сторонние данные (аутентификация через гугл-аккаунт, твиттер-аккаунт и т.д.)
+1. Приложение самостоятельно проводит аутентификацию (авто-"спринговая" аутентификация)
+2. Приложение поручает аутентификацию другому приложению
+3. Приложение использует сторонние данные (аутентификация через гугл-аккаунт, твиттер-аккаунт и т.д.)
 
 Сценарии отличаются набором бинов, которые мы должны дать спрингу и тем, что спринг передает в эти бины.
 
@@ -177,14 +192,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         this.userDetailsService = userDetailsService;
     }
 
-    @Bean  // <-- 4
-    public PasswordEncoder passwordEncoder() {
-        return NoOpPasswordEncoder.getInstance();
-    }
-
     @Override  // <-- 3
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService);
+    }
+    
+    @Bean  // <-- 4
+    public PasswordEncoder passwordEncoder() {
+        return NoOpPasswordEncoder.getInstance();
     }
 
     @Override  // <-- 5
@@ -259,7 +274,7 @@ public class MyUserDetailsService implements UserDetailsService {  // <-- 1
                 .username(userCredentials.getLogin())
                 .password(userCredentials.getPassword())
                 .roles(userCredentials.getRole())
-//                .authorities(userCredentials.getRole())
+            //  .authorities(userCredentials.getRole())
                 .build();
 
         return user;
@@ -278,7 +293,7 @@ public class MyUserDetailsService implements UserDetailsService {  // <-- 1
 
 # С2: Делегированная аутентификация
 
-Характеризуется тем, что спринг передает нам *и логин, и пароль* из запроса. Предполагается, что мы передадим эту информацию стороннему сервису, он сам сравнит пароли и вернет нам информацию о пользователе (в частности, его права), а мы уже эту информацию преобразуем и вернем спрингу в понятном ему виде.
+Характеризуется тем, что спринг передает нам *и логин, и пароль* из запроса. Предполагается, что мы передадим эту информацию стороннему сервису, он сам сравнит пароли и вернет нам информацию о пользователе (в частности, его права), а мы уже эту информацию отдадим спрингу в понятном ему виде.
 
 Сервис может быть и не сторонним, а нашим микросервисом или даже быть частью этой же программы. Суть в том, что провести аутентификацию (читай "сравнить пароли") придется именно этому сервису, а спринг этим заниматься не будет.
 
@@ -289,7 +304,7 @@ public class MyUserDetailsService implements UserDetailsService {  // <-- 1
 ```java
 @EnableWebSecurity
 public class SecurityConfigThirdPartyAuth {
-	// 1. Требуем объект провайдера аутентификации
+    // 1. Требуем объект провайдера аутентификации
     private MyAuthenticationProvider myAuthenticationProvider;
 
     @Autowired
