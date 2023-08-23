@@ -11,7 +11,7 @@
   - [ ] В чем отличие файлов hibernate.cfg.xml и persistence.xml, располагающихся в директории resources/META-INF? К какой технологии относится каждый из них?
     - [ ] Что такое единица хранения (persistence-unit) в persistence.xml? Какие параметры она содержит? Может ли быть в этом файле несколько pu?
     - [ ] За что отвечает настройка provider в persistence.xml? Пример ее значения *"org.hibernate.jpa.HibernatePersistenceProvider"*. Есть ли такая настройка в hibernate.cfg.xml?
-  - [ ] Когда мы вызываем *метод* Persistence.createEntityManagerFactory, что мы передаем ему в качестве параметра?
+  - [ ] Когда мы вызываем *метод* Persistence.createEntityManagerFactory, что передаем ему в качестве параметра?
     - [ ] Опишите процесс создания в этом методе конкретной реализации интерфейса EntityManagerFactory. Как это связано с интерфейсом PersistenceProvider?
   - [ ] Что такое EntityManager по своей сути? Какую роль он выполняет для объектов данных БД, транзакций?
     - [ ] Какие отношения между объектами EntityManager и Session? Что из них относится к JPA, а что к Hibernate?
