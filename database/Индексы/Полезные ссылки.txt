@@ -1,0 +1,5 @@
+* Про разные алгоритмы индексирования (btree, gist и т.д.)
+https://habr.com/ru/companies/ruvds/articles/724066/
+
+
+https://habr.com/ru/articles/247373/

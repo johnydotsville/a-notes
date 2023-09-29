@@ -15,19 +15,19 @@ docker volume ls  // Список томов
 ## Создать том
 
 ```
-docker volume create MyVolume
+docker volume create myvol  // myvol - имя, придуманное нами для тома
 ```
 
 ## Удалить том
 
 ```
-docker volume rm MyVolume
+docker volume rm myvol
 ```
 
 ## Информация о томе
 
 ```
-docker volume inspect volumeName
+docker volume inspect myvol
 ```
 
 ## Примонтировать том
@@ -37,11 +37,11 @@ docker volume inspect volumeName
 ```
 docker run \
 --name postgres_standalone -e POSTGRES_PASSWORD=j123 -p 5432:5432 \
---mount source="postgres_data",destination="/var/lib/postgresql/data" \
+--mount source="myvol",destination="/var/lib/postgresql/data" \
 postgres
 ```
 
-* --mount опция, здесь в source указываем имя тома, а в destination - директорию контейнера, к которой нужно примонтировать том
+* `--mount` опция, здесь в *source* указываем имя тома, а в *destination* - директорию контейнера, к которой нужно примонтировать том.
 
 После запуска контейнера, командой `docker inspect container-name` можно посмотреть, все ли нормально примонтировалось, в разделе *Mounts*:
 
@@ -94,7 +94,7 @@ volumes:
 
 ## Опции томов
 
-* external: true - указывает, что том должен быть создан заранее. Без этой опции том будет создан при первом запуске компоста и переиспользоваться при последующих
+* `external: true` - указывает, что том должен быть создан заранее. Без этой опции том будет создан при первом запуске компоста и переиспользоваться при последующих.
 
 
 

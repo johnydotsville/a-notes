@@ -1,0 +1,62 @@
+[ ] Помогают ли индексы, когда дело касается выборки не из одной таблицы, а с использованием соединения нескольких таблиц?
+
+
+
+Разобрать выражения в запросах:
+
+CREATE TABLE t AS
+SELECT d, repeat(md5(d::text), 10) AS padding
+  FROM generate_series(timestamp '1900-01-01',
+                       timestamp '2100-01-01',
+                       interval '1 day') s(d);
+VACUUM ANALYZE t;
+
+
+
+
+
+
+Видно что когда используется индекс, это показывается в explain'e:
+
+Seq Scan on t  (cost=0.00..4416.75 rows=32 width=332)
+   Filter: ((d >= '2001-01-01 00:00:00'::timestamp without time zone)
+        AND (d <= '2001-02-01 00:00:00'::timestamp without time zone))
+(2 rows)
+
+                               QUERY PLAN
+------------------------------------------------------------------------
+ Index Scan using idx_t_d on t  (cost=0.29..9.97 rows=34 width=332)
+   Index Cond: ((d >= '2001-01-01 00:00:00'::timestamp without time zone)
+            AND (d <= '2001-02-01 00:00:00'::timestamp without time zone))
+(2 rows)
+
+
+
+ QUERY PLAN
+------------------------------------------------------------------------
+ Bitmap Heap Scan on t  (cost=47.35..3305.25 rows=2459 width=332)
+                        (actual time=2.400..12.539 rows=2401 loops=1)
+   Recheck Cond: (date_part('day'::text, d) = '1'::double precision)
+   Heap Blocks: exact=2401
+   ->  Bitmap Index Scan on idx_t_expr  (cost=0.00..46.73 rows=2459 width=0)
+                                (actual time=1.243..1.243 rows=2401 loops=1)
+         Index Cond: (date_part('day'::text, d) = '1'::double precision)
+ Planning time: 0.374 ms
+ Execution time: 17.136 ms
+(7 rows)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
