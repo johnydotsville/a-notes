@@ -1,6 +1,6 @@
 # Индексы и order by + limit
 
-Сортировка идет отдельным шагом после выборки. Но наличие индекса может позволить избежать сортировки вообще.
+Сортировка идет отдельным шагом после выборки. Но наличие индекса может позволить избежать сортировки вообще. Правда это справедливо только для B-tree индексов.
 
 Исходные данные: таблица `boarding_passes`, всего около 7.5 млн записей:
 
@@ -14,7 +14,7 @@
 
 И вот такой индекс:
 
-```plsql
+```sql
 create index boarding_passes_orderby_test on boarding_passes(boarding_no desc, flight_id asc);
 ```
 
@@ -22,7 +22,7 @@ create index boarding_passes_orderby_test on boarding_passes(boarding_no desc, f
 
 Когда выбираются все записи, индекс даже мешает:
 
-```plsql
+```sql
 explain (analyze) select * from boarding_passes 
 order by boarding_no desc, flight_id asc;
 
@@ -64,7 +64,7 @@ Execution Time: 10283.461 ms
 
 Если выбирается небольшое количество записей (относительно общего), то индекс сильно ускоряет запрос:
 
-```plsql
+```sql
 explain (analyze) select * from boarding_passes 
 order by boarding_no desc, flight_id asc 
 limit 10000;
@@ -114,7 +114,7 @@ Execution Time: 4.526 ms
 
 Если попробовать выбрать limit'ом почти все записи, то тут индекс конечно не поможет и запрос будет долгим:
 
-```plsql
+```sql
 explain (analyze) select * from boarding_passes
 order by boarding_no desc, flight_id asc
 limit 7000000;
@@ -138,7 +138,7 @@ order by boarding_no asc, flight_id desc   -- 19.343 ms
 
 ### desc-asc как в индексе
 
-```plsql
+```sql
 explain (analyze) select * from boarding_passes
 order by boarding_no desc, flight_id asc
 limit 10000;
@@ -157,7 +157,7 @@ Execution Time: 6.148 ms
 
 ### 1 так же, 2 поменялось
 
-```plsql
+```sql
 explain (analyze) select * from boarding_passes
 order by boarding_no desc, flight_id desc
 limit 10000;
@@ -183,7 +183,7 @@ Execution Time: 7.112 ms
 
 ### 1 поменялось, 2 так же
 
-```plsql
+```sql
 explain (analyze) select * from boarding_passes
 order by boarding_no asc, flight_id asc
 limit 10000;
@@ -209,7 +209,7 @@ Execution Time: 246.035 ms
 
 ### оба поменялись
 
-```plsql
+```sql
 explain (analyze) select * from boarding_passes
 order by boarding_no asc, flight_id desc
 limit 10000;
@@ -230,7 +230,7 @@ Execution Time: 19.343 ms
 
 Если поменять порядок полей на `order by flight_id asc, boarding_no desc`, то индекс `boarding_no desc, flight_id asc` становится бесполезен:
 
-```plsql
+```sql
 explain (analyze) select * from boarding_passes 
 order by flight_id asc, boarding_no desc
 limit 10000;
