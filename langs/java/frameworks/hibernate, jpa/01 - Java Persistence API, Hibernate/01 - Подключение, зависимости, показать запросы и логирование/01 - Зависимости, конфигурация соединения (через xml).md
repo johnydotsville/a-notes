@@ -1,49 +1,55 @@
 # Зависимости
 
-Нужна зависимость jpa, hibernate и провайдера драйвера:
+Обязательные:
 
-```xml
-<dependency>
-    <groupId>jakarta.persistence</groupId>
-    <artifactId>jakarta.persistence-api</artifactId>
-    <version>3.1.0</version>
-</dependency>
-```
+* jpa
 
-```xml
-<dependency>
-    <groupId>org.hibernate.orm</groupId>
-    <artifactId>hibernate-core</artifactId>
-    <version>6.1.0.Final</version>
-</dependency>
-```
+  ```xml
+  <dependency>
+      <groupId>jakarta.persistence</groupId>
+      <artifactId>jakarta.persistence-api</artifactId>
+      <version>3.1.0</version>
+  </dependency>
+  ```
+* hibernate:
+  ```xml
+  <dependency>
+      <groupId>org.hibernate.orm</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>6.1.0.Final</version>
+  </dependency>
+  ```
 
-```xml
-<dependency>
-    <groupId>org.postgresql</groupId>
-    <artifactId>postgresql</artifactId>
-    <version>42.3.6</version>
-</dependency>
-```
+* Провайдер драйвера:
+  ```xml
+  <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>42.3.6</version>
+  </dependency>
+  ```
 
-Также полезными окажутся lombok и dev tools:
+Полезные:
 
-```xml
-<dependency>
-    <groupId>org.projectlombok</groupId>
-    <artifactId>lombok</artifactId>
-    <version>1.18.26</version>
-</dependency>
-```
+* lombok:
 
-```xml
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-devtools</artifactId>
-    <scope>runtime</scope>
-    <optional>true</optional>
-</dependency>
-```
+  ```xml
+  <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.26</version>
+  </dependency>
+  ```
+
+* dev tools:
+  ```xml
+  <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <scope>runtime</scope>
+      <optional>true</optional>
+  </dependency>
+  ```
 
 Включить горячий перезапуск в настройках идеи:
 
@@ -58,13 +64,13 @@ File > Settings > Advanced Settings, установить галочку Allow a
 
 ## Hibernate-стиль
 
-Конфигурация кладется в папку resources/META-INF/hibernate.cfg.xml
+Конфигурация кладется в папку `resources/META-INF/hibernate.cfg.xml`
 
 Конкретно этот стиль я пока не использовал, не буду про него ничего писать.
 
 ## JPA-стиль
 
-Конфигурация кладется в папку resources/META-INF/persistence.xml
+Конфигурация кладется в папку `resources/META-INF/persistence.xml`
 
 ```xml
 <persistence xmlns="https://jakarta.ee/xml/ns/persistence"
