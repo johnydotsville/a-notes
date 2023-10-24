@@ -14,39 +14,45 @@ class City {
     @JoinColumn(name = "country_id")
     private Country country;
 }
-...
-С жадной:
+```
+
+```sql
+-- С жадной:
 select c1_0.city_id, c2_0.country_id, c2_0.last_update, c2_0.country, c1_0.last_update, c1_0.city 
 from city c1_0
     left join country c2_0
         on c2_0.country_id=c1_0.country_id
 where c1_0.city_id=?
 
-С ленивой:
+-- С ленивой:
 select c1_0.city_id, c1_0.country_id, c1_0.last_update, c1_0.city 
 from city c1_0
 where c1_0.city_id=?
 ```
 
+
+
 А вот в случае со страной, список городов кажется по умолчанию ленивый:
 
 ```java
-Если не указывать тип выборки:
+class Country {
+    @OneToMany(mappedBy = "country", fetch = FetchType.EAGER)
+    private Set<City> cities = new HashSet<>();
+}
+```
+
+```sql
+-- Если не указывать тип выборки:
 select c1_0.country_id, c1_0.last_update, c1_0.country 
 from country c1_0
 where c1_0.country_id=?
 
-Если указать EAGER:
+-- Если указать EAGER:
 select c1_0.country_id, c2_0.country_id, c2_0.city_id, c2_0.last_update, c2_0.city, c1_0.last_update, c1_0.country 
 from country c1_0 
     left join city c2_0 
         on c1_0.country_id=c2_0.country_id 
 where c1_0.country_id=?
-
-class Country {
-    @OneToMany(mappedBy = "country", fetch = FetchType.EAGER)
-    private Set<City> cities = new HashSet<>();
-}
 ```
 
 А если указать жадную в обоих классах, получается два запроса, но я их писать сюда не буду, потому что это уже какой-то треш.
@@ -78,6 +84,7 @@ private void getCityWithCountry(long cityId) {
     System.out.println("Пытаемся выбрать город");
     City city = manager.find(City.class, cityId);
     System.out.println(String.format("Город %s", city.getName()));
+    
     System.out.println("А теперь обратимся к стране");
     System.out.println(String.format("Страна %s", city.getCountry().getName()));  // <-- Туть
 }

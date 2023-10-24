@@ -69,6 +69,8 @@ public void noRentalFilmsNativeQueryTyped() {
 
 Можно выставлять параметры. JPA поддерживает вроде только позиционные, но хибер умеет в именованные:
 
+UPD. Нет, работают оба стиля, и именованные, и позиционные.
+
 ```xml
 <!-- Все жанры, в которых актер НЕ снимался -->
 <named-native-query name="get_actor_skipped_genres"
@@ -125,7 +127,6 @@ public void actorSkippedGenres(long actorId) {
   from {h-schema}client_current_status ccs
   where ccs.client_id = :clientId
   ```
-
 
 # Сложный мэппинг
 
