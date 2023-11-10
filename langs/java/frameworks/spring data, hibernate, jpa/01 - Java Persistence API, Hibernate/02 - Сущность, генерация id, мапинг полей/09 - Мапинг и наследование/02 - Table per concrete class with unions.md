@@ -1,6 +1,10 @@
 # Table per concrete class with unions
 
+"По таблице на потомка, с объединением".
+
 ## Характеристика
+
+<img src="img/table-per-class-with-unions.png" alt="table-per-class-with-unions" style="zoom:80%;" />
 
 У этого подхода особенность в том, что все BillingDetails (т.е. все и кредитные карты, и банковские аккаунты, и т.д.) вытягиваются *одним* запросом, который использует union. Поскольку запрос один, этот подход считается эффективнее чем "table-per-concrete-class с неявным полиморфизмом":
 
@@ -37,11 +41,11 @@ from
 
 * Базовый класс должен быть абстрактным и отмечен как `@Entity`. Абстрактность нужна, потому что у него все еще нет собственной таблицы в БД.
 
-* Идентификатор должен содержаться теперь в базовом классе, а не в потомках.
+* Идентификатор должен содержаться в базовом классе, а не в потомках.
 
 * Должна быть указана стратегия наследования `@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)`.
 
-* Общие поля в таблицах, содержащих данные потомков, должны теперь называться одинаково.
+* Общие поля в таблицах, содержащих данные потомков, должны называться одинаково.
 
   Если в предыдущем подходе с @MappedSuperclass мы могли переопределить название поля (например, owner на cc_owner), то теперь так не получится. Поле должно называться owner в обеих таблицах creditcard, bankaccount и быть замаплено в родительском классе под этим названием.
 
@@ -74,7 +78,7 @@ public abstract class BillingDetails {  // <-- Класс должен быть 
 @Getter @Setter
 public class BankAccount extends BillingDetails {
 
-	// <-- Больше не содержит id.
+    // <-- Больше не содержит id.
 
     @Column(name = "account")
     private String account;
@@ -95,7 +99,7 @@ public class BankAccount extends BillingDetails {
 @Getter @Setter
 public class CreditCard extends BillingDetails {
 
-	// <-- Больше не содержит id.
+    // <-- Больше не содержит id.
 
     @Column(name = "cardnumber")
     private String cardNumber;

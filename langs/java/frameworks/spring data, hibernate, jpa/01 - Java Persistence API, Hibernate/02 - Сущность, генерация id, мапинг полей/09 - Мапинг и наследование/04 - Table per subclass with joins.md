@@ -1,8 +1,10 @@
 # Table per subclass with joins
 
+"По таблице на все классы, с соединением".
+
 ## Характеристика
 
-<img src="img/image-20231110102634238.png" alt="image-20231110102634238" style="zoom:80%;" />
+<img src="img/table-per-subclass-with-joins.png" alt="image-20231110102634238" style="zoom:80%;" />
 
 Для этого подхода характерно:
 
