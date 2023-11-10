@@ -2,6 +2,8 @@
 
 "По таблице на потомка, с объединением".
 
+InheritanceType.TABLE_PER_CLASS
+
 ## Характеристика
 
 <img src="img/table-per-class-with-unions.png" alt="table-per-class-with-unions" style="zoom:80%;" />

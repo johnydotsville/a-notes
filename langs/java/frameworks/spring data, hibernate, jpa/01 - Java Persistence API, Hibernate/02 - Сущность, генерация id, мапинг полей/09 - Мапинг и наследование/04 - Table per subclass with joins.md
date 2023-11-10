@@ -2,6 +2,8 @@
 
 "По таблице на все классы, с соединением".
 
+InheritanceType.JOINED
+
 ## Характеристика
 
 <img src="img/table-per-subclass-with-joins.png" alt="image-20231110102634238" style="zoom:80%;" />

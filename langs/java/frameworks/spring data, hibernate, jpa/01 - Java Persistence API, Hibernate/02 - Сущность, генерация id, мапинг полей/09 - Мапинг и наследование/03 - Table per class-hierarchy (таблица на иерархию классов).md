@@ -2,6 +2,8 @@
 
 "Одна таблица на иерархию классов".
 
+InheritanceType.SINGLE_TABLE
+
 ## Характеристика
 
 <img src="img/table-per-class_hierarchy.png" alt="image-20231109123055018" style="zoom:80%;" />
