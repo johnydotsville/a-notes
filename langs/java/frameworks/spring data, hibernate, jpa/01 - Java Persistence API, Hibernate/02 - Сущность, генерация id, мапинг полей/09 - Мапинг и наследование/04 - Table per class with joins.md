@@ -1,6 +1,6 @@
-# Table per subclass with joins
+# Table per class with joins
 
-"По таблице на все классы, с соединением".
+"По таблице на все классы, с соединением". В оригинале называется "Table per *sub*class with joins", но я переименовал, потому что здесь таблица есть не только у подклассов, но и у родителя.
 
 InheritanceType.JOINED
 
