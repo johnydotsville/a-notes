@@ -22,13 +22,16 @@
 
   ```
   git restore --staged some/file.c
+  ```
+  
+  ```
   git restore --staged some/  ; Удалить из стейджа всю директорию some/
   ```
   
-* Удалить всё из стейджа, и файлы, и директории:
+* Удалить всё из стейджа - и файлы, и директории:
 
   ```
-  git restore .
+  git restore --staged .
   ```
 
 ### Через GUI
