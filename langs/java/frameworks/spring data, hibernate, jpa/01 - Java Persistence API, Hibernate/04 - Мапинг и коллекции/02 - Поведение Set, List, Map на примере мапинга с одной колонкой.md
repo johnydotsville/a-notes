@@ -1,10 +1,10 @@
 # Не-сущность Фотографии сотрудников
 
-Пусть у нас есть таблица, хранящая фотографии сотрудников:
+Пусть у нас есть таблица, хранящая фотографии сотрудников, `emp_photo`:
 
 ![employee-emp_photo-relation](img/employee-emp_photo-relation.svg)
 
-Для автогенерации id фотографии есть отдельный sequence. В программе не будем делать отдельную сущность `Фотография`, а посмотрим как можно сделать мапинг данных из этой таблицы на коллекцию внутри сущности Сотрудник.
+Для генерации id фотографии есть отдельный sequence. В программе не будем делать отдельную сущность `Фотография`, а посмотрим как можно сделать мапинг данных из этой таблицы на коллекцию внутри сущности Сотрудник.
 
 # Мапинг Set, один столбец таблицы
 
@@ -18,8 +18,7 @@ public class Employee {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.TABLE, generator = "employee_id_gen")
-    @SequenceGenerator(name = "employee_id_gen", sequenceName = "employee_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "name")

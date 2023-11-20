@@ -44,3 +44,20 @@ alter table only goods_feature
 
 FK сам по себе не применяет на поле not null, надо делать это самому
 
+## Добавить внешний ключ
+
+Добавить новую колонку и сделать ее внешним ключом:
+
+```sql
+alter table only ast.employee
+    add column photo_id integer not null unique
+	    constraint employee_to_photo_fk references ast.photo(photo_id);
+```
+
+Если в таблицах уже есть данные, то СУБД не позволит применить not null ограничения. Придется либо дропнуть данные, либо создать без not null, заполнить связи, а потом отдельно добавить ограничение not null на столбец:
+
+```sql
+alter table only ast.employee
+    alter column photo_id set not null;
+```
+
