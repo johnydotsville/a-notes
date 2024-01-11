@@ -1,0 +1,1 @@
+* Модель зрелости ReST Ричардсона https://martinfowler.com/articles/richardsonMaturityModel.html
