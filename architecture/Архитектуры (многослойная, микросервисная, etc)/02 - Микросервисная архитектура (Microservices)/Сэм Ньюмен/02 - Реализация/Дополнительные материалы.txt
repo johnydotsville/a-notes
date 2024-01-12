@@ -1,1 +1,2 @@
 * Модель зрелости ReST Ричардсона https://martinfowler.com/articles/richardsonMaturityModel.html
+* сети доставки контента (content delivery networks, CDNs)
