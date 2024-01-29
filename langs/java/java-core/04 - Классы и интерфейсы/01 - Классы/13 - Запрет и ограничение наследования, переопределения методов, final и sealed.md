@@ -24,16 +24,16 @@ public class House extends Asset {  // Ошибка! Нельзя наследо
 
 ## Конечные методы
 
-Отдельные методы тоже можно помечать как `final`, чтобы их нельзя было переопределить в потомках.
+Можно помечать через `final` отдельные методы, чтобы их нельзя было переопределить в потомках:
 
 ```java
 public class Asset  {
-    public final void virtualDescription() {
-        System.out.println("Asset.VirtualDescription()");
+    public void commentary() {  // Обычный метод можно переопределить в потомке.
+        System.out.println("Asset.commentary()");
     }
 
-    public final void description() {
-        System.out.println("Asset.Description()");
+    public final void description() {  // <-- final метод нельзя переопределить в потомке.
+        System.out.println(getClass().getSimpleName() + ".description()");
     }
 }
 ```
@@ -41,12 +41,12 @@ public class Asset  {
 ```java
 public class House extends Asset {
     @Override
-    public final void virtualDescription() {
-        System.out.println("House.VirtualDescription()");
+    public final void commentary() {  // <-- Переопределяем и блокируем дальнейшее переопределение.
+        System.out.println("Заменили реализацию родительского метода commentary.");
     }
 
-    public void description() {
-        System.out.println("House.Description()");
+    public void description() { // Ошибка! Нельзя переопределить final метод.
+        System.out.println("Тщетны попытки заменить описание.");
     }
 }
 ```
@@ -54,12 +54,8 @@ public class House extends Asset {
 ```java
 public class Castle extends House {
     @Override
-    public void virtualDescription() {
-        System.out.println("Castle.VirtualDescription()");
-    }
-
-    public void description() {
-        System.out.println("Castle.Description()");
+    public void commentary() {  // Ошибка! House при переопределении сделал метод final.
+        System.out.println("Теперь и этот метод нельзя переопределить.");
     }
 }
 ```
