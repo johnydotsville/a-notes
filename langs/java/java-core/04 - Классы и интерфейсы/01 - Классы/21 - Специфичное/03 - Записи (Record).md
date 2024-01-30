@@ -16,11 +16,12 @@ public record Point(int x, int y, Date created) {
 
 Характеристики записи:
 
-* Запись трансформируется в класс с двумя полями:
+* Запись трансформируется в класс с тремя полями:
 
   ```java
-  private final double x;
-  private final double y;
+  private final int x;
+  private final int y;
+  private Date created;
   ```
 
 * Запись и наследование:
