@@ -1,0 +1,5 @@
+https://www.youtube.com/watch?v=jqzo99f-D4o
+примерно с 20 минуты начинает демонстрация практического использования кубера.
+
+Replica Set - 49:00
+Deployment - 1:02:45

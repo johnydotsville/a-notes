@@ -21,7 +21,7 @@ public record Point(int x, int y, Date created) {
   ```java
   private final int x;
   private final int y;
-  private Date created;
+  private final Date created;
   ```
 
 * Запись и наследование:
