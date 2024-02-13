@@ -73,7 +73,7 @@ public record Point(int x, int y, Date created) {
   ```java
   public record Point(int x, int y, Date created) {
       
-      public int x() {  // Моветон
+      public int x() {  // <-- Моветон
           return y;
       }
       
