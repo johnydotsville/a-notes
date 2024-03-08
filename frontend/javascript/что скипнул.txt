@@ -1,0 +1,13 @@
+Скипнул эти темы, вернуться позже:
+
+* Числа
+https://learn.javascript.ru/number
+
+* Дата и время
+https://learn.javascript.ru/date
+
+* Формат JSON
+https://learn.javascript.ru/json
+
+* WeakMap и WeakSet
+https://learn.javascript.ru/weakmap-weakset
