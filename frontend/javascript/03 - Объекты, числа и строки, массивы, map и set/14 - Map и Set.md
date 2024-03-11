@@ -138,37 +138,7 @@ console.log(guys.size);  // 2
 
 ## Перебор мапы
 
-Перебрать можно три вещи:
-
-* `.keys()` - только ключи.
-* `.values()` - только значения.
-* `.entries()` - пару ключ-значение. Каждый элемент будет представлен массивом, где в 0 индексе лежит ключ, а в 1 значение.
-
-За основу возьмем такую мапу:
-
-```javascript
-let tom = { name: "Tom" };
-let huck = { name: "Huck" };
-
-let users = new Map();
-users.set(tom, 100);
-users.set(huck, 50);
-
-// <-- Только ключи
-for (let k of users.keys()) {
-  console.log(k);  // {name: 'Tom'}, {name: 'Huck'}
-}
-
-// <-- Только значения
-for (let v of users.values()) {
-  console.log(v);  // 100, 50
-}
-
-// <-- Ключи и значения
-for (let e of users.entries()) {  // <-- Каждый элемент представлен массивом из двух ячеек
-  console.log(e[0].name + " : " + e[1]);
-}
-```
+Здесь имеется ввиду возможность отдельно перебрать ключи, значения и пары "ключ:значение". Делается методами keys(), values(), entries() и по ним есть отдельный конспект.
 
 ## Конвертация мапы
 
@@ -335,47 +305,4 @@ console.log(users.size);  // 2
 
 ## Перебор сета
 
-Хотя у сета нет ключа, но тем не менее у него есть такие же методы как у мапы:
-
-* `values()` - возвращает итерируемый объект со значениями. 
-* `keys()` -  тоже итерируемый объект со значениями.
-* `entries()` - возвращает итерируемый объект
-
-Это, теоретически, упрощает взаимозаменяемость этих двух видов коллекций.
-
-```javascript
-let users = new Set();
-
-let tom = new User("Tom", 14);
-let huck = new User("Huck", 14);
-
-users.add(tom);
-users.add(huck);
-
-// <-- Каноничный перебор
-for (let user of users) {
-  console.log(user);  // {name: 'Tom', age: 14}, {name: 'Huck', age: 14}
-}
-
-// <-- Остальные переборы, для совместимости с Map
-for (let k of users.keys()) {
-  console.log(k);  // {name: 'Tom', age: 14}, {name: 'Huck', age: 14}
-}
-
-for (let v of users.values()) {
-  console.log(v);  // {name: 'Tom', age: 14}, {name: 'Huck', age: 14}
-}
-
-for (let e of users.entries()) {
-  console.log(e[0] + " " + e[1]);  /*
-  Array(2)
-    0: User {name: 'Tom', age: 14}
-    1: User {name: 'Tom', age: 14}
-*/}
-
-function User(name, age) {
-  this.name = name;
-  this.age = age;
-}
-```
-
+Здесь имеется ввиду возможность отдельно перебрать ключи, значения и пары "ключ:значение". Делается методами keys(), values(), entries() и по ним есть отдельный конспект.

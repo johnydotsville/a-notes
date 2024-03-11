@@ -10,4 +10,8 @@ https://learn.javascript.ru/date
 https://learn.javascript.ru/json
 
 * WeakMap и WeakSet
-https://learn.javascript.ru/weakmap-weakset
+  https://learn.javascript.ru/weakmap-weakset
+
+* Object.keys, values, entries
+
+  https://learn.javascript.ru/keys-values-entries
