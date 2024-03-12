@@ -136,6 +136,23 @@ for (let e of entries) {
 let e = entries[0];  // undefined, т.к. entries это не массив, а итерируемый объект
 ```
 
+## Перебор без метода
+
+Если просто перебирать мапу в цикле, то перебираются записи. Получается тот же самый эффект, что при методе `.entries()`:
+
+```javascript
+let users = new Map([
+  ["k-tom",  { name: "Tom",  age: 14 }],
+  ["k-huck", { name: "Huck", age: 15 }]
+]);
+
+for (let e of users) {  // <-- Указываем просто саму переменную с мапой
+  //          ключ       значение
+  console.log(e[0] + " " + e[1]);  // k-tom [object Object], k-huck [object Object]
+  console.log(e[1].name + " " + e[1].age);  // Tom 14, Huck 15
+}
+```
+
 # Set
 
 Хотя у сета нет ключа, но тем не менее у него тоже есть полный набор методов keys(), values(), entries().
