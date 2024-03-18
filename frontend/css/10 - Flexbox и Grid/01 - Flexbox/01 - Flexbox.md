@@ -89,15 +89,19 @@ flex-direction: row;
 
 <img src="img/flex-direction-row-reverse.png" alt="flex-direction-row-reverse" style="zoom:80%;" />
 
-Элементы располагаются по горизонтали + в обратном порядке.
-
 ```css
 flex-direction: row-reverse;
 ```
 
+Элементы располагаются по горизонтали + в обратном порядке.
+
 #### column
 
 <img src="img/flex-direction-column.png" alt="flex-direction-column" style="zoom:80%;" />
+
+```css
+flex-direction: column;
+```
 
 Элементы располагаются по вертикали.
 
@@ -105,11 +109,11 @@ flex-direction: row-reverse;
 
 <img src="img/flex-direction-column-reverse.png" alt="flex-direction-column-reverse" style="zoom:80%;" />
 
-Элементы располагаются по вертикали + в обратном порядке.
-
 ```css
 flex-direction: column-reverse;
 ```
+
+Элементы располагаются по вертикали + в обратном порядке.
 
 ### Пример
 
@@ -169,21 +173,21 @@ flex-wrap: nowrap;
 
 <img src="img/flex-wrap-wrap.png" alt="flex-wrap-wrap" style="zoom:80%;" />
 
-Каждый элемент занимает нужную ему ширину, а не вмещающиеся элементы переносятся на следующую строку.
-
 ```css
 flex-wrap: wrap;
 ```
+
+Каждый элемент занимает нужную ему ширину, а не вмещающиеся элементы переносятся на следующую строку.
 
 #### wrap-reverse
 
 <img src="img/flex-wrap-wrap-reverse.png" alt="flex-wrap-wrap-reverse" style="zoom:80%;" />
 
-Порядок элементов инвертируется по вертикали. Редко используется.
-
 ```css
 flex-wrap: wrap-reverse;
 ```
+
+Порядок элементов инвертируется по вертикали. Редко используется.
 
 ### Пример
 
@@ -336,7 +340,7 @@ flex-wrap: wrap-reverse;
 }
 ```
 
-Задает, как браузер распределяет место между и вокруг элементов на *основной* оси.
+`justify-content` задает, как браузер распределяет место между элементами и по краям элементов на *основной* оси.
 
 ```css
 .flex-container {
@@ -344,7 +348,7 @@ flex-wrap: wrap-reverse;
 }
 ```
 
-Задает, как браузер распределяет место между и вокруг элементов на *поперечной* оси.
+`align-content` задает, как браузер распределяет место между элементами и по краям элементов на *поперечной* оси.
 
 Я разместил эти свойства в одном разделе, потому что у них похожая цель и, главное, они принимают одинаковые значения. Демо-картинки размещу рядом, чтобы не дублировать описания.
 
@@ -492,49 +496,43 @@ asdf
 
 #### stretch (default)
 
-<img src="img/ai-stretch.png" alt="ai-stretch" style="zoom:80%;" />
-
 ```css
 align-items: stretch;
 ```
 
-#### flex-start
+<img src="img/ai-stretch.png" alt="ai-stretch" style="zoom:80%;" />
 
-<img src="img/ai-flex-start.png" alt="ai-flex-start" style="zoom:80%;" />
+#### flex-start
 
 ```css
 align-items: flex-start;
 ```
 
-
+<img src="img/ai-flex-start.png" alt="ai-flex-start" style="zoom:80%;" />
 
 #### flex-end
-
-<img src="img/ai-flex-end.png" alt="image-20240313171330883" style="zoom:80%;" />
 
 ```css
 align-items: flex-end;
 ```
 
-
-
-
+<img src="img/ai-flex-end.png" alt="image-20240313171330883" style="zoom:80%;" />
 
 #### center
-
-<img src="img/ai-center.png" alt="ai-center" style="zoom:80%;" />
 
 ```css
 align-items: center;
 ```
 
-#### baseline
+<img src="img/ai-center.png" alt="ai-center" style="zoom:80%;" />
 
-![ai-baseline](img/ai-baseline.png)
+#### baseline
 
 ```css
 align-items: baseline;
 ```
+
+![ai-baseline](img/ai-baseline.png)
 
 Элементы выравниваются по базовой линии текста. Базовая линия - это основание текста в первом блоке контейнера. Наглядное отличие от center:
 
@@ -556,8 +554,6 @@ align-items: baseline;
   </div>
 </div>
 ```
-
-
 
 # Свойства элемента
 
@@ -636,7 +632,7 @@ align-items: baseline;
 }
 ```
 
-Задает элементу *базовый* размер. Это размер, который контейнер устанавливает элементу до начала распределения пространства между вложенными элементами. Он перекрывает размеры, заданные через width или height. Если направление элементов горизонтальное, что fb задает ширину и перекрывает width, если вертикальное - то высоту и перекрывает height.
+Задает элементу *базовый* размер. Это размер, который контейнер устанавливает элементу до начала распределения пространства между вложенными элементами. Он перекрывает размеры, заданные через width или height. Если направление элементов горизонтальное, что flex-basis задает ширину и перекрывает width, если вертикальное - то flex-basis задает высоту и перекрывает height.
 
 <img src="img/flex-basis.png" alt="flex-basis" style="zoom:80%;" />
 
