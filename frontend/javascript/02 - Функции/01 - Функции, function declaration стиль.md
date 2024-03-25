@@ -11,35 +11,7 @@ function hello(firstname, lastname) {
 }
 ```
 
-## Внешние переменные
-
-Функции имеют доступ к внешним переменным, могут их изменять. Если внутри функции есть переменная с таким же именем, как и внешняя, то локальная перекрывает ее.
-
-```javascript
-let username = "Alice";
-
-function hello() {
-  let username = "Bob";  // Локальная переменная перекрывает одноименную внешнюю.
-  console.log("Привет, " + username);  // Привет, Bob
-}
-
-console.log(username);  // Alice
-hello();
-console.log(username);  // Осталось Alice
-```
-
-```javascript
-let username = "Alice";
-
-function hello() {
-  username = "Sam";  // Перезаписали внешнюю переменную.
-  console.log("Привет, " + username);  // Привет, Sam
-}
-
-console.log(username);  // Alice
-hello();
-console.log(username);  // Перезаписалось и стало Sam
-```
+Мы пишем ключевое слово `function`, а после него имя функции.
 
 ## Параметры
 
@@ -83,7 +55,7 @@ function hello(name, age = 25) {
 hello("Sam");  // Пользователю Sam сейчас 25 лет.
 ```
 
-## Результат
+## Возврат результата
 
 Возврат результата делается через `return`.
 
