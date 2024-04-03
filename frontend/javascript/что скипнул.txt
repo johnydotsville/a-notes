@@ -22,3 +22,16 @@ https://learn.javascript.ru/json
   
 * Синтаксис new Function, про создание функции из текстовой строки.
   https://learn.javascript.ru/new-function
+
+* setInterval и setTimeout
+  https://learn.javascript.ru/settimeout-setinterval
+  
+* Флаги и дескрипторы свойств
+  https://learn.javascript.ru/property-descriptors
+  О том как, например, сделать свойство только для чтения, видимым \ невидимым
+  для перечислителей и прочая магия.
+
+* Геттеры и сеттеры
+  https://learn.javascript.ru/property-accessors
+  Просто потому что это не приоритетная тема. Тут используется материал из
+  предыдущей темы, которая тоже пропущена.
