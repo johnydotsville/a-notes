@@ -1,0 +1,4 @@
+input onChange почитать
+
+
+* rendering phase - в реакте есть какие-то фазы, почитать.

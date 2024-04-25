@@ -1,0 +1,2 @@
+Асинхронность, PromiseJobs
+Микро и макрозадачи https://habr.com/ru/post/681882/

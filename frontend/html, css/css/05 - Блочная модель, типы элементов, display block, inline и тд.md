@@ -57,6 +57,16 @@ display: none;
 
 Дает эффект, как будто элемента вообще нет в разметке.
 
-## TODO остальные значения
+## flex и grid
 
-Есть еще flex, inline-flex и мб какие-то другие. Дописать позже.
+```css
+display: flex;
+display: inline-flex;
+```
+
+```css
+display: grid;
+display: inline-grid;
+```
+
+О них написано в отдельных разделах, потому что темы объемные.

@@ -1,0 +1,91 @@
+Вместо switch теперь необходимо использовать Routes;
+2. useHistory убрали в router-dom v6 и заменили на useNavige, в котором по умолчанию исп-ся push
+3.exact не нужен теперь
+4. в route исп-ся теперь element c указанием компонента, вместо component
+5.у тебя в видео при рендере массива роутов идет component={route.component} ; у меня рендер массива роутов заработал только после указания в скобках  element={<route.element />} 
+6.Redirect тоже убрали вместо него нужно исп-ть Route с переданным в element  модуля <Navigate /> , 
+пример с моего кода( <Route path="/*" element={<Navigate to="/login" replace />} />))
+
+
+Автор лучший! Огромная работа, разбирался в каждой строчке. Спасибо больше!
+Так же в связи с датой выхода ролика, помощь молодым выкатываю ниже
+
+36:50
+Изменены props  и теперь могут выглядит так: <Post id="1" title="title 1" body="description 1"/>
+
+Если у кого проблема с Route/react-router v6 то теперь нужно писать так:
+
+2:15:18
+
+<BrowserRouter>
+
+<Routes>
+
+<Route path = "/about" element={<About/>}/>
+
+</Routes>
+
+</BrowserRouter>
+
+
+2:19:27    
+
+Вместо <Switch> используется <Routes>
+
+2:20:51
+
+Вместо <Redirect> использовал <Route>
+<Route path="*" element={<Error />} />
+
+2:23:05 (Вместо useHistory() теперь используется useNavigate()
+ const navigate = useNavigate()
+
+  function transitToPost(id) {
+
+    navigate(`/posts/${id}`, { replace: true })
+
+  }
+//
+<MyButton onClick={() => transitToPost(props.post.id)}>
+
+          Открыть
+
+        </MyButton>
+
+  
+2:25:09
+Пропс exact больше не нужен <Route path="/posts/:id" element={<PostIdPage />} />
+
+2:34:49(Работа с декомпозицией файлов):AppRouter.jsx
+return (
+
+    <Routes>
+
+      {routes.map(route =>
+
+        <Route exact={route.exact}
+
+          path={route.path}
+
+          element={route.element} />
+
+      )}
+
+    </Routes>
+
+  )
+
+И файлом router.js У автора это файл по пути ../src/Router/index.js
+export const routes = [
+
+  { path: "/about", element: <About />, exact: true },
+
+  { path: "/posts", element: <Posts />, exact: true },
+
+  { path: "/posts/:id", element: <PostIdPage />, exact: true },
+
+  { path: "/", element: <Posts />, exact: true },
+
+  { path: "*", element: <Error />, exact: true },
+
+];
