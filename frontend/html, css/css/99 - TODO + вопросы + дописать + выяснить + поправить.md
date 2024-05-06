@@ -10,3 +10,8 @@
 * width: clamp(60px, 10.1vw, 194px);
 * <button class="banner-pagination-button" type="button" Разве у кнопки может быть другой type?
 
+
+
+* background и background-color
+* Как принято оформлять названия классов, когда они состоят из нескольких слов.
+

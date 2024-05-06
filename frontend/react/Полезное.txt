@@ -1,0 +1,6 @@
+api возвращающее разные данные в json-формате:
+https://jsonplaceholder.typicode.com/posts
+
+https://jsonplaceholder.typicode.com/posts?_limit=10&_page=2
+Полезный заголовок x-total-count 100 показывает общее количество постов.
+Он доступен только в запросе с указанным лимитом и страницей.
