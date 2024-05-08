@@ -1,0 +1,6 @@
+* Библиотеки готовых реакт-компонентов:
+https://v2.chakra-ui.com/
+https://mui.com/material-ui/
+
+
+* framework with file-based routing, such as Next.js
