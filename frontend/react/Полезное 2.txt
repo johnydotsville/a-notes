@@ -2,5 +2,6 @@
 https://v2.chakra-ui.com/
 https://mui.com/material-ui/
 
+* Библиотека Immer для упрощения работы с иммутабельным состоянием.
 
 * framework with file-based routing, such as Next.js
