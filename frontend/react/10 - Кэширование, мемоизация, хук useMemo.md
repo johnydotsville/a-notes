@@ -1,5 +1,7 @@
 # Кэширование, мемоизация
 
+TODO: почитать как useMemo работает с массивами. Прямо по элементам сравнивает или только ссылку на сам массив?
+
 ## Проблема
 
 > Здесь я приведу лишь обрывки компонентов, потому что целиком было бы много, а писать отдельную демку долго. Надеюсь, с помощью комментариев мне удастся растолковать суть в этой ситуации.
@@ -80,4 +82,97 @@ const sortedPosts = useMemo(() => {
 Мы просто перенесли логику из метода getSortedPosts в колбэк, а метод удалили. Перерасчет сортировки постов нас интересует только в случае если меняется сам набор постов или поле сортировки, поэтому мы в зависимостях указали переменные состояния постов и выбранной сортировки. Самого компонента сортировки тут нет для краткости, но сути это не меняет.
 
 
+
+
+
+
+
+
+
+Наглядный пример пользы useMemo
+
+```react
+import {useState} from 'react';
+import {useRef} from 'react';
+
+function getBookmarks() {
+  return [
+    {id: 0, title: 'О дружбе и вражде', content: 'Неверный друг опаснее врага.'},
+    {id: 1, title: 'О родине', content: 'Глупа та птица, которой гнездо свое немило.'},
+    {id: 2, title: 'О труде и работе', content: 'С мастерством люди не родятся, а добытым ремеслом гордятся.'},
+    {id: 3, title: 'О времени', content: 'Иное время, иное бремя.'},
+    {id: 4, title: 'О книгах и чтении', content: 'Книга - маленькое окошко, через него весь мир видно.'},
+  ];
+}
+
+// <-- Компонент обычного поиска
+function Search({setNeedle}) {
+  const needle = useRef();
+
+  const resetNeedle = () => {
+    setNeedle('');
+    needle.current.value = '';
+  }
+
+  return (
+    <div>
+      <input ref={needle} />
+      <button onClick={() => setNeedle(needle.current.value)}>Искать</button>
+      <button onClick={resetNeedle}>Сбросить</button>
+    </div>
+  );
+}
+
+// <-- Компонент живого поиска
+function LiveSearch({setNeedle}) {
+  const needle = useRef();
+
+  const resetNeedle = () => {
+    setNeedle('');
+    needle.current.value = '';
+  }
+
+  return (
+    <div>
+      <input ref={needle} onChange={e => setNeedle(e.target.value)} />
+      <button onClick={resetNeedle}>Сбросить</button>
+    </div>
+  );
+}
+
+// <-- Компонент элемента
+function Bookmark({title, children}) {
+  return (
+    <div style={{ border: '1px solid black', margin: '10px', padding: '5px' }}>
+      <strong>{title}</strong>
+      <div>{children}</div>
+    </div>
+  );
+}
+
+// <-- Компонент с данными и логикой отображения
+export default function Mentions() {
+  const [bookmarks, setBookmarks] = useState(getBookmarks());
+  const [needle, setNeedle] = useState('');
+  const [foobar, setFoobar] = useState('');
+
+  let displayedBookmarks = bookmarks;
+
+  if (needle) {
+    console.log(`Сработала фильтрация. needle: '${needle}'`);
+    displayedBookmarks = displayedBookmarks.filter(b => b.content.toLowerCase().includes(needle.toLowerCase()));
+  }
+
+  return (
+    <>
+      <div>Нужен useMemo<input onChange={e => setFoobar(e.target.value)} /></div>
+      Обычный поиск <Search setNeedle={setNeedle} />
+      Мгновенный поиск <LiveSearch setNeedle={setNeedle} />
+      <section>
+        {displayedBookmarks.map(b => <Bookmark title={b.title}>{b.content}</Bookmark>)}
+      </section>
+    </>
+  );
+}
+```
 
