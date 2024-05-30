@@ -14,3 +14,18 @@ input onChange почитать
   UPD. Как будто просто криво написал. Нет такого, изменяется и при стирании тоже.
 
 * memo. Есть useMemo, а есть обычное memo. Что это? https://habr.com/ru/companies/otus/articles/800549/
+
+* Что такое eject?
+
+* intersection observer
+  https://www.youtube.com/watch?v=GNrdg3PzpJQ&list=PL6DxKON1uLOHyPVa0XhcqcW2RhDytDpAI&index=3
+  Примерно на 2:50:00 используется для реализации подгрузки постов для бесконечной ленты.
+
+* useCallback - что за хук?
+
+* Дополнительные большие курсы, просто для сравнения
+  https://www.youtube.com/watch?v=k35Jt-VnzO8&list=PLXkonRjGXZwxfa5YGgkENee7sQhc-Mdhd&index=1
+  https://www.youtube.com/watch?v=Fbsusu0xfpY&list=PLXkonRjGXZwxfa5YGgkENee7sQhc-Mdhd&index=12 (от того же автора, но посвежее)
+
+  https://www.youtube.com/watch?v=euYBnQ5MbLM&list=PL7cTIfGFrdKkQAWKDu2NdFt5Cx38B-A3i  (тут вообще реакт+редакс)
+  
