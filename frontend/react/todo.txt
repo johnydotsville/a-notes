@@ -23,6 +23,8 @@ input onChange почитать
 
 * useCallback - что за хук?
 
+* Написать правила использования хуков, где можно, где нельзя.
+
 * Дополнительные большие курсы, просто для сравнения
   https://www.youtube.com/watch?v=k35Jt-VnzO8&list=PLXkonRjGXZwxfa5YGgkENee7sQhc-Mdhd&index=1
   https://www.youtube.com/watch?v=Fbsusu0xfpY&list=PLXkonRjGXZwxfa5YGgkENee7sQhc-Mdhd&index=12 (от того же автора, но посвежее)

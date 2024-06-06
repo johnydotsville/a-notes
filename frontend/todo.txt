@@ -1,1 +1,3 @@
 * Что такое линтер?
+
+* reflow, repaint, composite (этапы рендеринга)
