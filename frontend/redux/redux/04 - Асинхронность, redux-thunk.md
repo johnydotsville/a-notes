@@ -2,6 +2,8 @@
 
 ## В чем суть
 
+TODO: погуглить и дописать: мб когда дело касается танков и асинхронных запросов, хорошим тоном является добавление статуса выполнения, типа "запрос отправлен", "запрос выполнился успешно", "запрос вернулся с ошибкой". Потому что в тулките даже автоматически эти штуки генерируются. Мб и тут положено их писать, только вручную?
+
 Здесь будет про библиотеку `redux-thunk`. Она крошечная и вся ее суть сводится к тому, что мы с ее помощью можем диспатчить не только объекты, но и функции. Для чего это нужно?
 
 В базовом случае из action creator мы возвращаем объект действия и передаем его в dispatch. В этом случае дальнейшая работа происходит *синхронно*, т.е. действие сразу отправляется в редюсеры. Пример: ввели в поле ввода имя и добавляем его в хранилище.
@@ -52,45 +54,6 @@ import { useDispatch } from 'react-redux';
 import { applyMiddleware } from 'redux';  // <-- Чтобы включить thunk в цепочку обработки действия
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
-
-export default function ReduxAsyncDemo() {
-
-  return (
-    <Provider store={myStore}>
-      <Control />
-      <Person />
-    </Provider>
-  );
-}
-
-// <-- Компонент с кнопкой загрузки данных.
-function Control() {
-  const dispatch = useDispatch();
-  // <-- Диспатчим "волшебное действие", которое представлено функцией, а не объектом.
-  // <-- Но со стороны этого не заметно, в том и прикол.
-  const download = () => {
-    // <-- Вызываем action creator, чтобы он вернул нам функцию.
-    const actionWithSideEffects = downloadPerson();
-    dispatch(actionWithSideEffects);  // <-- Диспатчим эту функцию.
-  }
-
-  return (
-    <button onClick={download}>Загрузить асинхронно</button>
-  );
-}
-
-function Person() {
-  const persons = useSelector(s => s.person);
-  return (
-    <div>{
-      (persons.length > 0) ? (
-        persons.map(p => <div key={p.email}>{p.name}, {p.email}</div>)
-      ) : (
-        <div>Нет информации о людях.</div>
-      )
-    }</div>
-  );
-}
 
 const initPerson = [
   { 
@@ -145,6 +108,44 @@ const rootReducer = combineReducers({
 // <-- Подключаем middleware с танком (devtools не нужен, просто чтобы показать как
 // подключить и то, и другое вместе)
 const myStore = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
+
+export default function ReduxAsyncDemo() {
+  return (
+    <Provider store={myStore}>
+      <Control />
+      <Person />
+    </Provider>
+  );
+}
+
+// <-- Компонент с кнопкой загрузки данных.
+function Control() {
+  const dispatch = useDispatch();
+  // <-- Диспатчим "волшебное действие", которое представлено функцией, а не объектом.
+  // <-- Но со стороны этого не заметно, в том и прикол.
+  const download = () => {
+    // <-- Вызываем action creator, чтобы он вернул нам функцию.
+    const actionWithSideEffects = downloadPerson();
+    dispatch(actionWithSideEffects);  // <-- Диспатчим эту функцию.
+  }
+
+  return (
+    <button onClick={download}>Загрузить асинхронно</button>
+  );
+}
+
+function Person() {
+  const persons = useSelector(s => s.person);
+  return (
+    <div>{
+      (persons.length > 0) ? (
+        persons.map(p => <div key={p.email}>{p.name}, {p.email}</div>)
+      ) : (
+        <div>Нет информации о людях.</div>
+      )
+    }</div>
+  );
+}
 ```
 
 Вся суть собрана вот в этой функции:

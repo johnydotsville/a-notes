@@ -75,6 +75,10 @@ const initialStateExperience = {
   lookingForJob: false,  // <-- Ищет ли работу
   workedFor: []  // <-- Где работал
 };
+// <-- Для упрощения извлечения нужных кусков данных можно написать селекторы.
+// Для этого надо заранее решить, под каким именем мы будем класть фрагмент в итоговое состояние.
+const selectLookingForJob = s => s.experience.lookingForJob;
+const selectWorkedFor = s => s.experience.workedFor;
 
 // <-- Действия для работы с Experience-фрагментом состояния
 const actionJobApply = (company) => {
@@ -181,8 +185,9 @@ function Display() {
   const lastname  = useSelector(state => state.person.lastname);
   const name = firstname && lastname && `${lastname}, ${firstname}`;
 
-  const workedFor = useSelector(s => s.experience.workedFor)
-  const isLookingForJob = useSelector(s => s.experience.lookingForJob);
+  // <-- Или передаем в хук селектор
+  const workedFor = useSelector(selectWorkedFor)
+  const isLookingForJob = useSelector(selectLookingForJob);
 
   return (
     <div>
@@ -198,6 +203,8 @@ function Display() {
 ```
 
 # Общая схема работы редакса
+
+## Схема работы
 
 Буду пользоваться в объяснении объектами из предыдущего примера. Тут я попробовал описать процесс работы с редаксом с максимально логичной отправной точки, как мне на данный момент кажется.
 
@@ -254,6 +261,14 @@ function Display() {
 
 ![redux-workflow.drawio](img/redux-workflow.drawio.svg)
 
+## Концепции
+
+Резюмируем. В редаксе можно выделить следующие концепции:
+
+* Действие (экшен, action) - это объект, имеющий тип ("имя") и полезную нагрузку в виде каких-то данных.
+* Action creator (экшен криейтор) - это функция, основная задача которой - создать экшен и вернуть его нам.
+* Редюсер (reducer) - это функция, которая принимает состояние и действие. На основе типа действия она принимает решение, как надо модифицировать текущее состояние. Для модификации она использует данные из действия и возвращает новое состояние.
+
 # Структуризация приложения
 
 Есть разные способы организовать структуру redux-приложения. Все файлы, относящиеся к редаксу, будем размещать в директории `src/store`. Пока что для себя я решил, что удобнее будет складывать редюсер и действия, с ними связанные, в одном файле. Получается так:
@@ -285,6 +300,9 @@ const initial = {
   lookingForJob: false,
   workedFor: []
 };
+
+export const selectLookingForJob = s => s.experience.lookingForJob;
+export const selectWorkedFor = s => s.experience.workedFor;
 
 export function jobApply(company) {
   return {
@@ -370,7 +388,7 @@ export function person(state = initial, action) {
 ### Собираем редюсеры вместе, rootReducer
 
 ```react
-// Файл src/store/store.js
+// Файл src/store/rootReducer.js
 import { combineReducers } from 'redux';
 
 import { person } from './person';
@@ -485,14 +503,16 @@ export default function Person() {
 ```react
 // Файл /src/components/Display.js
 import { useSelector } from 'react-redux';
+import { selectLookingForJob } from '../store/reducers/experience';
+import { selectWorkedFor } from '../store/reducers/experience';
 
 export default function Display() {
   const firstname = useSelector(state => state.person.firstname);
   const lastname  = useSelector(state => state.person.lastname);
   const name = firstname && lastname && `${lastname}, ${firstname}`;
 
-  const workedFor = useSelector(s => s.experience.workedFor)
-  const isLookingForJob = useSelector(s => s.experience.lookingForJob);
+  const workedFor = useSelector(selectWorkedFor)
+  const isLookingForJob = useSelector(selectLookingForJob);
 
   return (
     <div>
