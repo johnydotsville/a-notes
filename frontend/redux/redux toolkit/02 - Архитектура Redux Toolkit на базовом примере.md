@@ -11,6 +11,8 @@
 
 # Пример
 
+## Базовый
+
 Схема работы такая же как в редаксе, поэтому не буду дублировать. Если забыл - читай конспект по редаксу. Здесь допишу только особенности синтаксиса тулкита.
 
 ```react
@@ -34,8 +36,8 @@ const slicePerson = createSlice({
       // <-- За счет либы Immer можно "изменять" состояние, а иммер сам все склонирует как надо.
       state.firstname = action.payload;
     },
-    setLastname: (state, action) => {  // <-- Экшен будет называться "person/setLastname"
-      state.lastname = action.payload;
+    setLastname: (state, action) => {  // <-- Этот экшен криейтор будет вызываться так: setLastname(знач);
+      state.lastname = action.payload;  // знач попадет в payload, т.е. action.payload == знач
     }
   }
 });
@@ -157,7 +159,71 @@ function Display() {
 }
 ```
 
+## Настройка экшена
+
+Когда мы пишем экшен-криейторы (АС) самостоятельно, то можем задать для функции сколько угодно параметров, и собрать из них payload, например:
+
+```javascript
+function setName(firstname, lastname) {
+  return {
+    type: 'SET_NAME',
+    payload: {
+      firstname,
+      lastname
+    }
+  }
+}
+```
+
+Но тулкит создает АС за нас и параметр у АС по умолчанию один - целиковый payload. Однако мы можем кастомизировать АС, чтобы он принимал сколько нам надо параметров, и сами собрать объект payload:
+
+```javascript
+const slicePerson = createSlice({
+  name: 'person',
+  initialState: {
+    firstname: null,
+    lastname: null
+  },
+  reducers: {
+    setFirstname: (state, action) => {
+      state.firstname = action.payload;
+    },
+    setLastname: (state, action) => {
+      state.lastname = action.payload;
+    },
+    setName: {  // <-- Экшен для одновременной установки и имени, и фамилии
+      reducer(state, action) {  // <-- Редюсер
+        state.firstname = action.payload.firstname;
+        state.lastname = action.payload.lastname;
+      },
+      prepare(firstname, lastname) {  // <-- Функция по подготовке нагрузки для экшена
+        return {  // <-- Должны вернуть объект с полем payload
+          payload: {  // <-- Формируем payload как нам надо
+            // <-- Тут еще можно было бы, например, сгенерировать id
+            firstname,
+            lastname
+          }
+        }
+      }
+    }
+  }
+});
+```
+
+Такая кастомизация полезна еще тем, что в ней можно делать сайд-эффекты. Например, сгенерировать уникальный id. Делать такое в редюсере концептуально запрещено, а вот при подготовке действия - самое оно.
+
+Теперь можно диспатчить экшен вот так:
+
+```javascript
+dispatch(setName(  // <-- Теперь можно передавать в АС два параметра
+  rFirstname.current.value,
+  rLastname.current.value
+));
+```
+
 # Структуризация программы
+
+Просто для примера, это не является единственно правильным способом группировки.
 
 ## Структура папок
 

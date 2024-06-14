@@ -2,3 +2,5 @@
 * Миддлвары https://ru.hexlet.io/courses/js-redux-toolkit/lessons/middlewares/theory_unit
 
 * enhancers, посмотреть какие энхансеры и миддлвары еще бывают и как встроить их при конфиге хранилища.
+
+* nanoid - библиотека-генератор уникальных идентификаторов, загуглить.
