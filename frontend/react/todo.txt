@@ -21,7 +21,7 @@ input onChange почитать
   https://www.youtube.com/watch?v=GNrdg3PzpJQ&list=PL6DxKON1uLOHyPVa0XhcqcW2RhDytDpAI&index=3
   Примерно на 2:50:00 используется для реализации подгрузки постов для бесконечной ленты.
 
-* useCallback - что за хук?
+* useCallback, useLayoutEffect - что за хуки?
 
 * Написать правила использования хуков, где можно, где нельзя.
 
@@ -31,3 +31,4 @@ input onChange почитать
 
   https://www.youtube.com/watch?v=euYBnQ5MbLM&list=PL7cTIfGFrdKkQAWKDu2NdFt5Cx38B-A3i  (тут вообще реакт+редакс)
   
+

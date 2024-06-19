@@ -1,7 +1,8 @@
-* thunk
+v thunk
 * middleware, enhancer
 * saga
 * функция connect в redux что делает?
+* Reselect либа
 
 v redux devtools, чтобы смотреть состояние хранилища
 v Нарисовать схему прохождения действия через редюсеры

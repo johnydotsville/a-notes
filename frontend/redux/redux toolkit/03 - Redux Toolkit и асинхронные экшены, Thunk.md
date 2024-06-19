@@ -2,26 +2,57 @@
 
 ## createAsyncThunk
 
-TODO: про createAsyncThunk потом подробнее почитать тут https://redux-toolkit.js.org/api/createAsyncThunk и законспектировать детали. Еще вот тут https://redux.js.org/tutorials/essentials/part-6-performance-normalization#thunk-arguments
+### Синтаксис
 
 Функция `createSlice` сама по себе не умеет работать с асинхронными действиями (танками). Поэтому танк нужно написать отдельно. Обычно его пишут в одном файле со слайсом.
 
-Танк создается с помощью функции `createAsyncThunk`. Она принимает имя действия (можно поставить произвольное, но лучше составить из комбинации имени слайса и выполняемой функции, для наглядности) и код, который нужно выполнить. Обычно это тот самый асинхронный код с сайд-эффектами, вроде загрузки \ отправки данных. Например:
+Танк создается с помощью функции `createAsyncThunk`. Она принимает:
+
+* Имя действия (можно поставить произвольное, но лучше составить из комбинации имени слайса и выполняемой функции для наглядности).
+* Код, который нужно выполнить. Обычно это тот самый асинхронный код с сайд-эффектами, вроде загрузки \ отправки данных.
+
+createAsyncThunk возвращает нам экшен криейтор, который мы диспатчим как обычно:
 
 ```javascript
-async function downloadPerson() { // <-- Код может быть большой, поэтому можно оформить отдельной функцией/
-  // Здесь выполняем загрузку \ отправку данных или прочую асинхронщину
-}
-// <-- Создаем танк, указав имя действия, и колбэк, который будет выполняться в танке
-const thunkDownloadPerson = createAsyncThunk('person/downloadPerson', downloadPerson);
+const thunkDownloadPerson = createAsyncThunk(  // <-- Создаем танк,
+  'person/downloadPerson',  // <-- указав имя действия
+  async ({param1, paramN}, {dispatch, getState}) => {  // <-- и функцию для выполнения
+    // Здесь выполняем загрузку \ отправку данных или прочую асинхронщину
+  }
+);
 
-// <-- А диспатчить будем так
-dispatch(thunkDownloadPerson());  // <-- Диспатчим действие-танк
+dispatch(thunkDownloadPerson({param1: 'hello', param2: 'world'}));  // <-- Диспатчим действие-танк
 ```
 
-Возвращает эта функция нам экшен криейтор, который мы диспатчим как обычно.
+### Параметры для колбэка
 
-Важный момент. Обычно при выполнении асинхронной работы к состоянию добавляют дополнительные поля вроде `status` и `error`. Например, у нас есть состояние с массивом людей, который мы хотим загрузить с сервера. Тогда мы бы могли при отправке запроса поставить `status = loading`, при успешной загрузке success, при ошибке - fail, а сам текст ошибки поместить в поле error. Поскольку это типичный паттерн, то createAsyncThunk это реализует из коробки. Он автоматически генерирует экшены для этих ситуаций и автоматически их диспатчит. Экшены можно получить так:
+В танк-экшен мы можем передавать параметры. При передаче мы должны оформить их в единый объект:
+
+```javascript
+dispatch(thunkDownloadPerson(
+  {param1: 'hello', param2: 'world'}  // <-- Передаем в танк-экшен параметры
+));
+```
+
+Этот объект тулкит передаст в колбэк. Мы можем его деструктурировать и получить переданные данные:
+
+```javascript
+const thunkDownloadPerson = createAsyncThunk(
+  'person/downloadPerson',
+  async (
+    {param1, paramN}, // <-- Дестрачим первый параметр-объект и получаем наши параметры
+    {dispatch, getState}  // <-- Дефолтные параметры, получаемые от тулкита
+  ) => {
+    console.log(param1);  // <-- Пользуемся параметрами
+  }
+);
+```
+
+Кроме наших параметров, тулкит еще передает в колбэк стандартные параметры вроде функций `dispatch` и `getState`, чтобы мы могли внутри своего экшена получать доступ к хранилищу и диспачить другие действия, если надо. Это не все стандартные параметры, есть еще и другие, о них можно почитать тут:  https://redux-toolkit.js.org/api/createAsyncThunk и https://redux.js.org/tutorials/essentials/part-6-performance-normalization#thunk-arguments
+
+## Автоэкшены
+
+Обычно при выполнении асинхронной работы к состоянию добавляют дополнительные поля вроде `status` и `error`. Например, у нас есть состояние с массивом людей, который мы хотим загрузить с сервера. Тогда мы бы могли при отправке запроса поставить `status = loading`, при успешной загрузке success, при ошибке - fail, а сам текст ошибки поместить в поле error. Поскольку это типичный паттерн, то createAsyncThunk это реализует из коробки. Он автоматически генерирует экшены для этих ситуаций и автоматически их диспатчит. Экшены можно получить так:
 
 ```javascript
 thunkDownloadPerson.pending  // <-- экшен для ситуации "запрос отправлен"
@@ -43,31 +74,33 @@ import { createSlice } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
 import { useDispatch } from 'react-redux';
 
-// <-- Написал функцию загрузки людей отдельно просто чтобы не загромождать второй параметр createAsyncThunk
-async function downloadPerson() {
-  const transform = (person) => person.map(p => ({
-    name:  p.name,
-    email: p.email
-  }));
-  
-  const data = await fetch('https://jsonplaceholder.typicode.com/users')
-    .then(response => {  // <-- Заморочился с проверками, т.к. тулкит рейтит статусы выполняемой работы
-      if (response.status != 200)
-        throw new Error('Не удалось загрузить данные.');  // <-- На каждый потенциальный косяк пишу его детали
-      return response.json(); 
-    })
-    .then(json => {
-      try {
-        return transform(json);
-      } catch (err) {
-        throw new Error('Не удалось обработать загруженные данные.');
-      }
-    });
+// <-- Создаем танк из функции загрузки людей. Имя произвольное, но лучше по имени слайса + функции.
+const thunkDownloadPerson = createAsyncThunk(
+  'person/downloadPerson', 
+  async ({url, foobar}, {dispatch, getState}) => {  // <-- url получим из параметра
+    const transform = (person) => person.map(p => ({
+      name:  p.name,
+      email: p.email
+    }));
+    console.log(foobar);
+    
+    const data = await fetch(url)
+      .then(response => { 
+        if (response.status != 200)
+          throw new Error('Не удалось загрузить данные.');
+        return response.json(); 
+      })
+      .then(json => {
+        try {
+          return transform(json);
+        } catch (err) {
+          throw new Error('Не удалось обработать загруженные данные.');
+        }
+      });
 
-  return data;
-}
-// <-- Создаем танк из функции загрузки людей. Имя действия произвольное, но лучше по имени слайса + функции.
-const thunkDownloadPerson = createAsyncThunk('person/downloadPerson', downloadPerson);
+    return data;
+  }
+);
 
 const slicePerson = createSlice({
   name: 'person',
@@ -86,7 +119,7 @@ const slicePerson = createSlice({
       state.push(action.payload);
     }
   },
-  // <-- Более подробное объяснение чуть дальше
+  // <-- Более подробное объяснение про обработку автоэкшенов - в след разделе
   extraReducers(builder) {  // <-- Дописываем дополнительные функции по модификации фрагмента
     builder
       .addCase(thunkDownloadPerson.pending, (state) => {  // <-- Указываем действие, на которое должна
