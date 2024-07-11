@@ -5,6 +5,10 @@
 С помощью ключевого слова `type` можно объявить псевдоним для существующего типа:
 
 ```typescript
+type имяТипа = описание;
+```
+
+```typescript
 type Kg = number;  // <-- Объявляем псевдонимы
 type Cm = number;
 
@@ -53,7 +57,11 @@ const jack: Person = {
 // Type '{ name: string; }' is missing the following properties from type 'Person': weight, height
 ```
 
-Пропущенных полей не будет в объекте.
+Пропущенных полей не будет в созданном объекте.
 
-TODO: а можно сделать значения по умолчанию?
+TODO: а можно сделать значения по умолчанию для полей?
+
+
+
+
 
