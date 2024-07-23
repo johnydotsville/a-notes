@@ -1,9 +1,32 @@
-<mxfile host="Electron" modified="2024-07-08T14:05:16.848Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.1 Chrome/112.0.5615.87 Electron/24.1.2 Safari/537.36" etag="urLrXtiALM080mOQ3wIa" version="21.2.1" type="device">
+<mxfile host="Electron" modified="2024-07-18T06:35:11.054Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.1 Chrome/112.0.5615.87 Electron/24.1.2 Safari/537.36" etag="zqc4jyYHWZafYyA95A0R" version="21.2.1" type="device">
   <diagram name="Page-1" id="xKLi1VYauy1XTdifKRGh">
-    <mxGraphModel dx="1548" dy="902" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="75" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="M7Bd20gSjHg11Doz2dbJ-1" value="?.&amp;nbsp; опциональная цепочка" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;swimlaneLine=1;fontStyle=0;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="70" y="880" width="330" height="180" as="geometry">
+            <mxRectangle x="-350" y="180" width="40" height="150" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M7Bd20gSjHg11Doz2dbJ-2" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="M7Bd20gSjHg11Doz2dbJ-1">
+          <mxGeometry x="290" y="80" width="20.58" height="20.58" as="geometry" />
+        </mxCell>
+        <mxCell id="M7Bd20gSjHg11Doz2dbJ-3" value="* Является сахаром, а не оператором.&lt;br style=&quot;font-size: 11px;&quot;&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;span style=&quot;background-color: initial; font-size: 11px;&quot;&gt;* Для обращ к св-вам и мет-м, кот мб null или undefined.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;span style=&quot;background-color: initial; font-size: 11px;&quot;&gt;* Провер выраж &lt;i style=&quot;font-size: 11px;&quot;&gt;слева&lt;/i&gt; от себя.Если оно undef, возвр undef, иначе вычисл дальше. Так что надо размещ ?. &lt;i style=&quot;font-size: 11px;&quot;&gt;после &lt;/i&gt;потенциально отсутств вещи.&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="M7Bd20gSjHg11Doz2dbJ-1">
+          <mxGeometry x="30" y="5" width="290" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="M7Bd20gSjHg11Doz2dbJ-4" value="let user = { name: &quot;Tom&quot; };&amp;nbsp; // св-ва address нет&lt;br&gt;console.log(user.address.street);&amp;nbsp; // Ошибка&lt;br&gt;console.log(user.address?.street);  // undefined&lt;br&gt;console.log(user.address?.[&quot;street&quot;]);  // undefined" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="M7Bd20gSjHg11Doz2dbJ-1">
+          <mxGeometry x="31" y="87" width="270" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="M7Bd20gSjHg11Doz2dbJ-5" value="Cвойства (обыч синтакс и через []):" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="M7Bd20gSjHg11Doz2dbJ-1">
+          <mxGeometry x="24" y="62" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="M7Bd20gSjHg11Doz2dbJ-6" value="Функции:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="M7Bd20gSjHg11Doz2dbJ-1">
+          <mxGeometry x="25" y="146" width="230" height="17" as="geometry" />
+        </mxCell>
+        <mxCell id="M7Bd20gSjHg11Doz2dbJ-7" value="const result = user.noExist?.();&amp;nbsp; // result = undefined" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="M7Bd20gSjHg11Doz2dbJ-1">
+          <mxGeometry x="36" y="160" width="280" height="17" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
