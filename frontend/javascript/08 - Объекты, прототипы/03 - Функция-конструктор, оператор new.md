@@ -133,6 +133,8 @@ const becky = new Person("Becky", "Thatcher");
 console.log(becky.fullname());  // Becky Thatcher
 ```
 
+### Восстановить свойство constructor
+
 Либо, если все же делаем через отдельный объект, то можем вручную восстановить свойство constructor:
 
 ```javascript

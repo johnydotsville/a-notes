@@ -2,11 +2,11 @@
 
 ## a instanceof Klass
 
-Оператор `instanceOf` определяет принадлежность объекта `a` к классу `Klass`.
+Оператор `instanceOf` определяет принадлежность экземпляра `a` к классу `Klass`.
 
 * В качестве Klass должен быть указан класс или функция-конструктор (что по сути одно и то же).
-  * Объект принадлежит
 * Проверяется принадлежность по цепочке, а не только непосредственная.
+  * Прототип экземпляра `a` сравнивается с объектом из `Klass.prototype`. Если равны, значит a является экземпляром Klass.
 
 Пример:
 
@@ -71,3 +71,22 @@ const b = Object.create(a);
 const bIsA = a.isPrototypeOf(b);  // true
 console.log(bIsA);
 ```
+
+Прототипность проверяется по цепочке:
+
+```javascript
+class Parent { }
+class Child extends Parent { }
+
+const p = new Parent();
+const c = new Child();
+
+const ParentPrototype = Object.getPrototypeOf(p);
+const ChildPrototype = Object.getPrototypeOf(c);
+
+// <-- Для экземпляра Child прототипом считается не только Child.prototype,
+console.log(ChildPrototype.isPrototypeOf(c));  // true
+// <-- но и Parent.prototype
+console.log(ParentPrototype.isPrototypeOf(c));  // true
+```
+
