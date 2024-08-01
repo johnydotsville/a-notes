@@ -80,7 +80,7 @@ npm i html-webpack-plugin -D
 
 * Подключаем плагин в конфиге вебпака:
 
-```json
+```javascript
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');  // <-- Импортируем класс плагина.
 
@@ -110,11 +110,11 @@ window.addEventListener("load", () => {
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Webpack❤️TS</title>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Webpack❤️TS</title>
 </head>
 <body>
   
