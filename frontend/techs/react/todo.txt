@@ -31,4 +31,6 @@ input onChange почитать
 
   https://www.youtube.com/watch?v=euYBnQ5MbLM&list=PL7cTIfGFrdKkQAWKDu2NdFt5Cx38B-A3i  (тут вообще реакт+редакс)
   
+* lazy from react - что за lazy?
 
+* <Suspence> from react
