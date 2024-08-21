@@ -89,3 +89,40 @@ npm start --env port=7000
 Аффтар говорит, что позже вернется подробнее, поэтому в этом моменте не рассказывает подробно. Оставляю тайминг на случай, если придется все-таки вернуться в этот момент.
 
 В целом, сорс мапы нужны для отладки. Поскольку после сборки весь код сливается в один файл, то при возникновении ошибки во время выполнения не понятно, в каком именно исходном файле она произошла. Вот для этого сопоставления результирующего кода и исходных файлов и нужны сорс мапы.
+
+Файл buildWebpack (TODO переписать на неразбитый конфиг):
+
+```typescript
+import webpack from "webpack";
+import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
+import { buildDevServer } from "./buildDevServer";
+import { buildLoaders } from "./buildLoaders";
+import { buildPlugins } from "./buildPlugins";
+import { buildResolvers } from "./buildResolvers";
+import { BuildOptions } from "./types/types";
+
+export function buildWebpack(options: BuildOptions): webpack.Configuration {
+  const { mode, paths } = options;
+  const isDev = mode === "development";
+
+  return {
+    mode: mode ?? "development",
+    entry: paths.entry,
+    module: {
+      rules: buildLoaders(options)
+    },
+    resolve: buildResolvers(options),
+    output: {
+      filename: '[name].[contenthash].js',
+      path: paths.output,
+      clean: true
+    },
+    plugins: buildPlugins(options),
+    // devtool: "inline-source-map",  // <-- Включаем сорс мэпы и указываем их вид.
+    devServer: isDev ? buildDevServer(options) : undefined,
+  };
+}
+```
+
+Виды сорс мэпов https://webpack.js.org/configuration/devtool/ отличаются влиянием на скорость билда и ребилда.
+

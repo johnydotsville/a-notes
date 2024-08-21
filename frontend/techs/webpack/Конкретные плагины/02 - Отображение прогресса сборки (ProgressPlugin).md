@@ -15,7 +15,7 @@ const webpack = require('webpack');  // <-- 1
 const progressPlugin = new webpack.ProgressPlugin();  // <-- 2
 
 module.exports =  {
-  ...
+  // ...
   plugins: [
     progressPlugin  // <-- 3
   ]
