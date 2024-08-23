@@ -30,7 +30,7 @@ interface Person {
   hello(): void;
 }
 
-const tom: Person = {  // <-- Для реализации у объекта дб все поля и методы интерфейса
+const tom: Person = {  // <-- Для реализации у объекта дб все поля и методы интерфейса.
   firstname: "Tom",
   lastname: "Sawyer",
   fullname() {
@@ -59,8 +59,8 @@ interface Person {
   hello(): void;
 };
 
-class Character implements Person {  // <-- implements, реализуем интерфейс
-  firstname: string;  // <-- Дб все поля и методы из интерфейса
+class Character implements Person {  // <-- implements, реализуем интерфейс.
+  firstname: string;  // <-- Дб все поля и методы из интерфейса.
   lastname: string;
 
   constructor(firstname: string, lastname: string) {
@@ -93,7 +93,7 @@ huck.hello();
 interface Person {
   public firstname: string;  // <-- Ошибка: 'public' modifier cannot appear on a type member.
   private lastname: string;  // <-- Ошибка: 'private' modifier cannot appear on a type member.
-  hello(): void;  // <-- Метод public по умолчанию и писать это специально не надо и нельзя
+  hello(): void;  // <-- Метод public по умолчанию и писать это специально не надо и нельзя.
 }
 ```
 
@@ -109,7 +109,7 @@ interface Person {
 
 ```typescript
 interface Person {
-  readonly firstname: string;  // <-- У поля интерфейса мб модификатор readonly
+  readonly firstname: string;  // <-- У поля интерфейса мб модификатор readonly.
   readonly lastname: string;
   fullname(): string;
   hello(): void;
@@ -134,14 +134,14 @@ tom.lastname  = "Finn";  // <-- Ошибка! Нельзя изменять read
 
 ```typescript
 interface Person {
-  readonly firstname: string;  // <-- У поля интерфейса мб модификатор readonly
+  readonly firstname: string;  // <-- У поля интерфейса мб модификатор readonly.
   readonly lastname: string;
   fullname(): string;
   hello(): void;
 }
 
 class Character implements Person {
-  firstname: string;  // <-- Класс может снять ограничение readonly
+  firstname: string;  // <-- Класс может снять ограничение readonly.
   readonly lastname: string;
 
   constructor(firstname: string, lastname: string) {
