@@ -45,8 +45,8 @@ npm i -D webpack-dev-server
 ```javascript
 module.exports = (settings, argv) => {
   return {
-    // <-- Остальная часть конфига
-    devServer: {
+    // Остальная часть конфига
+    devServer: {  // <-- Секция dev-сервера.
       port: settings.port,
       open: true
     }
@@ -111,57 +111,21 @@ function getDevServer(port: number): DevServerConfiguration {  // <-- Польз
 
 Про структуру самого типа писать не буду, потому что пока кроме порта ничем пользоваться не приходилось.
 
+# Опции dev-сервера
 
+TODO: В конфиге вебпака нужно добавить опцию `historyApiFallback` для dev-сервера:
 
-
-
-
-
-Здесь написать про типизацию самих полей объекта в поле dev-сервер? И мб про отдельную функцию сбора конфига сервера?
-
-
-
-Дописать, что надо дополнительно поставить пакет
-
-TODO: проверить, ставится ли автоматически с ним "@types/webpack-dev-server": "^4.7.2", 
-
-UPD. Нет, не ставится.
-
-
-
-```typescript
-import path from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import webpack from 'webpack';
-import type { Configuration as DevServerConfiguration } from "webpack-dev-server";  // <-- Конфиг видел поле devServer
-
-type Mode = "development" | "production";
-
-interface EnvVariables {
-  mode: Mode;
-  port: number;
-}
-
-export default (env: EnvVariables) => {
-  const isDev = env.mode === "development";
-    
-  const config: webpack.Configuration = {
+```javascript
+module.exports = (settings, argv) => {
+  return {
     // Остальная часть конфига
-    devServer: isDev ? {  // <-- Если режим не development, то devServer не нужен.
-      port: env.port ?? 3000,  // <-- Если порт не укажут при запуске, будет 3000 по умолчанию.
-      open: true
-    } : undefined
-  };
-
-  return config;
+    devServer: {
+      port: settings.port,
+      open: true,
+      historyApiFallback: true  // <-- Добавляем опцию для dev-сервера
+    }
+  }
 };
 ```
 
-Поскольку мы используем ts и переменная конфига типизирована, то каждое поле должно быть известно. Для этого у конфига должен быть специальный тип Configuration:
-
-```typescript
-import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
-```
-
-TODO: но ведь используется как будто не он, а тот же webpack.Configuration, но без этого импорта ругается, а с импортом - нет. Почему?
-
+Без этой настройки мы не сможем открывать страницы приложения, вводя их в поисковую строку. Переходы будут работать только при щелчке по ссылкам. А с этой настройкой будет работать и так, и так.
