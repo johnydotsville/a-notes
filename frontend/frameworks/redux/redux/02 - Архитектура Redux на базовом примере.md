@@ -274,13 +274,13 @@ function Display() {
 Есть разные способы организовать структуру redux-приложения. Все файлы, относящиеся к редаксу, будем размещать в директории `src/store`. Пока что для себя я решил, что удобнее будет складывать редюсер и действия, с ними связанные, в одном файле. Получается так:
 
 ```
-src
-  components
+src/
+  components/
     Display.js
     Experience.js
     Person.js
-  store
-    reducers
+  store/
+    reducers/
       experience.js
       person.js
       rootReducer.js

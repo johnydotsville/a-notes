@@ -2,6 +2,7 @@
 
 ```javascript
 const graphqlQuery = {
+  // Тут важно что getGameVersions такое же в query getGameVersions
   operationName: "getGameVersions",
   query: "query getGameVersions { constants { gameVersions { id, name, asOfDateTime } } }",
   variables: {}

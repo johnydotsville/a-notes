@@ -1,4 +1,4 @@
-# Контейнер, элемент
+# Контейнер и элемент
 
 * Флекс-контейнер - это элемент, для которого установлено свойство:
 
@@ -13,7 +13,7 @@
 
 <img src="img/flex-block-flex.png" alt="flex-flex" style="zoom:80%;" />
 
-Когда как строчный, то на одну строку могут даже поместиться несколько контейнеров:
+Когда как строчный, то контейнер занимает только нужную ему ширину. Поэтому на одну строку могут поместиться несколько контейнеров:
 
 <img src="img/flex-inline-flex.png" alt="flex-inline-flex" style="zoom:80%;" />
 
@@ -77,17 +77,15 @@
 
 #### row (default)
 
-<img src="img/flex-direction-row.png" alt="flex-direction-row" style="zoom:80%;" />
-
 ```css
 flex-direction: row;
 ```
 
 Элементы располагаются по горизонтали в прямом порядке, т.е. идут в том же порядке, как и в разметке.
 
-#### row-reverse
+<img src="img/flex-direction-row.png" alt="flex-direction-row" style="zoom:80%;" />
 
-<img src="img/flex-direction-row-reverse.png" alt="flex-direction-row-reverse" style="zoom:80%;" />
+#### row-reverse
 
 ```css
 flex-direction: row-reverse;
@@ -95,9 +93,9 @@ flex-direction: row-reverse;
 
 Элементы располагаются по горизонтали + в обратном порядке.
 
-#### column
+<img src="img/flex-direction-row-reverse.png" alt="flex-direction-row-reverse" style="zoom:80%;" />
 
-<img src="img/flex-direction-column.png" alt="flex-direction-column" style="zoom:80%;" />
+#### column
 
 ```css
 flex-direction: column;
@@ -105,15 +103,17 @@ flex-direction: column;
 
 Элементы располагаются по вертикали.
 
-#### column-reverse
+<img src="img/flex-direction-column.png" alt="flex-direction-column" style="zoom:80%;" />
 
-<img src="img/flex-direction-column-reverse.png" alt="flex-direction-column-reverse" style="zoom:80%;" />
+#### column-reverse
 
 ```css
 flex-direction: column-reverse;
 ```
 
 Элементы располагаются по вертикали + в обратном порядке.
+
+<img src="img/flex-direction-column-reverse.png" alt="flex-direction-column-reverse" style="zoom:80%;" />
 
 ### Пример
 
@@ -161,13 +161,19 @@ flex-direction: column-reverse;
 
 #### nowrap (default)
 
-<img src="img/flex-wrap-nowrap.png" alt="flex-wrap-nowrap" style="zoom:80%;" />
-
 ```css
 flex-wrap: nowrap;
 ```
 
-Элементы не переносятся и всеми силами стараются сжаться и уместиться в доступную ширину (даже если им явно заданы размеры).
+Элементы не переносятся на следующую строку \ столбец, даже если не влезают в ширину \ высоту контейнера.
+
+* Если направление флекса горизонтальное, то элементы стараются уместиться в доступную ширину. Если не помещаются, то они начинают сжиматься, чтобы поместиться (даже если им явно заданы размеры). Если ширина контейнера задана явно и слишком узкая, то элементы не смогут сжиматься бесконечно и вылезут за границу контейнера.
+
+  <img src="img/rework/flex-row-nowrap.png" alt="flex-wrap-nowrap" style="zoom:80%;" />
+
+* Если направление флекса вертикальное, то контейнер будет расти в высоту по мере добавления новых элементов. Если высота контейнера задана явно, то элементы могут вылезти за его границы:
+
+  <img src="img/flex-column-nowrap.png" alt="flex-column-nowrap" style="zoom:80%;" />
 
 #### wrap
 
@@ -177,7 +183,7 @@ flex-wrap: nowrap;
 flex-wrap: wrap;
 ```
 
-Каждый элемент занимает нужную ему ширину, а не вмещающиеся элементы переносятся на следующую строку.
+Каждый элемент занимает нужную ему ширину, а не вмещающиеся элементы переносятся на следующую `строку`.
 
 #### wrap-reverse
 
@@ -255,7 +261,7 @@ flex-wrap: wrap-reverse;
 
 ## Контент, строка и элементы
 
-![content-elem-diff](img/content-elem-diff.png)
+<img src="img/rework/content-stroka-elem.png" alt="content-elem-diff" style="zoom:80%;" />
 
 С первого взгляда может быть не очень понятно, в чем отличие align-content и align-items. Поэтому на картинках для align-items я разместил рядом align-content и скрин вообще без задания обоих свойств. Получилось имхо наглядно, но решил еще написать это предисловие, чтобы наверняка было понятно. P.S. Это собственные догадки, реальность может быть иной, но для себя я объясняю именно так и с виду это работает.
 
@@ -274,7 +280,7 @@ flex-wrap: wrap-reverse;
 
 Как запомнить, что значит justify, а что align? Например, так: монитор по горизонтали длиннее, чем по вертикали. Слово justify длиннее, чем align. Значит justify - это выравнивание по горизонтали, а align - по вертикали. Ну а что именно выравнивается - строки или элементы, понятно из второго слова в justify-content, align-content, align-items. P.S. Есть нюанс. На самом деле justify отвечает за главную ось, а align за поперечную, так что если `flex-direction: column`, то justify будет работать на вертикаль. Однако поскольку изначально `flex-direction: row`, то можно начать вспоминать именно аналогию с монитором, а потом инвертировать.
 
-P.S. По ощущениям, после разбора темы спустя длительное время, совет такой: четко усвоить про наличие строк и элементов и то что align-content воздействует на строки, а align-items - на элементы внутри строк по побочной оси. А justify-content - на элементы основной оси. justify-items в принципе для флексов не существует.
+P.S. По ощущениям, после разбора темы спустя длительное время, совет такой: четко усвоить про наличие строк и элементов и то что align-content воздействует на строки, а align-items - на элементы внутри строк по побочной оси. А justify-content - на элементы основной оси. justify-items для флексов не существует.
 
 ## Разметка для примеров
 

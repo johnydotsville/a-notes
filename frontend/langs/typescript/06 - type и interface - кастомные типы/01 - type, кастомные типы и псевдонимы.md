@@ -102,3 +102,26 @@ tom.hello();
 
 
 
+
+
+# TODO
+
+## a
+
+```typescript
+export type PossibleSelections =
+  | {
+      type: SelectionType.Repository
+      repository: Repository
+      state: IRepositoryState
+    }
+  | {
+      type: SelectionType.CloningRepository
+      repository: CloningRepository
+      progress: ICloneProgress
+    }
+  | { type: SelectionType.MissingRepository; repository: Repository }
+```
+
+Что тут означает `|` в начале? Вероятно просто перенос строки?
+

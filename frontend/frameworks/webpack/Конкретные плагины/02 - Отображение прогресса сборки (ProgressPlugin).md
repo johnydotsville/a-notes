@@ -8,6 +8,8 @@
 
 # Использование
 
+В конфиге вебпака `webpack.config.js` создаем экземпляр плагина и добавляем в секцию плагинов:
+
 ```javascript
 const path = require('path');
 const webpack = require('webpack');  // <-- 1

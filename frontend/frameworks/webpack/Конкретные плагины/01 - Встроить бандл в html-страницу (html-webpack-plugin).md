@@ -44,6 +44,7 @@ npm i html-webpack-plugin -D
 ```js
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');  // <-- Импортируем плагин.
+// import HtmlWebpackPlugin from "html-webpack-plugin";
 
 module.exports = (settings, argv) => {
     
