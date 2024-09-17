@@ -1,3 +1,18 @@
+# Документация
+
+| Документация                                                 | Про что                             |
+| ------------------------------------------------------------ | ----------------------------------- |
+| [MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) | Общий раздел про флексы             |
+| [css-tricks.com](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) | Большая сторонняя статья про флексы |
+
+CSS flexible box layout enables you to:
+
+- Vertically center a block of content inside its parent.
+- Make all the children of a container take up an equal amount of  the available width/height, regardless of how much width/height is  available.
+- Make all columns in a multiple-column layout adopt the same height even if they contain a different amount of content.
+
+Flexbox features may be the perfect solution for your one dimensional layout needs.
+
 # Контейнер и элемент
 
 * Флекс-контейнер - это элемент, для которого установлено свойство:
@@ -11,11 +26,11 @@
 
 Когда контейнер как блочный, он занимает всю доступную ширину вьюпорта:
 
-<img src="img/flex-block-flex.png" alt="flex-flex" style="zoom:80%;" />
+<img src="img/rework/flex-block-flex.png" alt="flex-flex" style="zoom:80%;" />
 
-Когда как строчный, то контейнер занимает только нужную ему ширину. Поэтому на одну строку могут поместиться несколько контейнеров:
+Когда как строчный, то контейнер занимает только нужную ему ширину (из-за этого тут сам контейнер визуально не видно, только элементы). Поэтому рядом могут поместиться несколько контейнеров:
 
-<img src="img/flex-inline-flex.png" alt="flex-inline-flex" style="zoom:80%;" />
+<img src="img/rework/flex-inline-flex.png" alt="flex-inline-flex" style="zoom:80%;" />
 
 ```html
 <body>
@@ -42,8 +57,6 @@
 .flex-container {
   display: flex;  /* Превращает элемент во flex-элемент */
   background-color: aquamarine;
-  column-gap: 10px;
-  padding: 10px;
   margin: 10px;
 }
 
@@ -83,7 +96,7 @@ flex-direction: row;
 
 Элементы располагаются по горизонтали в прямом порядке, т.е. идут в том же порядке, как и в разметке.
 
-<img src="img/flex-direction-row.png" alt="flex-direction-row" style="zoom:80%;" />
+<img src="img/rework/flex-direction-row.png" alt="flex-direction-row" style="zoom:80%;" />
 
 #### row-reverse
 
@@ -93,7 +106,7 @@ flex-direction: row-reverse;
 
 Элементы располагаются по горизонтали + в обратном порядке.
 
-<img src="img/flex-direction-row-reverse.png" alt="flex-direction-row-reverse" style="zoom:80%;" />
+<img src="img/rework/flex-direction-row-reverse.png" alt="flex-direction-row-reverse" style="zoom:80%;" />
 
 #### column
 
@@ -103,7 +116,7 @@ flex-direction: column;
 
 Элементы располагаются по вертикали.
 
-<img src="img/flex-direction-column.png" alt="flex-direction-column" style="zoom:80%;" />
+<img src="img/rework/flex-direction-column.png" alt="flex-direction-column" style="zoom:80%;" />
 
 #### column-reverse
 
@@ -113,7 +126,7 @@ flex-direction: column-reverse;
 
 Элементы располагаются по вертикали + в обратном порядке.
 
-<img src="img/flex-direction-column-reverse.png" alt="flex-direction-column-reverse" style="zoom:80%;" />
+<img src="img/rework/flex-direction-column-reverse.png" alt="flex-direction-column-reverse" style="zoom:80%;" />
 
 ### Пример
 
@@ -133,10 +146,8 @@ flex-direction: column-reverse;
 ```css
 .flex-container {
   display: flex;
-  flex-direction: row-reverse;  /* Задаем ось */
+  flex-direction: row;  /* Задаем ось */
   background-color: aquamarine;
-  column-gap: 10px;
-  padding: 10px;
   margin: 10px;
 }
 
@@ -177,17 +188,21 @@ flex-wrap: nowrap;
 
 #### wrap
 
-<img src="img/flex-wrap-wrap.png" alt="flex-wrap-wrap" style="zoom:80%;" />
-
 ```css
 flex-wrap: wrap;
 ```
 
-Каждый элемент занимает нужную ему ширину, а не вмещающиеся элементы переносятся на следующую строку \ столбец.
+Каждый элемент занимает нужную ему ширину, а не вмещающиеся элементы переносятся на следующую строку \ столбец. Если ширина \ высота фиксированные и их не хватает, то элементы могут вылезти за границы контейнера.
+
+Горизонтальный флекс:
+
+<img src="img/flex-row-wrap.png" alt="flex-row-wrap" style="zoom:80%;" />
+
+Вертикальный флекс:
+
+![flex-column-wrap](img/flex-column-wrap-1726498519284.png)
 
 #### wrap-reverse
-
-<img src="img/flex-wrap-wrap-reverse.png" alt="flex-wrap-wrap-reverse" style="zoom:80%;" />
 
 ```css
 flex-wrap: wrap-reverse;
@@ -195,23 +210,19 @@ flex-wrap: wrap-reverse;
 
 Порядок элементов инвертируется по вертикали. Редко используется. P.S. Вероятно, не обязательно по вертикали, а в зависимости от того, какая ось выбрана основной, но это не точно, а проверять впадлу, выглядит как что-то артхаусное.
 
+<img src="img/flex-wrap-wrap-reverse.png" alt="flex-wrap-wrap-reverse" style="zoom:80%;" />
+
 ### Пример
 
 ```html
 <body>
   <div class="flex-container">
-    <div class="flex-element">
-      Раз прислал мне Раз прислал мне Раз прислал мне
-    </div>
-    <div class="flex-element">
-      барин чаю
-    </div>
-    <div class="flex-element">
-      и велел
-    </div>
-    <div class="flex-element">
-      его сварить
-    </div>
+    <div class="flex-element">Раз прислал мне</div>
+    <div class="flex-element">барин чаю</div>
+    <div class="flex-element">и велел</div>
+    <div class="flex-element">его сварить</div>
+    <div class="flex-element">А я отроду не знаю</div>
+    <div class="flex-element">Как хороший чай варить.</div>
   </div>
 </body>
 ```
@@ -324,6 +335,8 @@ P.S. По ощущениям, после разбора темы спустя д
   display: flex;
   flex-wrap: wrap;  /* Важно */
   height: 175px;    /* Важно */
+  /* justify-content: flex-start; */
+  /* align-content: flex-start; */
   background-color: aquamarine;
   border: 1px dashed black;
   margin: 10px;
@@ -347,7 +360,7 @@ P.S. По ощущениям, после разбора темы спустя д
 
 ```css
 .flex-container {
-  justify-content: flex-start;
+  justify-content: flex-start;  /* default */
 }
 ```
 
@@ -689,7 +702,7 @@ align-items: baseline;
 }
 ```
 
-## Растягивание + сужение + базис
+## Растягивание + сужение + базис, flex
 
 ```css
 .flex-element {
