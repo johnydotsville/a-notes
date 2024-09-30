@@ -1,0 +1,4 @@
+tailwind - стилизация
+bootstrap
+jenkins - ci cd
+netlify - для публикации приложений (бесплатное)
