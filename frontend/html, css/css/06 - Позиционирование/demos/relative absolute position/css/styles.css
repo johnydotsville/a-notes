@@ -1,0 +1,27 @@
+.hero-container {
+  position: relative;
+  width: 200px;
+}
+
+.hero-portrait {
+  width: 100%;
+  display: block;
+}
+
+.hero-role-container {
+  position: absolute;
+  right: 5%;
+  bottom: 8%;
+  width: 20%;
+  aspect-ratio: 1/1;
+  background-color: #282828;
+  border: 1px solid indianred;
+  border-radius: 50px;
+}
+
+.hero-role-pic {
+  position: absolute;
+  width: 150%;
+  top: 10%;
+  left: 15%;
+}
