@@ -16,7 +16,7 @@
 
 # Значения для position
 
-## static
+## static (дефолт)
 
 ```css
 position: static;
