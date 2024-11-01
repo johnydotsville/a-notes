@@ -4,7 +4,7 @@
 
 Рамка задается свойством `border` и представляет собой линию, проходящую по границе элемента:
 
-<img src="img/border-view.drawio.svg" alt="border-view.drawio" style="zoom:80%;" />
+<img src="img/border-view.png" alt="border-view.drawio" style="zoom:80%;" />
 
 Важные характеристики рамки:
 
@@ -57,7 +57,7 @@ border-top-width: 10px;   /* Все остальные, -bottom- -left- и т.д
 
 Обводка задается свойством `outline` и представляет собой линию, проходящую по границе элемента:
 
-<img src="img/outline-view.drawio.svg" alt="outline-view.drawio" style="zoom:80%;" />
+<img src="img/outline-view.png" alt="outline-view.drawio" style="zoom:80%;" />
 
 Важные характеристики рамки:
 

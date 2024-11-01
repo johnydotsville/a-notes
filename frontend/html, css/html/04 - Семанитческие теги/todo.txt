@@ -1,0 +1,4 @@
+link тег. Зачем? Вместо а?
+
+https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element
+Дописать про main, search
