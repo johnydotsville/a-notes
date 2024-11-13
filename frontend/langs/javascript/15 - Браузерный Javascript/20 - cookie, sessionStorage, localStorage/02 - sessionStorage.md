@@ -1,0 +1,6 @@
+# sessionStorage
+
+## Особенности sessionStorage
+
+
+

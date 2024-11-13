@@ -1,0 +1,4 @@
+# localStorage
+
+## Особенности localStorage
+
