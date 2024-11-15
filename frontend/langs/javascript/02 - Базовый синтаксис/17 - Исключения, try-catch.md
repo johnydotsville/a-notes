@@ -1,6 +1,6 @@
 
 
-# Синтаксис
+# Синтаксис try-catch
 
 ```javascript
 try {
