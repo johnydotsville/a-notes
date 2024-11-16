@@ -29,7 +29,7 @@ function hello(user) {
 
 console.log(username);  // Alice
 hello(username);  // Привет, Попытаемся сломать исходные данные
-console.log(username);  // Осталось Alice, исходные данные не затронуты
+console.log(username);  // Alice, исходные данные не затронуты, все осталось как было.
 ```
 
 ### Значения по умолчанию
@@ -95,6 +95,6 @@ function noReturn() {
 }
 
 let r1 = justReturn();  // undefined
-let r1 = noReturn();    // undefined
+let r2 = noReturn();    // undefined
 ```
 
