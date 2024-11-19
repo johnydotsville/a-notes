@@ -45,12 +45,11 @@ console.log(tom);  // undefined
 
 Внутри конструктора с помощью конструкции `new.target` можно проверить, вызван ли конструктор без new:
 
-* `new.target === undefined` - значит вызвано без new.
-* `new.target === "имя функции"` (например, `User(name)` в нашем случае) - значит вызвано с new.
+* `new.target === undefined` - значит вызвано без new. Если же функция-конструктор вызвана как положено, с new, тогда в new.target будет лежать объект функции.
 
 ```javascript
 function User(name) {
-  if (new.target === undefined) {  // Если вызвали без new, мы за их поправим
+  if (new.target === undefined) {  // Если вызвано без new, мы за сами перевызовем как надо.
     return new User(name);
   }
   this.name = name;
@@ -101,7 +100,7 @@ function Mouse(buttons, wired) {
 }
 console.log(Mouse.prototype);  // <-- Тут уже лежит объект { constructor: ƒ Mouse(buttons, wired) }
 
-// Mouse.prototype = device;  // <-- Т.е. тут мы его по сути не определяем, а ПЕРЕопределяем
+// Mouse.prototype = device;  // <-- Т.е. так мы бы его по сути не определили, а ПЕРЕопределили
 let mouse = new Mouse(5, true);
 console.log(mouse.constructor);  // <-- ƒ Mouse(buttons, wired), ФК через которую мы создали объект
 ```
