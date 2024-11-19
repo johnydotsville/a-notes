@@ -51,6 +51,8 @@ console.log(tom);  // undefined
 function User(name) {
   if (new.target === undefined) {  // Если вызвано без new, мы за сами перевызовем как надо.
     return new User(name);
+  } else {
+    console.log(new.target.name);  // User
   }
   this.name = name;
 }
