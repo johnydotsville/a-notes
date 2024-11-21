@@ -41,6 +41,16 @@ console.log(huckIsHuman);  // true
 
 Хотя huck был создан с помощью конструктора `Person`, но `instanceOf Human` тоже выдает true. Все потому, что у Person и Human выставлены одинаковые прототипы, а оператор instanceof ориентируется по прототипам. Если прототипом объекта `a` является объект из `Klass.prototype`, то считается что a является экземпляром класса Klass.
 
+Демонстрация, что принадлежность определяется не только непосредственная, но по цепочке наследования:
+
+```javascript
+class Human { }
+class Person extends Human { }
+
+const huck = new Person;
+console.log(huck instanceof Human);  // true
+```
+
 Использовать объект справа от instanceof нельзя:
 
 ```javascript
