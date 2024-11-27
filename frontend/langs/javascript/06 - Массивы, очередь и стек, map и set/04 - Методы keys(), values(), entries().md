@@ -284,4 +284,3 @@ console.log(e[0]);   // name
 console.log(e[1]);   // Tom
 ```
 
-d
