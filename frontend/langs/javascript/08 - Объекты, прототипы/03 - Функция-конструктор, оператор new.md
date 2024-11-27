@@ -136,7 +136,7 @@ console.log(becky.fullname());  // Becky Thatcher
 
 ### Восстановить свойство constructor
 
-Либо, если все же делаем через отдельный объект, то можем вручную восстановить свойство constructor:
+Если мы кладем в .prototype кастомный объект, то можем в нем вручную восстановить свойство constructor:
 
 ```javascript
 function Person(firstname, lastname) {  // <-- Функция-конструктор
@@ -188,6 +188,8 @@ console.log(arr.prototype);  // <-- undefined, у массивов нет сво
 const arrayRealProto = Object.getPrototypeOf(arr);  // <-- Но конечно у них есть прототип
 console.log(arrayRealProto);  // <-- [at: ƒ, concat: ƒ, copyWithin: ƒ, fill: ƒ, find: ƒ, …]
 ```
+
+Прототипом функций является объект из `Function.prototype`
 
 # Методы в ФК
 
