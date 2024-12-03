@@ -1,0 +1,3 @@
+Пока ограничусь одним сценарием использования - ссылка на DOM-элемент.
+Остальные допишу по мере необходимости. Вот ссылка на несколько примеров:
+https://dev.to/kirubelkinfe/mastering-useref-in-react-with-typescript-4-different-use-cases-for-useref-2a87
