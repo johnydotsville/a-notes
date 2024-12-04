@@ -1,0 +1,2 @@
+* Условия, при которых кэш очищается.
+* Мемоизация при lazy-загрузке. https://habr.com/ru/companies/otus/articles/800549/
