@@ -75,11 +75,61 @@
 
 Приблизительной альтернативой использованию async и defer является размещение тегов `<script>` после закрывающего `</html>`. Тогда когда парсер дойдет до них, DOM-дерево и так уже будет построено.
 
-TODO: 
+## Динамическое подключение скрипта
 
-* https://learn.javascript.ru/script-async-defer - возможно, стоит дописать про скрипты, подключаемые динамически? Через добавление элемента script через метод createElement?
+Если не использовать модули, то динамическое подключение скрипта реализуется через программное создание элемента script и добавление его в документ. Под "динамическим" подключением подразумевается, что изначально мы этот скрипт не упоминаем в разметке, а добавляем его уже после того, как разметка отрисовалась. Например, когда пользователь нажал кнопку. Пример реализации:
 
-  
+Пишем какой-нибудь скрипт, который будем подключать динамически, и сохраняем его в отдельный файл, например `helloscript.js`:
+
+```javascript
+function message(text) {
+  console.log(text);
+}
+```
+
+Теперь мы хотим подключить этот скрипт к странице, чтобы иметь возможность пользоваться функцией message.
+
+```html
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>HTML CSS Project</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/prog.js"></script>
+  </head>
+  <body>
+    <button onclick="start()">Загрузить скрипт</button>
+    <button onclick="message('Hello, script')">Выполнить функцию</button>
+  </body>
+</html>
+```
+
+Здесь у нас к странице подключается базовый скрипт prog.js, который выглядит так:
+
+```javascript
+function include(url) {  // <-- Функция загрузки и подключения скрипта к странице.
+  return new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.onload = () => resolve();
+    script.onerror = (err) => reject(err);
+    script.src = url;
+    document.head.append(script);
+  });
+}
+
+async function start() {  // <-- Функция запуска загрузки.
+  try {
+    // Путь надо указывать от страницы, на которой выполняется текущий скрипт (prog.js)
+    await include("js/helloscript.js");
+    console.log("Скрипт успешно добавился на страницу.");
+  } catch(err) {
+    console.log(err.message);
+  }
+}
+```
+
+Теперь, если нажать на первую кнопку, то скрипт загрузится и функция message станет доступна для использования. Если же мы сразу нажмем вторую кнопку, то будет ошибка, что функция message неизвестна.
 
 
 
