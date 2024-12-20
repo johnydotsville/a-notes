@@ -1,13 +1,1 @@
-* Что такое псевдомассивы? Почитать после главы про наследование и классы, потому что https://habr.com/ru/articles/336136/ вроде как это связано.
-
-
-
-* Про оператор расширения и параметры более очевидно написать, 
-  как собирать \ разбирать параметры в кучу.
-
-
-* spread и дестракт операторы с итерируемыми объектами [..."abcd"]
-
-* typeof instanceof в карточки
-  The difference between and is that the former is usedtypeof instanceof
-  with the built-in TypeScript types while the latter with the custom ones
+Прочитать про функциональность signals
