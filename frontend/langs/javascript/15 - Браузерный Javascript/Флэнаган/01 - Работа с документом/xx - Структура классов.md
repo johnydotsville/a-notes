@@ -2,6 +2,8 @@
 
 HTMLElement
 
+HTMLUnknownElement
+
 
 
 DOMTokenList
