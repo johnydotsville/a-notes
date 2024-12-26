@@ -113,7 +113,24 @@ function handleBtnClick(event) {
 
 ## .preventDefault()
 
-TODO: А стоит ли сюда их писать? Мб нужно их просто перечислить, а в отдельных конспектах расписать применение?
+Подробно об этом методе написано в конспекте про механику остановки распространения событий. Здесь же я оставлю только мини-пример на то, как предотвратить перезагрузку страницы при отправке формы:
+
+```html
+<body>
+  <form>
+    <input type="text" />
+    <button type="sumbit">Отправить</button>
+  </form>
+</body>
+```
+
+```javascript
+const f = document.querySelector("form");
+
+f.addEventListener("submit", (event) => {
+  event.preventDefault();
+});
+```
 
 # this в обработчиках
 
