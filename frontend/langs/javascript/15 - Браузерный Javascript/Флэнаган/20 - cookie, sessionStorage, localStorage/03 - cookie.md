@@ -14,6 +14,8 @@
 
 Будут рассмотрены через библиотеку `js-cookie` ([CDN](https://www.jsdelivr.com/package/npm/js-cookie), [git](https://github.com/js-cookie/js-cookie)), чтобы не возиться с низкоуровневым API.
 
+TODO: написать html с подключенным js-cookie
+
 ## Записать куку
 
 ### Обычная кука
