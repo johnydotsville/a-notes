@@ -73,7 +73,11 @@ new Promise((resolve, reject) => {
 
 ## Создать хранилище
 
-Важно! Создавать хранилище можно только при открытии БД в событии `onupgradeneeded`. Иначе будет ошибка `Failed to execute 'createObjectStore' on 'IDBDatabase': The database is not running a version change transaction`.
+Важно! Создавать хранилище можно только при открытии БД в событии `onupgradeneeded`. Иначе будет ошибка:
+
+```
+Failed to execute 'createObjectStore' on 'IDBDatabase': The database is not running a version change transaction
+```
 
 Хранилище создается методом `.createObjectStore()` на объекте БД ([документация](https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/createObjectStore)):
 
@@ -123,12 +127,12 @@ function save(database) {
 
 #### keyPath: "поле"
 
-Указываем, какое поле сохраняемого объекта следует использовать в качестве ключа:
+Ситуация, когда мы указали в настройках хранилища, какое поле сохраняемого объекта следует использовать в качестве ключа:
 
 ```javascript
 function save(database) {
   const data = {
-    id: 10,  // <-- Укажем, что это поле надо взять в качестве ключа.
+    id: 10,  // <-- В keyPath при создании хранилища мы указывали id
     firstname: "Tom",
     lastname: "Sawyer"
   };
