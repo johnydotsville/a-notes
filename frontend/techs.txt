@@ -2,3 +2,4 @@ tailwind - стилизация
 bootstrap
 jenkins - ci cd
 netlify - для публикации приложений (бесплатное)
+React hook form
