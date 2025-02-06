@@ -1,3 +1,4 @@
 Без декси, просто индекседДБ
 https://dev.to/esponges/indexeddb-your-offline-and-serverless-db-in-your-browser-with-react-3hm7
 https://learn.javascript.ru/indexeddb#otkryt-bazu-dannyh
+
