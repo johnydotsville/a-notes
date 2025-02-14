@@ -1,16 +1,5 @@
 Синтаксические вещи, которые надо разобрать.
 
-# 1
-
-```typescript
-export interface IAppShell {
-  readonly moveItemToTrash: (path: string) => Promise<void>
-```
-
-Что тут означает конструкция `=>`
-
-P.S. Похоже то, что в поле moveItemToTrash можно положить лямбду, которая возвращает Promise void
-
 # 2
 
 ```typescript
@@ -63,13 +52,42 @@ export class Account {
 
 ReadonlyArray
 
-# 7
+
+
+# 8 
 
 ```typescript
-export type ForkedGitHubRepository = GitHubRepository & {
-  readonly parent: GitHubRepository
-  readonly fork: true
+const Status = {
+  Active: "Active",
+  Inactive: "Inactive",
+  Pending: "Pending",
+} as const;
+```
+
+As const что это?
+
+# 9 
+
+Type branding, flavouring
+
+# 10
+
+```typescript
+function employeeTypeChecker<T extends Position>(
+  position: T, employee: Director | Seller 
+) {
+  if (position === Position.Director) {
+    return employee as T extends Position.Director ? Director : never
+  } else {
+    return employee as T extends Position.Seller ? Seller : never;    
+  }
 }
 ```
 
-`&` здесь что значит?
+Функция, во-первых, ничего не возвращает судя по заголовку, и в return что-то не особо понятное.
+
+
+
+# 11
+
+Конструкция as const в целом.

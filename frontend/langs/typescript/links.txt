@@ -1,0 +1,8 @@
+Песочница:
+https://www.typescriptlang.org/play
+
+Набор вопросов по TS с ответами. Вероятно можно использовать как карту обучения:
+https://github.com/FedorovAlexander/typescript-interview-questions-ru
+
+Мб неплохо
+https://github.com/etroynov/typescript-book/blob/master/docs/classes.md

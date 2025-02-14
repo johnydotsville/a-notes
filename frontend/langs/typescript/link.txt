@@ -1,2 +1,0 @@
-Мб неплохо
-https://github.com/etroynov/typescript-book/blob/master/docs/classes.md
