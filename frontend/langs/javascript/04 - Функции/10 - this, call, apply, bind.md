@@ -234,11 +234,11 @@ setTimeout(binded, 1000);  // I am Tom
 Метод bind *не изменяет исходный объект функции*, он возвращает новую функцию-обертку, которая вызывает исходную, передавая ей объект, который нужно использовать в качестве this. Для понимания как это примерно устроено, рассмотрим такой пример "самодельной" реализации bind, названной `link`:
 
 ```javascript
-function link(zis) {
-  let origin = this; // в this лежит объект функции, на которой вызван метод link
+function link(objForThis) {
+  let originFunc = this; // в this лежит объект функции, на которой вызван метод link
   
   return function(...args) {
-    origin.call(zis, ...args);
+    originFunc.call(objForThis, ...args);
   };
 }
 

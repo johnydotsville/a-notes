@@ -91,12 +91,12 @@ class Child extends Parent { }
 const p = new Parent();
 const c = new Child();
 
-const ParentPrototype = Object.getPrototypeOf(p);
-const ChildPrototype = Object.getPrototypeOf(c);
+const pPrototype = Object.getPrototypeOf(p);
+const cPrototype = Object.getPrototypeOf(c);
 
 // <-- Для экземпляра Child прототипом считается не только Child.prototype,
-console.log(ChildPrototype.isPrototypeOf(c));  // true
+console.log(cPrototype.isPrototypeOf(c));  // true
 // <-- но и Parent.prototype
-console.log(ParentPrototype.isPrototypeOf(c));  // true
+console.log(pPrototype.isPrototypeOf(c));  // true
 ```
 
