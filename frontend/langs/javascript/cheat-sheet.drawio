@@ -1,0 +1,139 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.2 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" scale="1" border="5" version="25.0.2">
+  <diagram name="Page-1" id="9iwx4kF-SaM_lTl1vUHh">
+    <mxGraphModel dx="747" dy="582" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="583" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="6Df2u15g98YnEbPmI9u2-2" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="809" y="1140" as="sourcePoint" />
+            <mxPoint x="810" y="12" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-3" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="411" y="1080" as="sourcePoint" />
+            <mxPoint x="412" y="10" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-4" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="9" y="1101.8181818181818" as="sourcePoint" />
+            <mxPoint x="10" y="12" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-6" value="&lt;div&gt;В JS динамическая нестрогая типизация:&lt;/div&gt;&lt;div&gt;* Динамическая:&lt;/div&gt;&lt;div&gt;&amp;nbsp; * Типы определяются во время выполнения, а не во время компиляции.&lt;/div&gt;&lt;div&gt;&amp;nbsp; * Переменная может менять тип во время выполнения.&lt;/div&gt;&lt;div&gt;* Нестрогая:&lt;/div&gt;&lt;div&gt;&amp;nbsp; * Автоматическое неявное приведение типов.&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="20" y="36" width="380" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-7" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;number&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;(зн.Infinity, -Infinity,&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;NaN)&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="15" y="149" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-8" value="&lt;b&gt;Типы данных в Javascript&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="40" y="10" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-10" value="&lt;b&gt;Примитивные (7)&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="40" y="119" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-12" value="&lt;div&gt;BigInt&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="135" y="149" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-13" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;string&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="175" y="149" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-14" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;boolean&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="215" y="149" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-15" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;symbol&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="265" y="149" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-16" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;null&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="315" y="149" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-17" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;undefined&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="345" y="149" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-19" value="&lt;b&gt;Не примитивные (2)&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="30" y="186" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-20" value="&lt;div&gt;object&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="15" y="216" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-21" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Обертки&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="65" y="216" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-22" value="&lt;div&gt;&lt;div&gt;const a = new Number(7)&lt;/div&gt;&lt;div&gt;const str = new String(&quot;Hello, world!&quot;)&lt;/div&gt;&lt;div&gt;const flag = new Boolean(true)&lt;/div&gt;&lt;div&gt;const sym = new Symbol(&quot;foobar&quot;)&lt;/div&gt;&lt;div&gt;const big = BigInt(10)&amp;nbsp; // без new! не обертка&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="160" y="216" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-23" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="120" y="231.68" as="sourcePoint" />
+            <mxPoint x="165" y="231.68" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-24" value="&lt;b&gt;Определение типа&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="30" y="292" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-25" value="&lt;div&gt;if ( &lt;b&gt;typeof&amp;nbsp;&lt;/b&gt;(foo) === &quot;number&quot; )&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="20" y="322" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-26" value="&lt;div&gt;typeof null&amp;nbsp; // &quot;object&quot;&lt;/div&gt;&lt;div&gt;typeof alert // &quot;function&quot;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="245" y="322" width="145" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-27" value="&lt;div&gt;function foobar() { }&lt;/div&gt;&lt;div&gt;typeof(foobar)&amp;nbsp; // function&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="245" y="360" width="145" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-28" value="&lt;b&gt;Преобразование типов&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="430" y="9" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-29" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;s = String(255);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; // &quot;255&quot;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;s = String(false);&amp;nbsp; &amp;nbsp; &amp;nbsp; // &quot;false&quot;&lt;/div&gt;&lt;div&gt;s = String(true);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;// &quot;true&quot;&lt;/div&gt;&lt;div&gt;s = String(null);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;// &quot;null&quot;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="418" y="496" width="192" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-32" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;n = Number(&quot;&amp;nbsp; &amp;nbsp;255&amp;nbsp; &amp;nbsp;&quot;);&amp;nbsp; // 255&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;n = Number(true);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;// 1&lt;/div&gt;&lt;div&gt;n = Number(false);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; // 0&lt;/div&gt;&lt;div&gt;n = Number(&quot;&amp;nbsp; &amp;nbsp;&quot;);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; // 0&lt;/div&gt;&lt;div&gt;n = Number(&quot;&quot;);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;// 0&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="420" y="55" width="190" height="91" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-33" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;b = Boolean(&quot;&amp;nbsp; &amp;nbsp;255&amp;nbsp; &amp;nbsp;&quot;);&amp;nbsp; &amp;nbsp; &amp;nbsp; // true&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;b = Boolean(&quot;&amp;nbsp; &amp;nbsp;2 5 5&amp;nbsp; &amp;nbsp;&quot;);&amp;nbsp; &amp;nbsp; // true&lt;/div&gt;&lt;div&gt;b = Boolean(&quot;&amp;nbsp; &amp;nbsp;ололо&amp;nbsp; &amp;nbsp;&quot;);&amp;nbsp; // true&lt;/div&gt;&lt;div&gt;b = Boolean(&quot;&amp;nbsp; &amp;nbsp;&quot;);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;// true&lt;/div&gt;&lt;div&gt;b = Boolean(&quot;0&quot;);&amp;nbsp; // true, расцен&amp;nbsp;&lt;/div&gt;&lt;div&gt;как непустая строка&lt;/div&gt;&lt;div&gt;b = Boolean(Infinity);&amp;nbsp; &amp;nbsp;// true&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="420" y="222" width="190" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-34" value="В строку" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="420" y="476" width="380" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-35" value="В число" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="420" y="36" width="380" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-36" value="В boolean" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="420" y="202" width="370" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-37" value="&lt;div&gt;&quot;&quot; + 1 + 0&lt;/div&gt;&lt;div&gt;&quot;&quot; - 1 + 0&lt;/div&gt;&lt;div&gt;true + false&lt;/div&gt;&lt;div&gt;6 / &quot;3&quot;&lt;/div&gt;&lt;div&gt;&quot;2&quot; * &quot;3&quot;&lt;/div&gt;&lt;div&gt;4 + 5 + &quot;px&quot;&lt;/div&gt;&lt;div&gt;&quot;$&quot; + 4 + 5&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="20" y="440" width="130" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-38" value="&lt;div&gt;&quot;10&quot;&lt;/div&gt;&lt;div&gt;-1&lt;/div&gt;&lt;div&gt;1&lt;/div&gt;&lt;div&gt;2&lt;/div&gt;&lt;div&gt;6&lt;/div&gt;&lt;div&gt;&quot;9px&quot;&lt;/div&gt;&lt;div&gt;&quot;$45&quot;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="150" y="440" width="50" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-40" value="Упражнения на преобразование типов" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="20" y="410" width="370" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-41" value="&lt;div&gt;* Все, что как бы &quot;интуитивно&quot; пустое, нулевое, непонятное, неопределенное, неизвестное вроде пустых строк, null, NaN, undefined, является false.&lt;/div&gt;&lt;div&gt;* Числа 1 и 0 являются, соответственное, true и false. Однако строка &quot;0&quot; является true, потому что она рассматривается именно как строка, а не как число. Она не пустая, поэтому true. Впрочем, в других языках может быть по-другому.&lt;/div&gt;&lt;div&gt;* При логическом преобразовании пробельные символы из строки не удаляются, поэтому строка из пробелов считается не пустой, а значит является true.&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="420" y="326" width="380" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-42" value="&lt;div&gt;* Пробельные символы по краям из строк удаляются, а все что после этого осталось, уже преобразуется в число.&lt;/div&gt;&lt;div&gt;* Пустая строка трактуется как 0&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="420" y="146" width="380" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-43" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;n = Number(null);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;// 0&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;n = Number(&quot;2 5 5&quot;);&amp;nbsp; // NaN&lt;/div&gt;&lt;div&gt;n = Number(&quot;&amp;nbsp; &amp;nbsp;ололо &quot;);&amp;nbsp; // NaN&lt;/div&gt;&lt;div&gt;n = Number(undefined);&amp;nbsp; &amp;nbsp; // NaN&lt;/div&gt;&lt;div&gt;n = Number(NaN);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; // NaN&lt;/div&gt;&lt;div&gt;n = Number(Infinity);&amp;nbsp; &amp;nbsp; &amp;nbsp;// Infinity&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="610" y="55" width="190" height="91" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-44" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;b = Boolean(1);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;// true&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;b = Boolean(0);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;// false&lt;/div&gt;&lt;div&gt;b = Boolean(&quot;&quot;);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; // false&lt;/div&gt;&lt;div&gt;b = Boolean(null);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;// false&lt;/div&gt;&lt;div&gt;b = Boolean(undefined);&amp;nbsp; // false&lt;/div&gt;&lt;div&gt;b = Boolean(NaN);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; // false&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="610" y="222" width="190" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-46" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;s = String(undefined);&amp;nbsp; // &quot;undefined&quot;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;s = String(NaN);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; // &quot;NaN&quot;&lt;/div&gt;&lt;div&gt;s = String(255 / 0);&amp;nbsp; &amp;nbsp; // &quot;Infinity&quot;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="610" y="496" width="192" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-47" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&quot;4&quot; - 2&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&quot;4px&quot; - 2&lt;/div&gt;&lt;div&gt;&quot;&amp;nbsp; -9&amp;nbsp; &quot; + 5&lt;/div&gt;&lt;div&gt;&quot;&amp;nbsp; -9&amp;nbsp; &quot; - 5&lt;/div&gt;&lt;div&gt;null + 1&lt;/div&gt;&lt;div&gt;undefined + 1&lt;/div&gt;&lt;div&gt;&quot; \t \n&quot; - 2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="220" y="441" width="130" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-48" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;NaN&lt;/div&gt;&lt;div&gt;&quot;&amp;nbsp; -9&amp;nbsp; 5&quot;&lt;/div&gt;&lt;div&gt;-14&lt;/div&gt;&lt;div&gt;1&lt;/div&gt;&lt;div&gt;NaN&lt;/div&gt;&lt;div&gt;-2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="350" y="441" width="50" height="110" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

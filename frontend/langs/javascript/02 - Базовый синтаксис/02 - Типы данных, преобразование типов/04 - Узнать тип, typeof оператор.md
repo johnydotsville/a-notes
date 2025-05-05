@@ -53,6 +53,11 @@ typeof null  // "object"
 typeof alert // "function"
 ```
 
+```javascript
+function foobar() { }
+typeof(foobar)  // function
+```
+
 Особенность здесь вот в чем:
 
 * null на самом деле не является объектом, потому что null это отдельный тип. Так что такой вывод typeof является признанной ошибкой оператора, которая осталась для совместимости.

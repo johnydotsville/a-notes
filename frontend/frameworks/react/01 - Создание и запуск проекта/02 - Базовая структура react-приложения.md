@@ -39,8 +39,6 @@ root.render(
 // ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
-TODO: почитать про классы (или что это такое) React, ReactDOM и расписать. Мб конкретно тут не надо импортировать React даже.
-
 ### App.js
 
 ```react
@@ -57,4 +55,3 @@ function App() {
 export default App;
 ```
 
-TODO: почитать во что и как превращается этот jsx, что в итоге возвращается из функции App.
