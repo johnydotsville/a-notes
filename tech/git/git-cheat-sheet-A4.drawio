@@ -10,506 +10,506 @@
             <mxPoint x="580" y="9" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-1" value="git workflow" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-1" value="git workflow" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="20" y="10" width="510" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-2" value="Рабочий каталог&lt;div&gt;(Working Directory)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-2" value="Рабочий каталог&lt;div&gt;(Working Directory)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="55" y="50" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-3" value="Stage&amp;nbsp;&lt;div&gt;(Index)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-3" value="Stage&amp;nbsp;&lt;div&gt;(Index)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="235" y="50" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-4" value="Git DB" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-4" value="Git DB" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="415" y="50" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-5" value="Возможные состояния файла" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-5" value="Возможные состояния файла" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="20" y="196" width="470" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-8" value="Untracked [?]" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-8" value="Untracked [?]" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="50" y="236" width="90" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-9" value="Tracked" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=2;dashed=1;dashPattern=1 4;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-9" value="Tracked" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=2;dashed=1;dashPattern=1 4;" parent="1" vertex="1">
           <mxGeometry x="50" y="296" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-16" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.004;entryY=0.191;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="j3O6o0AAXhgC6TbAAweH-3">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-16" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.004;entryY=0.191;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="j3O6o0AAXhgC6TbAAweH-3" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="175" y="60" as="sourcePoint" />
             <mxPoint x="230" y="60" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-17" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="j3O6o0AAXhgC6TbAAweH-3" target="j3O6o0AAXhgC6TbAAweH-4">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-17" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="j3O6o0AAXhgC6TbAAweH-3" target="j3O6o0AAXhgC6TbAAweH-4" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="350.0000000000002" y="60" as="sourcePoint" />
             <mxPoint x="395" y="60" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-30" value="Unmodified" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-30" value="Unmodified" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="110" y="296" width="80" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-31" value="Staged" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-31" value="Staged" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="190" y="296" width="70" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-32" value="Commited" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-32" value="Commited" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="260" y="296" width="70" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-34" value="Modified [M]" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-34" value="Modified [M]" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="110" y="326" width="80" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-37" value="Unmerged [U]" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-37" value="Unmerged [U]" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="330" y="296" width="90" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-40" value="Copied [C]" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-40" value="Copied [C]" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="420" y="296" width="80" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-43" value="Renamed [R]" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-43" value="Renamed [R]" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="420" y="326" width="80" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-46" value="Deleted [D]" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-46" value="Deleted [D]" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="420" y="356" width="80" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-52" value="&lt;b&gt;&quot;Рабочка&quot;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-52" value="&lt;b&gt;&quot;Рабочка&quot;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="55" y="100" width="120" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-53" value="&lt;b&gt;&quot;Индекс&quot;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-53" value="&lt;b&gt;&quot;Индекс&quot;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="235" y="100" width="120" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-54" value="&lt;b&gt;&quot;Коммит&quot;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-54" value="&lt;b&gt;&quot;Коммит&quot;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="415" y="100" width="120" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-55" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="j3O6o0AAXhgC6TbAAweH-4" target="j3O6o0AAXhgC6TbAAweH-3">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-55" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="j3O6o0AAXhgC6TbAAweH-4" target="j3O6o0AAXhgC6TbAAweH-3" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="285" y="250" as="sourcePoint" />
             <mxPoint x="335" y="200" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-56" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="j3O6o0AAXhgC6TbAAweH-3" target="j3O6o0AAXhgC6TbAAweH-2">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-56" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="j3O6o0AAXhgC6TbAAweH-3" target="j3O6o0AAXhgC6TbAAweH-2" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="220" y="90" as="sourcePoint" />
             <mxPoint x="175" y="90" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-59" value="Рабочка&amp;nbsp; &amp;gt;&amp;nbsp; Индекс" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-59" value="Рабочка&amp;nbsp; &amp;gt;&amp;nbsp; Индекс" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="785" y="60" width="120" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-60" value="Индекс&amp;nbsp; &amp;gt;&amp;nbsp; Коммит" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-60" value="Индекс&amp;nbsp; &amp;gt;&amp;nbsp; Коммит" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="785" y="90" width="120" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-63" value="Индекс&amp;nbsp; &amp;lt;&amp;nbsp; Коммит" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-63" value="Индекс&amp;nbsp; &amp;lt;&amp;nbsp; Коммит" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="785" y="120" width="120" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-64" value="Рабочка&amp;nbsp; &amp;lt;&amp;nbsp; Индекс&amp;nbsp;&amp;nbsp;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-64" value="Рабочка&amp;nbsp; &amp;lt;&amp;nbsp; Индекс&amp;nbsp;&amp;nbsp;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="785" y="154" width="120" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-65" value="Посмотреть состояние файлов" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-65" value="Посмотреть состояние файлов" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="20" y="470" width="540" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-66" value="Движение файлов" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-66" value="Движение файлов" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="620" y="10" width="470" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-67" value="Индексировать файлы" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-67" value="Индексировать файлы" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="930" y="60" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-68" value="Закоммитить индексированные файлы" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-68" value="Закоммитить индексированные файлы" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="930" y="90" width="230" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-69" value="Восстановить файл в индексе" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-69" value="Восстановить файл в индексе" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="930" y="120" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-70" value="Восстановить файл в рабочке" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-70" value="Восстановить файл в рабочке" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="930" y="154" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-71" value="P.S. Если уловить вайб движения файлов, и думать о конкретных операциях добавления, удаления, восстановления как о движении файлов, то будет понятно как этими командами сделать любые действия.&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;За подробностями - в большой конспект. Лучше понять принцип, чем марать шпаргалку десятком конкретных примеров, каждый из которых делается по сути одинаково.&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-71" value="P.S. Если уловить вайб движения файлов, и думать о конкретных операциях добавления, удаления, восстановления как о движении файлов, то будет понятно как этими командами сделать любые действия.&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;За подробностями - в большой конспект. Лучше понять принцип, чем марать шпаргалку десятком конкретных примеров, каждый из которых делается по сути одинаково.&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="600" y="260" width="540" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-75" value="Рабочка&amp;nbsp; &amp;lt;&amp;nbsp; Ласт коммит&lt;br&gt;Рабочка&amp;nbsp; &amp;lt;&amp;nbsp; Коммит ab34fe7" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-75" value="Рабочка&amp;nbsp; &amp;lt;&amp;nbsp; Ласт коммит&lt;br&gt;Рабочка&amp;nbsp; &amp;lt;&amp;nbsp; Коммит ab34fe7" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="840" y="206" width="235" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-77" value="Имена файлов \ директорий" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-77" value="Имена файлов \ директорий" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="20" y="640" width="470" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-78" value=". - все файлы \ директории" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-78" value=". - все файлы \ директории" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="20" y="680" width="170" height="29" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-79" value="foobar.js - конкретный файл" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-79" value="foobar.js - конкретный файл" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="20" y="709" width="160" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-80" value="foo.js, bar.js - несколько файлов" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-80" value="foo.js, bar.js - несколько файлов" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="20" y="739" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-81" value="*.ts&amp;nbsp;- все ts-файлы" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-81" value="*.ts&amp;nbsp;- все ts-файлы" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="20" y="769" width="170" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-82" value="Шаблоны:" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-82" value="Шаблоны:" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="270" y="679" width="90" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-84" value="* - любое количество любых символов&lt;div&gt;? - один любой символ&lt;/div&gt;&lt;div&gt;[abc] - один из указанных символов&lt;/div&gt;&lt;div&gt;** - любая вложенная директория&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-84" value="* - любое количество любых символов&lt;div&gt;? - один любой символ&lt;/div&gt;&lt;div&gt;[abc] - один из указанных символов&lt;/div&gt;&lt;div&gt;** - любая вложенная директория&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="290" y="709" width="220" height="61" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-88" value="Прекратить отслеживание" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-88" value="Прекратить отслеживание" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="610" y="400" width="470" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-91" value="Прекратить отслеживать файл" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-91" value="Прекратить отслеживать файл" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="815" y="443" width="225" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-92" value="Прекратить отслеживать директорию" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-92" value="Прекратить отслеживать директорию" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="815" y="473" width="225" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-94" value="Надо закоммитить это" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-94" value="Надо закоммитить это" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="850" y="503" width="225" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-95" value="Стоп отслеживания делается через удаление файла из гита. Флаг --cached говорит гиту оставить файл в рабочке." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-95" value="Стоп отслеживания делается через удаление файла из гита. Флаг --cached говорит гиту оставить файл в рабочке." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="600" y="544" width="550" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-96" value="Коммиты" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-96" value="Коммиты" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="20" y="840" width="470" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-100" value="Откроется vi. Команды vi надо вводить на английской раскладке.&lt;div&gt;Esc - перейти в режим команд.&lt;/div&gt;&lt;div&gt;i - режим редактирования.&lt;/div&gt;&lt;div&gt;:wq - сохранить и выйти.&lt;/div&gt;&lt;div&gt;# закомментированные строчки в текст коммита не попадают.&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="125" y="1005" width="380" height="80" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-100" value="Откроется vi. Команды vi надо вводить на английской раскладке.&lt;div&gt;Esc - перейти в режим команд.&lt;/div&gt;&lt;div&gt;i - режим редактирования.&lt;/div&gt;&lt;div&gt;:wq - сохранить и выйти.&lt;/div&gt;&lt;div&gt;# закомментированные строчки в текст коммита не попадают.&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="152" y="1005" width="380" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-107" value="Изменить сообщение к ласт коммиту" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="18.75" y="1239" width="235" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-107" value="Изменить сообщение к ласт коммиту" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="45.75" y="1239" width="235" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-109" value="Создать новый коммит" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="13.75" y="955" width="160" height="20" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-109" value="Создать новый коммит" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="40.75" y="955" width="160" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-110" value="Дополнить существующий коммит" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="19.25" y="1120" width="210" height="20" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-110" value="Дополнить существующий коммит" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="46.25" y="1120" width="210" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-111" value="Откатиться на указанный коммит" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="16.25" y="1360" width="235" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-111" value="Откатиться на указанный коммит" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="43.25" y="1360" width="235" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-114" value="История коммитов" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="16.25" y="1449" width="235" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-114" value="История коммитов" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="43.25" y="1449" width="235" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-123" value="Полный лог. Листать пробелом или стрелками. Выход q" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="136.25" y="1479" width="390" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-123" value="Полный лог. Листать пробелом или стрелками. Выход q" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="163.25" y="1479" width="390" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-124" value="Лог из последних n-коммитов." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="136.25" y="1509" width="390" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-124" value="Лог из последних n-коммитов." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="163.25" y="1509" width="390" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-125" value="Форматированный вывод&amp;nbsp; oneline | short | full | fuller" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="231.25" y="1539" width="315" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-125" value="Форматированный вывод&amp;nbsp; oneline | short | full | fuller" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="258.25" y="1539" width="315" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-126" value="Слияние" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-126" value="Слияние" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="605" y="840" width="470" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-127" value="merge" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="600" y="870" width="200" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-127" value="merge" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="642" y="870" width="200" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-128" value="- переключаемся, КУДА хотим вливать." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="750" y="905" width="260" height="20" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-128" value="- переключаемся, КУДА хотим вливать." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="792" y="905" width="260" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-129" value="&amp;nbsp; &amp;nbsp;- указываем, ОТКУДА вливать." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="740" y="930" width="190" height="20" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-129" value="&amp;nbsp; &amp;nbsp;- указываем, ОТКУДА вливать." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="782" y="930" width="190" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-130" value="&amp;nbsp; &amp;nbsp;- отменить слияние, если конфликты задушили." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="720" y="975" width="380" height="20" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-130" value="&amp;nbsp; &amp;nbsp;- отменить слияние, если конфликты задушили." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="762" y="975" width="380" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-131" value="когда решили конфликт для файла." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="695" y="1251.5" width="225" height="20" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-131" value="когда решили конфликт для файла." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="737" y="1251.5" width="225" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-132" value="&amp;nbsp; &amp;nbsp;- когда решили все конфликты и готовы завершить слияние." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="672.5" y="1035" width="430" height="20" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-132" value="&amp;nbsp; &amp;nbsp;- когда решили все конфликты и готовы завершить слияние." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="714.5" y="1035" width="430" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-134" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; private String fullname;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; private LocalDate birth;&lt;/div&gt;&lt;div&gt;=======&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; private String username;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; features/f1&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br style=&quot;&quot;&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
-          <mxGeometry x="610" y="1461" width="160" height="99" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-134" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; private String fullname;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; private LocalDate birth;&lt;/div&gt;&lt;div&gt;=======&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; private String username;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; features/f1&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br style=&quot;&quot;&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="652" y="1461" width="160" height="99" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-137" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; оригинал&lt;/div&gt;&lt;div&gt;=======&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; то что хотим влить&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; features/f1&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br style=&quot;&quot;&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
-          <mxGeometry x="770" y="1461" width="130" height="99" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-137" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; оригинал&lt;/div&gt;&lt;div&gt;=======&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; то что хотим влить&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; features/f1&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br style=&quot;&quot;&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="812" y="1461" width="130" height="99" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-138" value="rebase" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="595" y="1110" width="200" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-138" value="rebase" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="637" y="1110" width="200" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-139" value="ЧТО мы хотим перебазировать. Обычно фичеветка." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="775" y="1150" width="295" height="20" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-139" value="ЧТО мы хотим перебазировать. Обычно фичеветка." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="817" y="1150" width="295" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-140" value="НА что. Обычно ветка, в которую потом будем вливать." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="775" y="1170" width="315" height="20" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-140" value="НА что. Обычно ветка, в которую потом будем вливать." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="817" y="1170" width="315" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-141" value="отменить перебазирование, если конфликты задушили." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="740" y="1219" width="325" height="20" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-141" value="отменить перебазирование, если конфликты задушили." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="782" y="1219" width="325" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-142" value="- продолжаем ребейз, переход к след конфликту и&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; так пока конфликтов не останется." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="745" y="1280" width="315" height="20" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-142" value="- продолжаем ребейз, переход к след конфликту и&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; так пока конфликтов не останется." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="787" y="1280" width="315" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-143" value="- если решили конфликт для файла." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="685" y="1015" width="210" height="20" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-143" value="- если решили конфликт для файла." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="727" y="1015" width="210" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-144" value="Как выглядит конфликт" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="640" y="1420" width="200" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-144" value="Как выглядит конфликт" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="682" y="1420" width="200" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-145" value="Когда все закончили, переходим на главную ветку и делаем merge. После успешного ребейза он сделается через fast-forward." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="595" y="1330" width="440" height="20" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-145" value="Когда все закончили, переходим на главную ветку и делаем merge. После успешного ребейза он сделается через fast-forward." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="637" y="1330" width="440" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-146" value="Тайник (Stash)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-146" value="Тайник (Stash)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="30" y="1660" width="470" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-147" value="git stash save &quot;Хорошее описание&quot; -u" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" vertex="1" parent="1">
-          <mxGeometry x="43.75" y="1818" width="240" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-147" value="git stash save &quot;Хорошее описание&quot; -u" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" parent="1" vertex="1">
+          <mxGeometry x="63.75" y="1818" width="240" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-148" value="База синтаксиса - подкоманды и флаги" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="13.75" y="1798" width="240" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-148" value="База синтаксиса - подкоманды и флаги" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="33.75" y="1798" width="240" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-149" value="save - подкоманда, они идут после команды.&lt;div&gt;&lt;div&gt;-u - флаг. Идет в конце.&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="303.75" y="1808" width="260" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-149" value="save - подкоманда, они идут после команды.&lt;div&gt;&lt;div&gt;-u - флаг. Идет в конце.&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="311.75" y="1808" width="260" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-150" value="* Тайник работает по принципу стека. Наверху то, что застешили последний раз.&lt;div&gt;* Тайник не привязан к веткам. Он общий на весь репозиторий.&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="23.75" y="1698" width="470" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-150" value="* Тайник работает по принципу стека. Наверху то, что застешили последний раз.&lt;div&gt;* Тайник не привязан к веткам. Он общий на весь репозиторий.&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="43.75" y="1698" width="470" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-151" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash list&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="33.75" y="2078" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-151" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash list&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="53.75" y="2078" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-152" value="Список всех записей стэша." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="163.75" y="2078" width="165" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-152" value="Список всех записей стэша." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="183.75" y="2078" width="165" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-155" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;stash@{0}: WIP on tits: 0c3f824 Рефакторинг класса ServiceB&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="38.75" y="1758" width="400" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-155" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;stash@{0}: WIP on tits: 0c3f824 Рефакторинг класса ServiceB&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="58.75" y="1758" width="400" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-156" value="Так выглядит запись тайника" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="13.75" y="1738" width="182.5" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-156" value="Так выглядит запись тайника" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="33.75" y="1738" width="182.5" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-157" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="38.75" y="1898" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-157" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="58.75" y="1898" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-158" value="Сохранить в стэш все, кроме untracked-файлов. Индекс и рабочка принимают вид ласт коммита." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="168.75" y="1898" width="350" height="40" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-158" value="Сохранить в стэш все, кроме untracked-файлов. Индекс и рабочка принимают вид ласт коммита." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="188.75" y="1898" width="350" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-159" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash save &quot;Застэшил правки в ServiceA&quot; -u&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="38.75" y="1968" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-159" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash save &quot;Застэшил правки в ServiceA&quot; -u&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="58.75" y="1968" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-160" value="Сохранить с кастомной подписью." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-160" value="Сохранить с кастомной подписью." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
           <mxGeometry x="353.75" y="1968" width="215" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-161" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash push src/foo.ts src/bar.ts&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="38.75" y="1998" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-161" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash push src/foo.ts src/bar.ts&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="58.75" y="1998" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-162" value="Сохранить отдельные файлы." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="311.25" y="1998" width="197.5" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-162" value="Сохранить отдельные файлы." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="331.25" y="1998" width="197.5" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-163" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash -u&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="38.75" y="1938" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-163" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash -u&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="58.75" y="1938" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-164" value="Сохранить все, включая untracked-файлы." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="168.75" y="1938" width="260" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-164" value="Сохранить все, включая untracked-файлы." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="188.75" y="1938" width="260" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-165" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash show&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="33.75" y="2108" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-165" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash show&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="53.75" y="2108" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-166" value="Показать какие файлы в ласт стэше." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="163.75" y="2108" width="220" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-166" value="Показать какие файлы в ласт стэше." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="183.75" y="2108" width="220" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-167" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash show stash@{0}&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="33.75" y="2138" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-167" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash show stash@{0}&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="53.75" y="2138" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-168" value="Показать какие файлы в указанном стэше." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="213.75" y="2138" width="250" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-168" value="Показать какие файлы в указанном стэше." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="233.75" y="2138" width="250" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-169" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash pop&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="33.75" y="2218" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-169" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash pop&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="53.75" y="2218" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-170" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash apply&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="33.75" y="2248" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-170" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash apply&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="53.75" y="2248" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-171" value="Извлечение ласта из стэша с удалением записи." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="153.75" y="2218" width="320" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-171" value="Извлечение ласта из стэша с удалением записи." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="173.75" y="2218" width="320" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-172" value="Извлечь ласт из стэша и не удалять запись." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="153.75" y="2248" width="250" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-172" value="Извлечь ласт из стэша и не удалять запись." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="173.75" y="2248" width="250" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-173" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash apply stash@{0}&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="53.75" y="2278" width="170" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-173" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash apply stash@{0}&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="73.75" y="2278" width="170" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-174" value="Извлечь конкретную запись." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="243.75" y="2278" width="160" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-174" value="Извлечь конкретную запись." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="263.75" y="2278" width="160" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-175" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash clear&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="33.75" y="2348" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-175" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash clear&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="53.75" y="2348" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-176" value="Полная очистка стэша." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="163.75" y="2348" width="160" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-176" value="Полная очистка стэша." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="183.75" y="2348" width="160" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-177" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash drop&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="33.75" y="2378" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-177" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash drop&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="53.75" y="2378" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-178" value="Удалить ласт запись." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="163.75" y="2378" width="140" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-178" value="Удалить ласт запись." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="183.75" y="2378" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-179" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash drop stash@{2}&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="56.25" y="2408" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-179" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git stash drop stash@{2}&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="76.25" y="2408" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-180" value="Удалить конкретную запись." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="233.75" y="2408" width="170" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-180" value="Удалить конкретную запись." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="253.75" y="2408" width="170" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-182" value="Посмотреть содержимое стэша." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="11.25" y="2048" width="202.5" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-182" value="Посмотреть содержимое стэша." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="31.25" y="2048" width="202.5" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-183" value="Сохранить в стэш." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="17.5" y="1868" width="126.25" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-183" value="Сохранить в стэш." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="37.5" y="1868" width="126.25" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-184" value="Извлечь из стэша." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="11.25" y="2188" width="202.5" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-184" value="Извлечь из стэша." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="31.25" y="2188" width="202.5" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-185" value="Удалить из стэша." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="11.25" y="2318" width="202.5" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-185" value="Удалить из стэша." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="31.25" y="2318" width="202.5" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-186" value="Ветки" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-186" value="Ветки" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="620" y="1660" width="470" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-187" value="&lt;pre class=&quot;notranslate&quot;&gt;git checkout feature/f1&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="595" y="1145" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-187" value="&lt;pre class=&quot;notranslate&quot;&gt;git checkout feature/f1&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="637" y="1145" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-188" value="&lt;pre class=&quot;notranslate&quot;&gt;git rebase master&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="595" y="1165" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-188" value="&lt;pre class=&quot;notranslate&quot;&gt;git rebase master&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="637" y="1165" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-189" value="&lt;pre class=&quot;notranslate&quot;&gt;git rebase --abort&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="595" y="1214" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-189" value="&lt;pre class=&quot;notranslate&quot;&gt;git rebase --abort&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="637" y="1214" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-190" value="&lt;pre class=&quot;notranslate&quot;&gt;git add файл&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="595" y="1246.5" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-190" value="&lt;pre class=&quot;notranslate&quot;&gt;git add файл&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="637" y="1246.5" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-191" value="&lt;pre class=&quot;notranslate&quot;&gt;git rebase --continue&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="595" y="1270" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-191" value="&lt;pre class=&quot;notranslate&quot;&gt;git rebase --continue&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="637" y="1270" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-192" value="&lt;pre class=&quot;notranslate&quot;&gt;git commit&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="600" y="1030" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-192" value="&lt;pre class=&quot;notranslate&quot;&gt;git commit&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="642" y="1030" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-194" value="&lt;pre class=&quot;notranslate&quot;&gt;git add файл&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="600" y="1010" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-194" value="&lt;pre class=&quot;notranslate&quot;&gt;git add файл&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="642" y="1010" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-195" value="&lt;pre class=&quot;notranslate&quot;&gt;git merge --abort&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="600" y="970" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-195" value="&lt;pre class=&quot;notranslate&quot;&gt;git merge --abort&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="642" y="970" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-196" value="&lt;pre class=&quot;notranslate&quot;&gt;git merge feature/f1&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="600" y="925" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-196" value="&lt;pre class=&quot;notranslate&quot;&gt;git merge feature/f1&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="642" y="925" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-197" value="&lt;pre class=&quot;notranslate&quot;&gt;git checkout master&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="600" y="900" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-197" value="&lt;pre class=&quot;notranslate&quot;&gt;git checkout master&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="642" y="900" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-198" value="&lt;pre class=&quot;notranslate&quot;&gt;git log&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="46.25" y="1479" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-198" value="&lt;pre class=&quot;notranslate&quot;&gt;git log&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="73.25" y="1479" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-199" value="&lt;pre class=&quot;notranslate&quot;&gt;git log -2&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="46.25" y="1509" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-199" value="&lt;pre class=&quot;notranslate&quot;&gt;git log -2&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="73.25" y="1509" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-200" value="&lt;pre class=&quot;notranslate&quot;&gt;git log --pretty=oneline&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="45" y="1539" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-200" value="&lt;pre class=&quot;notranslate&quot;&gt;git log --pretty=oneline&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="72" y="1539" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-201" value="&lt;pre class=&quot;notranslate&quot;&gt;git reset cb42b1650 --hard&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="47.5" y="1381.5" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-201" value="&lt;pre class=&quot;notranslate&quot;&gt;git reset cb42b1650 --hard&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="74.5" y="1381.5" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-204" value="&lt;pre class=&quot;notranslate&quot;&gt;// &amp;lt;-- НЕ добавляем никаких файлов в стейдж!&lt;br/&gt;git commit --amend -m &quot;Новое сообщение заменит старое&quot;&lt;br/&gt;git commit --amend  // Если хотим редактировать сообщение в vi&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="46.25" y="1269" width="100" height="40" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-204" value="&lt;pre class=&quot;notranslate&quot;&gt;// &amp;lt;-- НЕ добавляем никаких файлов в стейдж!&lt;br/&gt;git commit --amend -m &quot;Новое сообщение заменит старое&quot;&lt;br/&gt;git commit --amend  // Если хотим редактировать сообщение в vi&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="73.25" y="1269" width="100" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-205" value="&lt;pre class=&quot;notranslate&quot;&gt;// &amp;lt;-- Добавляем нужные файлы в стейдж&lt;br/&gt;git commit --amend --no-edit  // Не меняем сообщение коммита&lt;br&gt;git commit --amend -m &quot;Новое сообщение заменит старое&quot;&lt;br&gt;git commit --amend  // Если хотим редактировать сообщение в vi&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="40" y="1140" width="100" height="70" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-205" value="&lt;pre class=&quot;notranslate&quot;&gt;// &amp;lt;-- Добавляем нужные файлы в стейдж&lt;br/&gt;git commit --amend --no-edit  // Не меняем сообщение коммита&lt;br&gt;git commit --amend -m &quot;Новое сообщение заменит старое&quot;&lt;br&gt;git commit --amend  // Если хотим редактировать сообщение в vi&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="67" y="1140" width="100" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-206" value="&lt;pre class=&quot;notranslate&quot;&gt;git commit -m &quot;Мой коммит&quot;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="40.5" y="975" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-206" value="&lt;pre class=&quot;notranslate&quot;&gt;git commit -m &quot;Мой коммит&quot;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="67.5" y="975" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-207" value="&lt;pre class=&quot;notranslate&quot;&gt;git commit&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="41.25" y="1000" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-207" value="&lt;pre class=&quot;notranslate&quot;&gt;git commit&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="68.25" y="1000" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-208" value="В коммит попадает только то, что положено в индекс (стейдж)." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="13.75" y="885" width="366.25" height="20" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-208" value="В коммит попадает только то, что положено в индекс (стейдж)." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="40.75" y="885" width="366.25" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-209" value="&lt;pre class=&quot;notranslate&quot;&gt;git rm --cached foobar.txt&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-209" value="&lt;pre class=&quot;notranslate&quot;&gt;git rm --cached foobar.txt&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
           <mxGeometry x="600" y="443" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-210" value="&lt;pre class=&quot;notranslate&quot;&gt;git rm -r --cached foobardir&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-210" value="&lt;pre class=&quot;notranslate&quot;&gt;git rm -r --cached foobardir&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
           <mxGeometry x="600" y="473" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-211" value="&lt;pre class=&quot;notranslate&quot;&gt;git commit -m &quot;Перестали отслеживать&quot;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-211" value="&lt;pre class=&quot;notranslate&quot;&gt;git commit -m &quot;Перестали отслеживать&quot;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
           <mxGeometry x="600" y="503" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-214" value="&lt;pre class=&quot;notranslate&quot;&gt;git status -s&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-214" value="&lt;pre class=&quot;notranslate&quot;&gt;git status -s&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
           <mxGeometry x="38.75" y="520" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-215" value="&lt;pre class=&quot;notranslate&quot;&gt;git status -s файл&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-215" value="&lt;pre class=&quot;notranslate&quot;&gt;git status -s файл&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
           <mxGeometry x="202.5" y="520" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-216" value="&lt;pre class=&quot;notranslate&quot;&gt;git add файл&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-216" value="&lt;pre class=&quot;notranslate&quot;&gt;git add файл&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
           <mxGeometry x="600" y="60" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-217" value="&lt;pre class=&quot;notranslate&quot;&gt;git commit&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-217" value="&lt;pre class=&quot;notranslate&quot;&gt;git commit&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
           <mxGeometry x="600" y="90" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-218" value="&lt;pre class=&quot;notranslate&quot;&gt;git restore --staged файл&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-218" value="&lt;pre class=&quot;notranslate&quot;&gt;git restore --staged файл&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
           <mxGeometry x="599" y="120" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-219" value="&lt;pre class=&quot;notranslate&quot;&gt;git restore --source=HEAD файл&lt;br/&gt;git restore --source=ab34fe7 файл&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-219" value="&lt;pre class=&quot;notranslate&quot;&gt;git restore --source=HEAD файл&lt;br/&gt;git restore --source=ab34fe7 файл&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
           <mxGeometry x="600" y="206" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-220" value="&lt;pre class=&quot;notranslate&quot;&gt;git restore файл&lt;br&gt;git restore --worktree файл&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-220" value="&lt;pre class=&quot;notranslate&quot;&gt;git restore файл&lt;br&gt;git restore --worktree файл&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
           <mxGeometry x="600" y="154" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-221" value="* У каждого коммита есть хэш - уникальный идентификатор вида ab2347dfeg23.&lt;br&gt;* Ветка - это просто удобный человекочитаемый указатель на конкретный коммит.&lt;div&gt;* Когда мы коммитим, указатель ветки смещается на новый коммит. Т.о. ветка как бы &quot;движется вперед&quot;.&lt;br&gt;&lt;div&gt;* HEAD - это указатель на коммит, на котором мы сейчас находимся.&lt;/div&gt;&lt;div&gt;* При переключении на ветку HEAD становится на указатель ветки.&lt;/div&gt;&lt;/div&gt;&lt;div&gt;* Если перейти на произвольный коммит, HEAD тоже на него встанет. Это называется &quot;DETACHED HEAD&quot;-режим.&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="600" y="1690" width="500" height="130" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-221" value="* У каждого коммита есть хэш - уникальный идентификатор вида ab2347dfeg23.&lt;br&gt;* Ветка - это просто удобный человекочитаемый указатель на конкретный коммит.&lt;div&gt;* Когда мы коммитим, указатель ветки смещается на новый коммит. Т.о. ветка как бы &quot;движется вперед&quot;.&lt;br&gt;&lt;div&gt;* HEAD - это указатель на коммит, на котором мы сейчас находимся.&lt;/div&gt;&lt;div&gt;* При переключении на ветку HEAD становится на указатель ветки.&lt;/div&gt;&lt;/div&gt;&lt;div&gt;* Если перейти на произвольный коммит, HEAD тоже на него встанет. Это называется &quot;DETACHED HEAD&quot;-режим.&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="619" y="1690" width="500" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-222" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git branch&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="629.5" y="1850" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-222" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git branch&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="648.5" y="1850" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-223" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git branch -a&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="630.5" y="1870" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-223" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git branch -a&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="649.5" y="1870" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-224" value="Список локальных веток." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="740.5" y="1848" width="260" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-224" value="Список локальных веток." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="759.5" y="1848" width="260" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-225" value="Список всех веток, в т.ч. remote" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="740.5" y="1870" width="260" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-225" value="Список всех веток, в т.ч. remote" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="759.5" y="1870" width="260" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-226" value="Список веток." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="599" y="1828" width="260" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-226" value="Список веток." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="618" y="1828" width="260" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-227" value="Звездочкой отмечена текущая ветка." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="630.5" y="1898" width="260" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-227" value="Звездочкой отмечена текущая ветка." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="649.5" y="1898" width="260" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-228" value="Создание веток." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="599" y="1960" width="260" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-228" value="Создание веток." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="618" y="1960" width="260" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-229" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git branch &quot;feature/persistence&quot;&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="620" y="1990" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-229" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git branch &quot;feature/persistence&quot;&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="639" y="1990" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-230" value="Создать без переключения на ветку." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="880" y="1990" width="260" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-230" value="Создать без переключения на ветку." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="899" y="1990" width="221" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-233" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git checkout -b &quot;feature/persistence&quot;&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="620" y="2018" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-233" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git checkout -b &quot;feature/persistence&quot;&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="639" y="2018" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-234" value="Создать ветку и сразу перейти на нее." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="880" y="2018" width="260" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-234" value="Создать ветку и сразу перейти на нее." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="899" y="2018" width="221" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-235" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git branch new-branch from-branch&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="620" y="2048" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-235" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git branch new-branch from-branch&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="639" y="2048" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-236" value="Создать ветку от другой ветки." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="880" y="2048" width="260" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-236" value="Создать ветку от другой ветки." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="899" y="2048" width="181" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-237" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git branch new-branch a81e8c7397&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="620" y="2078" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-237" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git branch new-branch a81e8c7397&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="639" y="2078" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-238" value="Создать ветку от любого коммита." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="880" y="2078" width="260" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-238" value="Создать ветку от любого коммита." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="899" y="2078" width="201" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-239" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git checkout &quot;features/f1&quot;&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="620" y="2158" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-239" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git checkout &quot;features/f1&quot;&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="639" y="2158" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-240" value="Переключение между ветками." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="599" y="2130" width="260" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-240" value="Переключение между ветками." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="618" y="2130" width="260" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-241" value="Удаление веток." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="600" y="2210" width="260" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-241" value="Удаление веток." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="619" y="2210" width="260" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-243" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git branch --d feature/f1&lt;br/&gt;&lt;/code&gt;git branch --delete feature/f1&lt;/pre&gt;&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="620" y="2240" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-243" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git branch --d feature/f1&lt;br/&gt;&lt;/code&gt;git branch --delete feature/f1&lt;/pre&gt;&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="639" y="2240" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-244" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git branch --D feature/f1&lt;br/&gt;git branch --delete --force feature/f1&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="620" y="2288" width="100" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-244" value="&lt;pre class=&quot;notranslate&quot;&gt;&lt;code&gt;git branch --D feature/f1&lt;br/&gt;git branch --delete --force feature/f1&lt;/code&gt;&lt;/pre&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="639" y="2288" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-245" value="Удаление ветки с проверкой, нет ли в ней невлитых изменений." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="850" y="2240" width="260" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-245" value="Удаление ветки с проверкой, нет ли в ней невлитых изменений." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="869" y="2240" width="260" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="j3O6o0AAXhgC6TbAAweH-246" value="Удаление ветки без проверок." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" vertex="1" parent="1">
-          <mxGeometry x="890.5" y="2288" width="179.5" height="30" as="geometry" />
+        <mxCell id="j3O6o0AAXhgC6TbAAweH-246" value="Удаление ветки без проверок." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;perimeterSpacing=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="909.5" y="2288" width="179.5" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
