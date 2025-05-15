@@ -1,0 +1,313 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" scale="1" border="5" version="26.2.2">
+  <diagram name="Page-1" id="9iwx4kF-SaM_lTl1vUHh">
+    <mxGraphModel dx="1556" dy="922" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="6Df2u15g98YnEbPmI9u2-3" value="" style="endArrow=none;html=1;rounded=0;fontSize=12;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="579" y="3419.599853515625" as="sourcePoint" />
+            <mxPoint x="580" y="9" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-6" value="&lt;div&gt;В JS динамическая нестрогая типизация:&lt;/div&gt;&lt;div&gt;* Динамическая:&lt;/div&gt;&lt;div&gt;&amp;nbsp; * Типы определяются во время выполнения, а не во время компиляции.&lt;/div&gt;&lt;div&gt;&amp;nbsp; * Переменная может менять тип во время выполнения.&lt;/div&gt;&lt;div&gt;* Нестрогая:&lt;/div&gt;&lt;div&gt;&amp;nbsp; * Автоматическое неявное приведение типов.&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="85" y="36" width="380" height="114" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-7" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;number&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font&gt;(зн.Infinity, -Infinity,&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;NaN)&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=center;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="55" y="203" width="150" height="37" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-8" value="&lt;b&gt;Типы данных в Javascript&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="105" y="10" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-10" value="&lt;b&gt;Примитивные (7)&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="110" y="170" width="350" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-12" value="&lt;div&gt;bigint&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=center;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="205" y="203" width="40" height="37" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-13" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;string&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=center;spacingLeft=5;spacingRight=5;direction=south;" parent="1" vertex="1">
+          <mxGeometry x="245" y="203" width="50" height="37" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-14" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;boolean&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=center;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="295" y="203" width="60" height="37" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-15" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;symbol&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=center;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="345" y="203" width="50" height="37" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-16" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;null&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=center;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="395" y="203" width="40" height="37" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-17" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;undefined&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=center;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="435" y="203" width="70" height="37" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-19" value="&lt;b&gt;Не примитивные (2)&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="95" y="280" width="350" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-20" value="&lt;div&gt;object&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="80" y="320" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-21" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Обертки&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="130" y="320" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-22" value="&lt;div&gt;&lt;div&gt;const a = new Number(7)&lt;/div&gt;&lt;div&gt;const str = new String(&quot;Hello, world!&quot;)&lt;/div&gt;&lt;div&gt;const flag = new Boolean(true)&lt;/div&gt;&lt;div&gt;const sym = new Symbol(&quot;foobar&quot;)&lt;/div&gt;&lt;div&gt;const big = BigInt(10)&amp;nbsp; // без new! не обертка&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=10;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="225" y="320" width="245" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-23" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="185" y="335.68" as="sourcePoint" />
+            <mxPoint x="230" y="335.68" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-24" value="&lt;b&gt;Определение типа&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="70" y="440" width="390" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-25" value="&lt;div&gt;if ( &lt;b&gt;typeof&amp;nbsp;&lt;/b&gt;(foo) === &quot;number&quot; )&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="70" y="480" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-26" value="&lt;div&gt;typeof null&amp;nbsp; // &quot;object&quot;&lt;/div&gt;&lt;div&gt;typeof alert // &quot;function&quot;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="320" y="480" width="145" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-27" value="&lt;div&gt;function foobar() { }&lt;/div&gt;&lt;div&gt;typeof(foobar)&amp;nbsp; // function&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="320" y="530" width="145" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-28" value="&lt;b&gt;Преобразование типов&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="678" y="20" width="399" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-29" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;s = String(255);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; // &quot;255&quot;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;s = String(false);&amp;nbsp; &amp;nbsp; &amp;nbsp; // &quot;false&quot;&lt;/div&gt;&lt;div&gt;s = String(true);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;// &quot;true&quot;&lt;/div&gt;&lt;div&gt;s = String(null);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;// &quot;null&quot;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="681" y="626" width="199" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-32" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;n = Number(&quot;&amp;nbsp; &amp;nbsp;255&amp;nbsp; &amp;nbsp;&quot;);&amp;nbsp; // 255&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;n = Number(true);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;// 1&lt;/div&gt;&lt;div&gt;n = Number(false);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; // 0&lt;/div&gt;&lt;div&gt;n = Number(&quot;&amp;nbsp; &amp;nbsp;&quot;);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; // 0&lt;/div&gt;&lt;div&gt;n = Number(&quot;&quot;);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;// 0&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="678" y="79" width="202" height="101" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-33" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;b = Boolean(&quot;&amp;nbsp; &amp;nbsp;255&amp;nbsp; &amp;nbsp;&quot;);&amp;nbsp; &amp;nbsp; &amp;nbsp; // true&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;b = Boolean(&quot;&amp;nbsp; &amp;nbsp;2 5 5&amp;nbsp; &amp;nbsp;&quot;);&amp;nbsp; &amp;nbsp; // true&lt;/div&gt;&lt;div&gt;b = Boolean(&quot;&amp;nbsp; &amp;nbsp;ололо&amp;nbsp; &amp;nbsp;&quot;);&amp;nbsp; // true&lt;/div&gt;&lt;div&gt;b = Boolean(&quot;&amp;nbsp; &amp;nbsp;&quot;);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;// true&lt;/div&gt;&lt;div&gt;b = Boolean(&quot;0&quot;);&amp;nbsp; // true, расцен&amp;nbsp;&lt;/div&gt;&lt;div&gt;как непустая строка&lt;/div&gt;&lt;div&gt;b = Boolean(Infinity);&amp;nbsp; &amp;nbsp;// true&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="678" y="290" width="202" height="116" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-34" value="В строку" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="689" y="606" width="380" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-35" value="В число" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="678" y="60" width="380" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-36" value="В boolean" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="678" y="270" width="370" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-37" value="&lt;div&gt;&quot;&quot; + 1 + 0&lt;/div&gt;&lt;div&gt;&quot;&quot; - 1 + 0&lt;/div&gt;&lt;div&gt;true + false&lt;/div&gt;&lt;div&gt;6 / &quot;3&quot;&lt;/div&gt;&lt;div&gt;&quot;2&quot; * &quot;3&quot;&lt;/div&gt;&lt;div&gt;4 + 5 + &quot;px&quot;&lt;/div&gt;&lt;div&gt;&quot;$&quot; + 4 + 5&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="80" y="650" width="130" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-38" value="&lt;div&gt;&quot;10&quot;&lt;/div&gt;&lt;div&gt;-1&lt;/div&gt;&lt;div&gt;1&lt;/div&gt;&lt;div&gt;2&lt;/div&gt;&lt;div&gt;6&lt;/div&gt;&lt;div&gt;&quot;9px&quot;&lt;/div&gt;&lt;div&gt;&quot;$45&quot;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="210" y="650" width="50" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-40" value="Упражнения на преобразование типов" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="80" y="620" width="370" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-41" value="&lt;div&gt;* Все, что как бы &quot;интуитивно&quot; пустое, нулевое, непонятное, неопределенное, неизвестное вроде пустых строк, null, NaN, undefined, является false.&lt;/div&gt;&lt;div&gt;* Числа 1 и 0 являются, соответственное, true и false. Однако строка &quot;0&quot; является true, потому что она рассматривается именно как строка, а не как число. Она не пустая, поэтому true. Впрочем, в других языках может быть по-другому.&lt;/div&gt;&lt;div&gt;* При логическом преобразовании пробельные символы из строки не удаляются, поэтому строка из пробелов считается не пустой, а значит является true.&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="678" y="406" width="402" height="168" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-42" value="&lt;div&gt;* Пробельные символы по краям из строк удаляются, а все что после этого осталось, уже преобразуется в число.&lt;/div&gt;&lt;div&gt;* Пустая строка трактуется как 0&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="678" y="180" width="402" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-43" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;n = Number(null);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;// 0&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;n = Number(&quot;2 5 5&quot;);&amp;nbsp; // NaN&lt;/div&gt;&lt;div&gt;n = Number(&quot;&amp;nbsp; &amp;nbsp;ололо &quot;);&amp;nbsp; // NaN&lt;/div&gt;&lt;div&gt;n = Number(undefined);&amp;nbsp; &amp;nbsp; // NaN&lt;/div&gt;&lt;div&gt;n = Number(NaN);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; // NaN&lt;/div&gt;&lt;div&gt;n = Number(Infinity);&amp;nbsp; &amp;nbsp; &amp;nbsp;// Infinity&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="880" y="79" width="200" height="101" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-44" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;b = Boolean(1);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;// true&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;b = Boolean(0);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;// false&lt;/div&gt;&lt;div&gt;b = Boolean(&quot;&quot;);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; // false&lt;/div&gt;&lt;div&gt;b = Boolean(null);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;// false&lt;/div&gt;&lt;div&gt;b = Boolean(undefined);&amp;nbsp; // false&lt;/div&gt;&lt;div&gt;b = Boolean(NaN);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; // false&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="878" y="290" width="202" height="116" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-46" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;s = String(undefined);&amp;nbsp; // &quot;undefined&quot;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;s = String(NaN);&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; // &quot;NaN&quot;&lt;/div&gt;&lt;div&gt;s = String(255 / 0);&amp;nbsp; &amp;nbsp; // &quot;Infinity&quot;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="880" y="626" width="220" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-47" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&quot;4&quot; - 2&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&quot;4px&quot; - 2&lt;/div&gt;&lt;div&gt;&quot;&amp;nbsp; -9&amp;nbsp; &quot; + 5&lt;/div&gt;&lt;div&gt;&quot;&amp;nbsp; -9&amp;nbsp; &quot; - 5&lt;/div&gt;&lt;div&gt;null + 1&lt;/div&gt;&lt;div&gt;undefined + 1&lt;/div&gt;&lt;div&gt;&quot; \t \n&quot; - 2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="280" y="651" width="130" height="119" as="geometry" />
+        </mxCell>
+        <mxCell id="6Df2u15g98YnEbPmI9u2-48" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;NaN&lt;/div&gt;&lt;div&gt;&quot;&amp;nbsp; -9&amp;nbsp; 5&quot;&lt;/div&gt;&lt;div&gt;-14&lt;/div&gt;&lt;div&gt;1&lt;/div&gt;&lt;div&gt;NaN&lt;/div&gt;&lt;div&gt;-2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="410" y="651" width="50" height="119" as="geometry" />
+        </mxCell>
+        <mxCell id="vXCGXY-Sgl9khhxSXDCE-1" value="&lt;div&gt;if ( &lt;b&gt;typeof&amp;nbsp;&lt;/b&gt;foo === &quot;number&quot; )&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="70" y="520" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-34" value="&lt;b&gt;Деструктуризация массива&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="31.5" y="827" width="520" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-35" value="const [a, b] = [&quot;Hello&quot;, &quot;world&quot;];" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="62.88" y="907" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-36" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;let a, b;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;[a, b] = [&quot;Hello&quot;, &quot;world&quot;];&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="62.88" y="990" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-37" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;const someDate = &quot;2025-04-28&quot;;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;const [, month, day] = someDate.split(&quot;-&quot;);&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="61.88" y="1170" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-38" value="&lt;span style=&quot;&quot;&gt;В сущ-ие переменные&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="62.88" y="970" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-39" value="Пропуск элементов" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="61.88" y="1150" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-40" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;let x = 50;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;let y = 100;&lt;/div&gt;&lt;div&gt;[x, y] = [y, x];&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="23" y="1300" width="90" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-41" value="&lt;span style=&quot;&quot;&gt;Свап значений переменных&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="23" y="1280" width="164" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-42" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;let fruits = [];&lt;/span&gt;&lt;/div&gt;&lt;div&gt;let [apple = &quot;Яблоко&quot;, pear = &quot;Груша&quot;] = fruits;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="62.88" y="1070" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-43" value="Дефолтные значения" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="62.88" y="1050" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-44" value="&lt;b&gt;Деструктуризация объекта&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="647.5" y="830" width="441" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-45" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;const obj = {&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp; name: &quot;Huck Finn&quot;,&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp; age: 14&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;}&lt;/span&gt;&lt;/div&gt;&lt;div&gt;const { name, age } = obj;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="609.38" y="1269.5" width="157.62" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-46" value="авто-сопоставление свойств и переменных" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="607.69" y="1239.5" width="157.62" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-47" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;const obj = {&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp; name: &quot;Huck Finn&quot;,&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp; age: 14&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;}&lt;/span&gt;&lt;/div&gt;&lt;div&gt;const { name: n, age: a } = obj;&amp;nbsp; // откуда: куда&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="797.32" y="1270" width="261.68" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-48" value="сопоставление свойств и переменных вручную" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="797.32" y="1250.5" width="271.68" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-49" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;const obj = {&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp; name: &quot;Huck Finn&quot;,&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp; age: 14&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;}&lt;/span&gt;&lt;/div&gt;&lt;div&gt;let name, age;&lt;/div&gt;&lt;div&gt;({ name, age } = obj);&amp;nbsp; // ( )&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="612.88" y="950" width="157.62" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-50" value="В сущ-ие переменные" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="612.88" y="930" width="155.43" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-51" value="&lt;div&gt;&lt;div&gt;const obj = { }&lt;/div&gt;&lt;div&gt;const { name = &quot;Huck&quot;, age = 14 } = obj;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;const obj = { }&lt;/span&gt;&lt;/div&gt;&lt;div&gt;const { name: n = &quot;Huck&quot;, age: a = 14 } = obj;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="893.88" y="960" width="261" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-52" value="Дефолтные значения" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="893.88" y="940" width="260" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-53" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;({ firstname: user.lastname, lastname: user.firstname } = user);&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="599.88" y="1600" width="351" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-54" value="Свап значений свойств" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="599.88" y="1570" width="138.75" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-55" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;const obj = { a: 1, b: 2 };&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;for (const [key, value] of Object.entries(obj)) {&lt;/div&gt;&lt;div&gt;&amp;nbsp; console.log(`key: ${key}, value: ${value}`);&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="21" y="1430" width="261" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-56" value="Обход свойств объекта и значений" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="21" y="1410" width="251" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-57" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;let settings = {&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; size: [1920, 1080],&lt;/div&gt;&lt;div&gt;&amp;nbsp; title: &quot;Мост в Терабитию&quot;,&lt;/div&gt;&lt;div&gt;&amp;nbsp; info: {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; year: 2007,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; country: &quot;США&quot;&lt;/div&gt;&lt;div&gt;&amp;nbsp; }&lt;/div&gt;&lt;div&gt;};&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="612.88" y="1410" width="161" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-58" value="Вложенная деструктуризация" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="612.38" y="1390" width="251" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-59" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;let {&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; size: [x, y],&lt;/div&gt;&lt;div&gt;&amp;nbsp; title,&lt;/div&gt;&lt;div&gt;&amp;nbsp; info: {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; year: g,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; country&lt;/div&gt;&lt;div&gt;&amp;nbsp; }&lt;/div&gt;&lt;div&gt;} = settings;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="773.88" y="1410" width="100" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-60" value="Надо добраться до &quot;минимальных&quot; частичек контейнера (в массиве это элементы, а в объекте - свойства). Пока до них добираемся, должны указывать путь. В примере выше, свойство title - уже минимальная частичка, поэтому она разобьется. А вот info - не минимальная, это составной объект. Поэтому для него снова применяем синтаксис деструктуризации. size - тоже не минимальная, поэтому и для нее снова применяем деструктуризацию." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="893.88" y="1390" width="256.12" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-61" value="&lt;span style=&quot;&quot;&gt;База&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="62.88" y="887" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-62" value="let { a, b, c } = obj;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="612.38" y="877" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-63" value="&lt;span style=&quot;&quot;&gt;База&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="612.38" y="857" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-64" value="&lt;div&gt;Мнемотехника:&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;* Объект объявляется через { }. Поэтому и деструктурируется через { }.&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Свойства, для которых не хватило переменных, собираются в объект (при использовании оператора ...)&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="760" y="857" width="407.63" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-65" value="&lt;div&gt;const someDate = &quot;2025-04-28&quot;;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;const [, month, day] = someDate.split(&quot;-&quot;);&lt;/div&gt;&lt;div&gt;console.log(month);&amp;nbsp; // 04&lt;/div&gt;&lt;div&gt;console.log(day);&amp;nbsp; &amp;nbsp; // 28&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="322" y="1300" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-66" value="&lt;span style=&quot;&quot;&gt;Пропуск ненужных значений&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="322" y="1280" width="170" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-67" value="&lt;div&gt;Мнемотехника:&lt;/div&gt;&lt;div&gt;* Массив объявляется через [ ]. Поэтому и деструктурируется через [ ].&lt;/div&gt;&lt;div&gt;* Данные, для которых не хватило переменных, собираются в массив (при использовании оператора ...)&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="257.88" y="890" width="250.25" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-68" value="&lt;b&gt;Полезные примеры использования&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="9.25" y="1240" width="520" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-71" value="&lt;div&gt;let users = new Map([&lt;/div&gt;&lt;div&gt;&amp;nbsp; [&quot;tom&quot;, 6000],&lt;/div&gt;&lt;div&gt;&amp;nbsp; [&quot;huck&quot;, 6000],&lt;/div&gt;&lt;div&gt;&amp;nbsp; [&quot;jim&quot;, 40]&lt;/div&gt;&lt;div&gt;]);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;for (let [k, v] of users) {&lt;/div&gt;&lt;div&gt;&amp;nbsp; console.log(k + &quot; &quot; + v);&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="322" y="1430" width="169.5" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-72" value="Обход ключей и значений мапы" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="322" y="1410" width="179.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-73" value="&lt;div&gt;let user = {&lt;/div&gt;&lt;div&gt;&amp;nbsp; name: &quot;Huck&quot;,&lt;/div&gt;&lt;div&gt;&amp;nbsp; age: 15,&lt;/div&gt;&lt;div&gt;&amp;nbsp; state: &quot;Illinois&quot;&lt;/div&gt;&lt;div&gt;};&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;let {state} = user;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="612.38" y="1090" width="107.62" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-74" value="Пропуск свойств при дестр." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="612.38" y="1070" width="167.99" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-75" value="&lt;div&gt;function foobar({&lt;/div&gt;&lt;div&gt;&amp;nbsp; title: tit = &quot;Заголовок&quot;,&lt;/div&gt;&lt;div&gt;&amp;nbsp; size: [width = 300, height = 200] = [],&lt;/div&gt;&lt;div&gt;&amp;nbsp; info: { year = null, duration = null } = {},&lt;/div&gt;&lt;div&gt;&amp;nbsp; items = []&lt;/div&gt;&lt;div&gt;} = {}) {&lt;/div&gt;&lt;div&gt;&amp;nbsp; // Код функции&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="895.76" y="1101" width="235.87" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-76" value="Для сложного объекта" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="895.26" y="1081" width="226.37" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ngcjcUXoR6iI7ZlTgGnq-82" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.824;entryY=0.02;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="ngcjcUXoR6iI7ZlTgGnq-51" target="ngcjcUXoR6iI7ZlTgGnq-75" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="620" y="1320" as="sourcePoint" />
+            <mxPoint x="670" y="1270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kJ-FwpvflCL0ReA5GwZK-1" value="&lt;b&gt;Оператор &quot;три точки&quot; ... (rest и spread)&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="31.5" y="1660" width="520" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kJ-FwpvflCL0ReA5GwZK-2" value="&lt;div&gt;... расценивается как:&lt;/div&gt;&lt;div&gt;* spread - в местах, где надо &lt;i&gt;указать&lt;/i&gt; значение. Например, создание массивов, объектов.&lt;/div&gt;&lt;div&gt;* rest - в местах, где надо &lt;i&gt;принять&lt;/i&gt;&amp;nbsp;значение. Например, параметры функций, деструктурирующее присваивание.&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="21" y="1690" width="540" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="kJ-FwpvflCL0ReA5GwZK-3" value="&lt;div&gt;const source = [5, 4, 7, 8, 3, 2];&lt;/div&gt;&lt;div&gt;const dest = [...source];&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="21" y="1800" width="189" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="kJ-FwpvflCL0ReA5GwZK-4" value="&lt;b&gt;spread&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="23" y="1770" width="520" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kJ-FwpvflCL0ReA5GwZK-5" value="&lt;div&gt;const source = {&lt;/div&gt;&lt;div&gt;&amp;nbsp; firstname: &quot;Tom&quot;,&lt;/div&gt;&lt;div&gt;&amp;nbsp; lastname: &quot;Sawyer&quot;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;&lt;div&gt;const dest = {&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; ...source&lt;/div&gt;&lt;div&gt;};&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="21" y="1855" width="124" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="kJ-FwpvflCL0ReA5GwZK-6" value="&lt;b&gt;rest&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="25" y="1960" width="520" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kJ-FwpvflCL0ReA5GwZK-7" value="&lt;div&gt;function hello(firstname, lastname, ...rest) {&lt;/div&gt;&lt;div&gt;&amp;nbsp; console.log(&quot;Имя: &quot; + firstname + &quot; &quot; + lastname);&lt;/div&gt;&lt;div&gt;&amp;nbsp; console.log(&quot;Прозвища:&quot;);&lt;/div&gt;&lt;div&gt;&amp;nbsp; rest.forEach(v =&amp;gt; console.log(v));&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;// firstname, lastname |&amp;nbsp; &amp;nbsp; &amp;nbsp; попадут в массив rest&lt;/div&gt;&lt;div&gt;hello(&quot;Джеки&quot;, &quot;Чан&quot;,&amp;nbsp; &amp;nbsp; &quot;Громобой&quot;, &quot;Азиатский ястреб&quot;, &quot;Ковбой&quot;, &quot;Тайфун&quot;);&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="25" y="1990" width="439" height="127" as="geometry" />
+        </mxCell>
+        <mxCell id="kJ-FwpvflCL0ReA5GwZK-8" value="&lt;div&gt;let fruits = [&quot;Яблоко&quot;, &quot;Груша&quot;, &quot;Апельсин&quot;, &quot;Мандарин&quot;];&lt;/div&gt;&lt;div&gt;let [apple, pear, ...other] = fruits;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;other.forEach(f =&amp;gt; console.log(f));&amp;nbsp; // Апельсин, Мандарин&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="25" y="2250" width="327" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="kJ-FwpvflCL0ReA5GwZK-9" value="&lt;div&gt;let user = {&lt;/div&gt;&lt;div&gt;&amp;nbsp; name: &quot;Huck&quot;,&lt;/div&gt;&lt;div&gt;&amp;nbsp; age: 15,&lt;/div&gt;&lt;div&gt;&amp;nbsp; state: &quot;Illinois&quot;&lt;/div&gt;&lt;div&gt;};&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;let {state, ...other} = user;&amp;nbsp; // name и age станут свойствами объекта other&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;console.log(state);&amp;nbsp; // Illinois&lt;/div&gt;&lt;div&gt;console.log(other.name);&amp;nbsp; // Huck&lt;/div&gt;&lt;div&gt;console.log(other.age);&amp;nbsp; &amp;nbsp;// 15&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="368" y="2130" width="194" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="kJ-FwpvflCL0ReA5GwZK-10" value="&lt;div&gt;function sum(...numbers) {&lt;/div&gt;&lt;div&gt;&amp;nbsp; return numbers.reduce((acc, cur) =&amp;gt; acc += cur, 0);&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="22.879999999999995" y="2150" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="kJ-FwpvflCL0ReA5GwZK-11" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;const info = { ...baseInfo, ...extInfo }&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;console.log(info);&amp;nbsp; // {name: &#39;Tom&#39;, age: 30, city: &#39;New York&#39;}&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="328.5" y="1875" width="232.5" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="kJ-FwpvflCL0ReA5GwZK-12" value="&lt;div&gt;const baseInfo = {&lt;/div&gt;&lt;div&gt;&amp;nbsp; name: &quot;Tom&quot;,&lt;/div&gt;&lt;div&gt;&amp;nbsp; age: 30&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="327.88" y="1800" width="123.12" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="kJ-FwpvflCL0ReA5GwZK-13" value="&lt;div&gt;const extInfo = {&lt;/div&gt;&lt;div&gt;&amp;nbsp; city: &quot;New York&quot;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="451" y="1800" width="110" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="kJ-FwpvflCL0ReA5GwZK-14" value="&lt;div&gt;const MyButton = ({children, ...props}) =&amp;gt; {&amp;nbsp; // &amp;lt;-- rest&lt;/div&gt;&lt;div&gt;&amp;nbsp; return (&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;lt;button {...props}&amp;gt;{children}&amp;lt;/button&amp;gt;&amp;nbsp; // &amp;lt;-- spread&lt;/div&gt;&lt;div&gt;&amp;nbsp; );&lt;/div&gt;&lt;div&gt;};&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="116.5" y="2370" width="327" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="kJ-FwpvflCL0ReA5GwZK-15" value="&lt;b&gt;rest + spread в React&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="25" y="2340" width="520" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pi7irVXcuimP3K4poUht-1" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="ngcjcUXoR6iI7ZlTgGnq-45" target="ngcjcUXoR6iI7ZlTgGnq-47" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="1300" as="sourcePoint" />
+            <mxPoint x="610" y="1250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pi7irVXcuimP3K4poUht-2" value="&lt;div&gt;const m1 = [5, 4, 7, 2];&lt;/div&gt;&lt;div&gt;const m2 = [ 4, 8 ];&lt;/div&gt;&lt;div&gt;const m3 = [...m1, ...m2];&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;spacingLeft=5;spacingRight=5;" parent="1" vertex="1">
+          <mxGeometry x="163" y="1855" width="147" height="75" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
