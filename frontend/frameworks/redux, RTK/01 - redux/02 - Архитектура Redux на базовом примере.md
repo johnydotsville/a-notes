@@ -8,6 +8,8 @@
 
 Здесь общий пример, который в следующем разделе будет разбит на отдельные файлы.
 
+## Пример сплошняком
+
 ```react
 import { useRef } from 'react';
 import { createStore } from 'redux';  // <-- Для создания хранилища
@@ -201,6 +203,234 @@ function Display() {
   );
 }
 ```
+
+## Пример фрагментированный
+
+Мб так легче будет воспринимать:
+
+```javascript
+import { useRef } from 'react';
+import { createStore } from 'redux';  // <-- Для создания хранилища
+import { useDispatch } from 'react-redux';  // <-- Для регистрации изменения хранилища
+import { useSelector } from 'react-redux';  // <-- Для подписки на изменение хранилища
+import { Provider } from 'react-redux';   // <-- Для предоставления компонентам доступа к хранилищу
+import { combineReducers } from 'redux';  // <-- Для объединения множества редюсеров в один объект
+```
+
+```javascript
+// <-- Фрагмент состояния, будем называть его "Person-фрагмент". Содержит имя и фамилию человека.
+// Все фрагменты потом соберутся в единое состояние.
+const initialStatePerson = {
+  firstname: null,
+  lastname: null
+}
+```
+
+```javascript
+// <-- "Action-creator" - функция, возвращающая объект, который будет понятен редюсерам.
+const actionSetFirstname = (firstname) => {
+  return {  // <-- Объект, называемый "Action" (Действие)
+    // <-- По типу поля редюсеры поймут, кто из них должен обработать это действие.
+    type: 'SET_FIRSTNAME',
+    // <-- Из payload редюсер извлечет информацию, которую мы хотим ему передать.
+    payload: {
+      firstname: firstname
+    }
+  }
+}
+```
+
+```javascript
+// <-- Еще одно действие. Это и предыдущее действия ориентированы на работу с Person-фрагментом состояния.
+const actionSetLastname = (lastname) => {
+  return {
+    type: 'SET_LASTNAME',
+    payload: {
+      lastname: lastname
+    }
+  }
+}
+```
+
+```javascript
+// <-- Редюсер, обрабатывающий действия над Person-фрагментом состояния: установку имени и фамилии.
+// Мы связываем редюсер с конкретным фрагментом состояния, указывая нужный фрагмент в качестве
+// значения по умолчанию для первого параметра редюсера.
+const reducerPerson = (state = initialStatePerson, action) => {
+  // <-- Редюсер проверяет тип действия, чтобы понять, должен ли он это действие обработать или нет.
+  switch (action.type) {
+    // <-- Перечисляем в case все действия, которые должен обработать этот редюсер.
+    case 'SET_FIRSTNAME':
+      return {  // <-- Результатом обработки является новый объект фрагмента состояния.
+        // <-- Из текущего состояния извлекутся поля firstname и lastname и попадут в новый объект.
+        ...state,
+        // <-- Из пришедшего действия извлечется поле firstname и перекроет старое firstname, а lastname не затронется.
+        ...action.payload
+      };
+    case 'SET_LASTNAME':
+      return {
+        ...state,
+        ...action.payload
+      };
+    // <-- Если редюсер не обработал действие, то должен вернуть текущее значение своего фрагмента состояния.
+    default:
+      return state;
+  }
+};
+```
+
+```javascript
+// <-- Следующий фрагмент состояния (Experience-фрагмент), для описания опыта работы человека.
+const initialStateExperience = {
+  lookingForJob: false,  // <-- Ищет ли работу
+  workedFor: []  // <-- Где работал
+};
+// <-- Для упрощения извлечения нужных кусков данных можно написать селекторы.
+// Для этого надо заранее решить, под каким именем мы будем класть фрагмент в итоговое состояние.
+const selectLookingForJob = s => s.experience.lookingForJob;
+const selectWorkedFor = s => s.experience.workedFor;
+```
+
+```javascript
+// <-- Действия для работы с Experience-фрагментом состояния
+const actionJobApply = (company) => {
+  return {
+    type: 'JOB_APPLY',
+    payload: {
+      current: company
+    }
+  }
+}
+```
+
+```javascript
+const actionSwitchLookingForJob = () => {
+  return {
+    type: 'LOOKING_FOR_JOB',
+    payload: { }
+  }
+}
+```
+
+```javascript
+// <-- И редюсер для Experience-фрагмента
+const reducerExperience = (state = initialStateExperience, action) => {
+  switch (action.type) {
+    case 'JOB_APPLY':
+      return {
+        ...state,
+        workedFor: [action.payload.current, ...state.workedFor]
+      };
+    case 'LOOKING_FOR_JOB':
+      return {
+        ...state,
+        lookingForJob: !state.lookingForJob
+      }
+    default:
+      return state;
+  }
+}
+```
+
+```javascript
+// <-- Объединяем все редюсеры в единый редюсер. Потом, при инициализации хранилища, редакс 
+// объединит фрагменты состояний, с которыми работает каждый из этих редюсеров, в единый объект состояния.
+const rootReducer = combineReducers({
+  person: reducerPerson,  // <-- "Person-фрагмент" попадет в итоговое состояние в поле person
+  experience: reducerExperience  // <-- "Experience-фрагмент" попадет в поле experience итогового состояния
+});
+```
+
+```javascript
+// <-- Создаем хранилище и указываем корневой редюсер.
+const myStore = createStore(rootReducer);
+```
+
+```react
+// <-- Корневой компонент нашего приложения
+export default function ReduxBasicDemo() {
+  return (
+    <Provider store={myStore}>  {/* <-- Оборачиваем все приложение в провайдер и указываем хранилище */}
+      <Person />
+      <Experience />
+      <Display />
+    </Provider>
+  );
+}
+```
+
+```react
+// <-- Компонент, который изменяет состояние.
+function Person() {
+  const rFirstname = useRef();
+  const rLastname = useRef();
+  // <-- Получаем функцию для регистрации изменения хранилища.
+  const dispatch = useDispatch();
+
+  // <-- Отправляем в хранилище запросы на изменение, путем передачи функции-диспетчеру объекта действия.
+  const applyName = () => {
+    dispatch(actionSetFirstname(rFirstname.current.value));
+    dispatch(actionSetLastname(rLastname.current.value));
+  }
+
+  return (
+    <div>
+      <input ref={rFirstname} placeholder="Введите имя"/>
+      <input ref={rLastname}  placeholder="Введите фамилию"/>
+      <button onClick={applyName}>Задать</button>
+    </div>
+  );
+}
+```
+
+```react
+// <-- Этот компонент тоже изменяет состояние.
+function Experience() {
+  const rCompany = useRef();
+  // <-- Получаем функцию для регистрации изменения хранилища.
+  const dispatch = useDispatch();
+
+  // <-- Отправляем в хранилище запросы на изменение.
+  const applyJob = () => dispatch(actionJobApply(rCompany.current.value));
+  const switchLookingForJob = () => dispatch(actionSwitchLookingForJob());
+
+  return (
+    <div>
+      <input ref={rCompany} placeholder='Куда хотите устроиться'/>
+      <button onClick={applyJob}>Устроиться на работу</button>
+      <button onClick={switchLookingForJob}>Ищет работу</button>
+    </div>
+  );
+}
+```
+
+```react
+// <-- Компонент, который читает состояние.
+function Display() {
+  // <-- Подписываем компонент на уведомления об изменении хранилища, используя хук useSelector
+  // и извлекаем данные, передавая в этот хук колбэк, обращающийся к нужным нам полям.
+  const firstname = useSelector(state => state.person.firstname);
+  const lastname  = useSelector(state => state.person.lastname);
+  const name = firstname && lastname && `${lastname}, ${firstname}`;
+
+  // <-- Или передаем в хук селектор
+  const workedFor = useSelector(selectWorkedFor)
+  const isLookingForJob = useSelector(selectLookingForJob);
+
+  return (
+    <div>
+      <div>{name ?? "Имя не известно."} {isLookingForJob && "(Ищет работу)"}</div>
+      {(workedFor.length > 0) ? (
+        <div>Работал в этих компаниях: { workedFor.map(c => <div key={c}>{c}</div>) }</div>
+      ) : (
+        <div>Прошлые места работы не известны.</div>
+      )}
+    </div>
+  );
+}
+```
+
+
 
 # Общая схема работы редакса
 
