@@ -1,0 +1,22 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenCMDHere]
+@="Open CMD Here"
+"Icon"="cmd.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenCMDHere\command]
+@="cmd.exe /s /k pushd \"%V\""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenPowerShellHere]
+@="Open PowerShell Here"
+"Icon"="powershell.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenPowerShellHere\command]
+@="powershell.exe -NoExit -Command \"Set-Location -LiteralPath '%V'\""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenWTHere]
+@="Open Terminal Here"
+"Icon"="C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.18.xxxx.0_x64__8wekyb3d8bbwe\\wt.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenWTHere\command]
+@="wt -d \"%V\""
