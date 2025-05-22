@@ -10,7 +10,7 @@
 // typeof в javascript
 const person = { name: "Huck Finn" };  // <-- Переменная со значением.
 const t = typeof person;  // <-- Вернет тип значения в виде СТРОКИ
-console.log(t);  // object
+console.log(t);  // 'object'
 ```
 
 ## typescript
