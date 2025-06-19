@@ -1,7 +1,3 @@
-
-
-
-
 # Альтернатива enum'у
 
 ## union
@@ -90,40 +86,4 @@ printSide(SideValues.East, SideValues.North, SideValues.West, SideValues.South);
 
 
 
-
-```typescript
-type T1Direction = {
-  Up: string,
-  Down: string,
-  Left: string,
-  Right: string
-};
-
-type T2Direction = {
-  Up: "UP",
-  Down: "DOWN",
-  Left: "LEFT",
-  Right: "RIGHT"
-};
-
-
-const Direction = {
-  Up: "UP",
-  Down: "DOWN",
-  Left: "LEFT",
-  Right: "RIGHT",
-} as const;
-
-// type Direction = typeof Direction[keyof typeof Direction]; // "UP" | "DOWN" | "LEFT" | "RIGHT"
-// фишка в том, что сначала идет typeof Direction, а потом Indexed Types Acceess, тогда все становитмся ясно
-type Direction = typeof Direction['Up' | 'Down' | 'Left' | 'Right'];
-
-function move(dir: Direction) {
-  console.log(dir);
-}
-
-move(Direction.Up); // OK
-move("UP"); // OK, так как Direction = "UP" | "DOWN" | ...
-// move("INVALID"); // Ошибка: Argument of type '"INVALID"' is not assignable to type 'Direction'.
-```
 

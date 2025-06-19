@@ -1,6 +1,6 @@
 TODO: Переделать на сниппет-стиль.
 
-# Механики
+# Общие механики
 
 * fetch возвращает промис.
 * fetch относится к web api.
@@ -10,28 +10,34 @@ TODO: Переделать на сниппет-стиль.
 # Базовый синтаксис
 
 ```javascript
-const response = await fetch(url);
-```
-
-Мини-пример:
-
-```javascript
 async function testFetch() {
   const url = 'https://jsonplaceholderZ.typicode.com/users';
 
   try {
     const response = await fetch(url);
     if (response.ok) {
-      const data = await response.json();
-      data.map(d => d.name).forEach(d => console.log(d)); 
+      return await response.json();
     }
   } catch (err) {
     console.log(`Ошибка: ${err.message}`);
+    throw err;
   }
 }
 
 testFetch();
 ```
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
