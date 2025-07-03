@@ -40,7 +40,7 @@ it('Таймаут', async() => {
 it('Ошибка сети', async() => {
   const url = new URL('http://lolosoft.com/tasks');
   server.use(http.get(url.toString(), () => {
-    return Response.error();  // <-- Имитация сетевой ошибк.
+    return Response.error();  // <-- Имитация сетевой ошибки.
   }));
 ```
 
@@ -52,10 +52,23 @@ it('Ошибка сети', async() => {
 it.only('Ошибка парсинга json ответа', async() => {
   const url = new URL('http://lolosoft.com/tasks');
   server.use(http.get(url.toString(), () => {
-    return new HttpResponse('Not a JSON', {
+    return new HttpResponse('Not a JSON', {  // <-- В ответе не JSON.
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
   }));
+```
+
+
+
+# Ошибки HTTP
+
+```javascript
+server.use(http.get(url.toString(), () => {
+  return new HttpResponse('Not a JSON', {
+    status: httpStatus,  // <-- Ставим статус-код, который надо.
+    headers: { 'Content-Type': 'application/json' },
+  });
+}));
 ```
 
