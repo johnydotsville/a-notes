@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "6f03f5f19806f239",
+        "id": "51de7513b52b1107",
         "type": "tabs",
         "children": [
           {
-            "id": "9f8215fd6fef2e22",
+            "id": "783186910c4eadf3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "frontend/langs/typescript/00 - index.md",
+                "file": "frontend/frameworks/react-query/00 - index.md",
                 "mode": "source",
                 "source": false
               },
@@ -168,10 +168,26 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9f8215fd6fef2e22",
+  "active": "783186910c4eadf3",
   "lastOpenFiles": [
-    "frontend/langs/typescript/Альтернатива enum через typeof + keyof + as const.md",
+    "frontend/frameworks/react-query/queryFn.md",
+    "frontend/frameworks/react-query/00 - index.md",
+    "frontend/frameworks/react-query/useQuery.md",
+    "frontend/frameworks/react-query/queryKey.md",
+    "frontend/frameworks/react-query/Провайдер и клиент.md",
+    "frontend/frameworks/react-query/Установка.md",
+    "frontend/frameworks/react/00 - index.md",
+    "frontend/frameworks/react/Механики/Реконсиляция, рендер, коммит, fiber-дерево.md",
+    "frontend/frameworks/react-query",
+    "frontend/frameworks/react/Механики/Жизненный цикл функционального компонента.md",
+    "Жизненный цикл компонента.md",
+    "frontend/frameworks/react/01 - Roadmap.md",
+    "frontend/frameworks/react/Сниппеты",
+    "frontend/frameworks/react/Механики",
     "frontend/langs/typescript/00 - index.md",
+    "frontend/langs/typescript/Альтернатива enum через typeof + keyof + as const.md",
+    "frontend/frameworks/react",
+    "frontend/frameworks",
     "Welcome.md",
     "frontend/langs/typescript",
     "frontend/langs",
