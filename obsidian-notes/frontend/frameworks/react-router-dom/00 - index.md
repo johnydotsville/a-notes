@@ -1,0 +1,11 @@
+- [[frontend/frameworks/react-router-dom/Установка|Установка]]
+- [[Подключение, задание маршрутов]]
+	- BrowserRouter, Routes, Route
+- [[Динамический маршрут]]
+	- `localhost:1337/team/7`
+	- useParams()
+- [[searchParams'ы query string'а]]
+	- `localhost:1337/team?page=2&limit=15`
+	- useSearchParams()
+- [[Переходы по страницам]]
+	- Link, useNavigate

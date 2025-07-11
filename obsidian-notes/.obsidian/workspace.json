@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "frontend/langs/typescript/00 - index.md",
+                "file": "frontend/frameworks/react-query/00 - index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +142,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "frontend/langs/typescript/00 - index.md",
+                "file": "frontend/frameworks/react-query/00 - index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -151,12 +151,12 @@
               "title": "Outline of 00 - index"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -170,12 +170,27 @@
   },
   "active": "783186910c4eadf3",
   "lastOpenFiles": [
-    "frontend/frameworks/react-query/queryFn.md",
+    "frontend/html-css/00 - index.md",
+    "frontend/frameworks/react-router-dom/00 - index.md",
+    "frontend/frameworks/react-router-dom/Переходы по страницам.md",
+    "frontend/frameworks/react-router-dom/Подключение, задание маршрутов.md",
+    "frontend/frameworks/react-router-dom/Динамический маршрут.md",
+    "frontend/frameworks/react-router-dom/searchParams'ы query string'а.md",
     "frontend/frameworks/react-query/00 - index.md",
-    "frontend/frameworks/react-query/useQuery.md",
-    "frontend/frameworks/react-query/queryKey.md",
-    "frontend/frameworks/react-query/Провайдер и клиент.md",
     "frontend/frameworks/react-query/Установка.md",
+    "frontend/frameworks/react-router-dom/Установка.md",
+    "frontend/frameworks/react-query/Провайдер и клиент.md",
+    "frontend/frameworks/react-router-dom",
+    "frontend/frameworks/react-query/useQuery.md",
+    "frontend/frameworks/react-query/roadmap/react query roadmap.md",
+    "frontend/frameworks/react-query/roadmap/Задача + что изучать.md",
+    "frontend/frameworks/react-query/roadmap",
+    "frontend/frameworks/react-query/react query/Задача + что изучать.md",
+    "frontend/frameworks/react-query/react query/react query roadmap.md",
+    "frontend/frameworks/react-query/react query",
+    "frontend/html-css",
+    "frontend/frameworks/react-query/queryFn.md",
+    "frontend/frameworks/react-query/queryKey.md",
     "frontend/frameworks/react/00 - index.md",
     "frontend/frameworks/react/Механики/Реконсиляция, рендер, коммит, fiber-дерево.md",
     "frontend/frameworks/react-query",
@@ -189,8 +204,6 @@
     "frontend/frameworks/react",
     "frontend/frameworks",
     "Welcome.md",
-    "frontend/langs/typescript",
-    "frontend/langs",
-    "frontend"
+    "frontend/langs/typescript"
   ]
 }
