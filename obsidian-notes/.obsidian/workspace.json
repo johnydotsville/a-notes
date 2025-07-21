@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "51de7513b52b1107",
+        "id": "0741ff72cfe0df13",
         "type": "tabs",
         "children": [
           {
-            "id": "783186910c4eadf3",
+            "id": "843d2309b16f2ece",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -168,21 +168,26 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "783186910c4eadf3",
+  "active": "843d2309b16f2ece",
   "lastOpenFiles": [
+    "frontend/frameworks/react-query/Разъяснение настроек кэширования.md",
+    "frontend/frameworks/react-query/00 - index.md",
+    "frontend/frameworks/react-query/Глобальная настройка кэширования.md",
+    "frontend/frameworks/react-query/Префетч данных.md",
+    "frontend/frameworks/react-query/useQuery.md",
+    "frontend/frameworks/react-query/roadmap/react query roadmap.md",
+    "frontend/frameworks/react/Механики/Реконсиляция, рендер, коммит, fiber-дерево.md",
+    "frontend/frameworks/react/Механики/Жизненный цикл компонента.md",
     "frontend/html-css/00 - index.md",
     "frontend/frameworks/react-router-dom/00 - index.md",
     "frontend/frameworks/react-router-dom/Переходы по страницам.md",
     "frontend/frameworks/react-router-dom/Подключение, задание маршрутов.md",
     "frontend/frameworks/react-router-dom/Динамический маршрут.md",
     "frontend/frameworks/react-router-dom/searchParams'ы query string'а.md",
-    "frontend/frameworks/react-query/00 - index.md",
     "frontend/frameworks/react-query/Установка.md",
     "frontend/frameworks/react-router-dom/Установка.md",
     "frontend/frameworks/react-query/Провайдер и клиент.md",
     "frontend/frameworks/react-router-dom",
-    "frontend/frameworks/react-query/useQuery.md",
-    "frontend/frameworks/react-query/roadmap/react query roadmap.md",
     "frontend/frameworks/react-query/roadmap/Задача + что изучать.md",
     "frontend/frameworks/react-query/roadmap",
     "frontend/frameworks/react-query/react query/Задача + что изучать.md",
@@ -192,18 +197,14 @@
     "frontend/frameworks/react-query/queryFn.md",
     "frontend/frameworks/react-query/queryKey.md",
     "frontend/frameworks/react/00 - index.md",
-    "frontend/frameworks/react/Механики/Реконсиляция, рендер, коммит, fiber-дерево.md",
     "frontend/frameworks/react-query",
-    "frontend/frameworks/react/Механики/Жизненный цикл функционального компонента.md",
     "Жизненный цикл компонента.md",
     "frontend/frameworks/react/01 - Roadmap.md",
     "frontend/frameworks/react/Сниппеты",
     "frontend/frameworks/react/Механики",
     "frontend/langs/typescript/00 - index.md",
-    "frontend/langs/typescript/Альтернатива enum через typeof + keyof + as const.md",
     "frontend/frameworks/react",
     "frontend/frameworks",
-    "Welcome.md",
     "frontend/langs/typescript"
   ]
 }
