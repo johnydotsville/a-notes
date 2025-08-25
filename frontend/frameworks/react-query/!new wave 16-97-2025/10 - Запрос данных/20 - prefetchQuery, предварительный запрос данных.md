@@ -2,7 +2,7 @@
 Основные шаги:
 - Получить queryClient через хук `useQueryClient`.
 - Вызвать на клиенте метод `prefetchQuery`. Синтаксис такой же как у useQuery.
-- Задача префетча - просто запустить запрос, а не извлекать данные. Извлекать их будет useQuery.
+- Задача префетча - просто запустить запрос и положить результат в кэш, а не извлекать данные. Извлекать их будет useQuery.
 
 Вот пример, где  префетч оформлен отдельной функцией:
 ```typescript
@@ -37,10 +37,12 @@ export function EmployeeCard({ employee }) {
 
   return (
     // ... остальное
-  <Button 
-	onClick={() => gotoEmployeePage(employee.id)} 
-	onMouseEnter={() => prefetchEmployee(employee.id)}  // <-- Префетчим
-  >Подробнее</Button>
+    <Button 
+	  onClick={() => gotoEmployeePage(employee.id)} 
+	  onMouseEnter={() => prefetchEmployee(employee.id)}  // <-- Префетчим
+    >
+      Подробнее
+    </Button>
   )
 }
 ```
